@@ -1,15 +1,20 @@
 <template>
-	<audio
-		:src="src"
-		:id="Id"
-		:loop="loop"
-		:controls="controls"
-		:poster="poster"
-		:name="name"
-		:author="author"
-		@play="audio_play"
-	/>
-
+	<view>
+		<audio
+			:src="src"
+			:id="Id"
+			:loop="loop"
+			:controls="controls"
+			:poster="poster"
+			:name="name"
+			:author="author"
+			@play="audio_play"
+			@error="audio_error"
+			@pause="audio_pause"
+			@timeupdate="audio_timeupdate"
+			@ended="audio_ended"
+		/>
+	</view>
 </template>
 
 <script>
@@ -50,6 +55,22 @@
 		  	        console.log("play audio success",e)
 		  	        this.$emit('play',e.details)
 		  	       }, 
+			audio_error(e){
+			        console.log("play audio error",e)
+			        this.$emit('error',e.details)
+			       }, 
+			audio_pause(e){
+			        console.log("play audio pause",e)
+			        this.$emit('pause',e.details)
+			       }, 
+			audio_timeupdate(e){
+			        console.log("play audio timeupdate",e)
+			        this.$emit('timeupdate',e.details)
+			       }, 	 
+			audio_ended(e){
+			        console.log("play audio ended",e)
+			        this.$emit('ended',e.details)
+			       }, 	   
 		  },
 
 	}
