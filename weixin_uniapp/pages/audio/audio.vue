@@ -1,9 +1,42 @@
 <template>
-	<onekit-audio src=""/>
+	<view>
+		
+	 <onekit-audio 
+	  style="text-align: left" 
+	 :src="current.src" 
+	 :poster="current.poster" 
+	 :name="current.name" 
+	 :author="current.author" 
+	 :action="audioAction" 
+	 controls
+	 />
+	  
+	 </view>
 </template>
 
 <script>
-</script>
+	export default {
+	    data() {
+	        return {
+	            current: {
+	                poster: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/audio/music.jpg',
+	                name: '致爱丽丝',
+	                author: '暂无',
+	                src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/audio/music.mp3',
+	            },
+	            audioAction: {
+	                method: 'pause'
+	            }
+	        }
+	    },
+		  // methods: {
+		  //       audioError: function() {
+		  //           console.error('音频加载错误！')
+		  //       }
+		  //   }
+	}
 
+</script>
+	
 <style>
 </style>
