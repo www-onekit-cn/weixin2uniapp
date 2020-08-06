@@ -1,5 +1,5 @@
 <template>
-	<canvas :canvas-id="Id" :disable-scroll="disableScroll" :width="width" :height="height" @touchstart="bindtouchstart"></canvas>
+	<canvas :canvas-id="Id" :disable-scroll="disableScroll" :width="width" :height="height" @touchstart="touch_start"></canvas>
 </template>
 
 <script>
@@ -23,7 +23,7 @@
 			},
 		},
 		methods:{
-			bindtouchstart(e) {
+			touch_start(e) {
 				console.log("bind start",e)
 				this.$emit("touchstart",e.details)
 			}
