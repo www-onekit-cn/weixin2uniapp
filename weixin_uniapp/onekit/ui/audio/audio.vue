@@ -7,7 +7,7 @@
 		:poster="poster"
 		:name="name"
 		:author="author"
-		
+		@play="audio_play"
 	/>
 
 </template>
@@ -44,8 +44,13 @@
 				type:String,
 				default: "未知作者"
 			},
-		            
-		        },
+		  },
+		  methods:{
+		  	audio_play(e){
+		  	        console.log("play audio success",e)
+		  	        this.$emit('play',e.details)
+		  	       }, 
+		  },
 
 	}
 </script>
