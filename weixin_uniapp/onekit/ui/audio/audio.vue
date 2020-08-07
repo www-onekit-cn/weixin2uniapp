@@ -23,11 +23,11 @@
 		props: {
 			src:{
 				type:String,
-				default: ''
+				default: ""
 			},
 			Id:{
 				type:String,
-				default: ''
+				default: ""
 			},
 			loop:{
 				type: Boolean,
@@ -39,7 +39,7 @@
 			},
 			poster:{
 				type:String,
-				default: ''
+				default: ""
 			},
 			name:{
 				type:String,
