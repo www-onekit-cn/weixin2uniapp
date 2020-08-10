@@ -1,5 +1,5 @@
 <template>
-	<view>
+<!-- 	<view>
 		<view
 		:hover-class=""
 		:hover-stop-propagation=""
@@ -9,7 +9,7 @@
 		>
 		</view>
 		
-	</view>
+	</view> -->
 </template>
 
 <script>

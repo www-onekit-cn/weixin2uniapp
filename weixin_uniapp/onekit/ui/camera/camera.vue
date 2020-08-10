@@ -10,7 +10,9 @@
 			@error="camera_error"
 			@initdone="camera_initdone"
 			@scancode="camera_scancode"
-		></camera>
+		>
+		<slot/>
+		</camera>
 	</view>
 </template>
 	
