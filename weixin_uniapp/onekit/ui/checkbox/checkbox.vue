@@ -1,10 +1,10 @@
 <template>
-
 	<checkbox
 		:value="value"
 		:disabled="disabled"
 		:checked="checked"
 		:color="color"
+	
 	>
 		<slot/>
 	</checkbox>
@@ -12,7 +12,6 @@
 
 <script>
 	export default{
-		behaviors: ['uni://form-field'],
 		props:{
 			value:{
 				type:String,
@@ -20,7 +19,6 @@
 			},
 			disabled:{
 				type:Boolean,
-
 				default: false
 			},
 			checked:{
@@ -37,6 +35,5 @@
 </script>
 
 <style>
-
 
 </style>
