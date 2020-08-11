@@ -1,6 +1,6 @@
 <template>
 	<onekit-view @tap="tap">
-		xxxxx
+		xview11112
 	</onekit-view>
 </template>
 
