@@ -1,11 +1,12 @@
 <template>
-	<view>
-		<icon
+		<icon class="onekit-icon"
 			:type="type"
 			:size="size"
 			:color="color"
-		></icon>
-	</view>
+		>
+		<slot />
+		</icon>
+
 </template>
 
 <script>
