@@ -4,8 +4,8 @@
 			:checked="checked"
 			:disabled="disabled"
 			:type="type"
-			@change="switch_change"
 			:color="color"
+			@change="switch_change"
 		>
 		<slot/>
 		</switch>

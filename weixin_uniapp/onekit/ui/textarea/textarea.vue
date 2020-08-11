@@ -1,0 +1,32 @@
+<template>
+	<textarea
+		value
+		placeholder
+		placeholder-style	
+		placeholder-class	
+		disabled	
+		maxlength
+		auto-focus	
+		focus
+		auto-height	
+		fixed
+		cursor-spacing	
+		cursor
+		show-confirm-bar	
+		selection-start		
+		selection-end	
+		adjust-position	
+		hold-keyboard	
+		disable-default-padding	
+		@focus	
+		@blur	
+	>
+		<slot/>
+	</textarea>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>
