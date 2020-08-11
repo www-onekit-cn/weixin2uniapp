@@ -1,10 +1,10 @@
 <template>
-
 	<checkbox
 		:value="value"
 		:disabled="disabled"
 		:checked="checked"
 		:color="color"
+	
 	>
 		<slot/>
 	</checkbox>
@@ -19,7 +19,6 @@
 			},
 			disabled:{
 				type:Boolean,
-
 				default: false
 			},
 			checked:{
@@ -36,6 +35,5 @@
 </script>
 
 <style>
-
 
 </style>

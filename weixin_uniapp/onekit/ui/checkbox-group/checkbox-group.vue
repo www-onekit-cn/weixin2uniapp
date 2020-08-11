@@ -9,6 +9,7 @@
 
 <script>
 	export default{
+		behaviors: ['uni://form-field'],
 		props:{
 			
 		},
