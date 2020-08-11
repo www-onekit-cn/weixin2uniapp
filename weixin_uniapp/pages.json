@@ -1,11 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-<<<<<<< HEAD
 			"path": "pages/rich-text/rich-text",
-=======
-			"path": "pages/icon/icon",
->>>>>>> e3f54bd9eae9565c657c9e52dabcef0f42518b71
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
