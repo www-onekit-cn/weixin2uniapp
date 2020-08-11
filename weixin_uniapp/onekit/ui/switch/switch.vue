@@ -14,6 +14,7 @@
 
 <script>
 	export default {
+		behaviors: ['uni://form-field'],
 			props:{
 				checked:{
 					type:Boolean,

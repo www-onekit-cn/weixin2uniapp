@@ -19,6 +19,7 @@
 
 <script>
 	export default{
+		behaviors: ['uni://form-field'],
 		props:{
 				min:{
 					type:Number,

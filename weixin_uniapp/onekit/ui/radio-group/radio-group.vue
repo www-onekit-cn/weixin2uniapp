@@ -9,6 +9,7 @@
 
 <script>
 	export default{
+		behaviors: ['uni://form-field'],
 		methods:{
 			radio_group_change(e){
 			        console.log("radio_group_change",e)

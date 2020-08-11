@@ -31,6 +31,7 @@
 
 <script>
 	export default{
+		behaviors: ['uni://form-field'],
 		props:{
 			value:{
 				type:String,
