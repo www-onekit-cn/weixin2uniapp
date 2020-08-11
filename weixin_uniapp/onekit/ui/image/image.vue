@@ -42,11 +42,11 @@
 		  },
 		  methods:{
 		  	image_load(e){
-		  	        console.log("image load success",e)
+		  	      //  console.log("image load success",e)
 		  	        this.$emit('load',e.details)
 		  	       }, 
 			image_error(e){
-			        console.log("image error",e)
+			      //  console.log("image error",e)
 			        this.$emit('error',e.details)
 			       }, 
 			

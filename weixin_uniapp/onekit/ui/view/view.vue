@@ -36,7 +36,7 @@ export default{
 		// 	this.$emit('click',e.details)
 		// },
 		view_tap:function(e){
-			console.log("image load success",e)
+			//console.log("image load success",e)
 			this.$emit('tap',e.details)
 		},
 	}
