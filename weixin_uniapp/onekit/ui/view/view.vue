@@ -4,7 +4,6 @@
 		:hover-stop-propagation="hoverStopPropagation"
 		:hover-start-time="hoverStartTime"
 		:hover-stay-time="hoverStayTime"
-		@click="view_click"
 		@tap="view_tap"
 		>
 		<slot></slot>
@@ -33,10 +32,13 @@ export default{
 		
 	},
 	methods:{
-		view_click:function(e){
+		// view_click:function(e){
+		// 	this.$emit('click',e.details)
+		// },
+		view_tap:function(e){
 			console.log("image load success",e)
 			this.$emit('tap',e.details)
-		}
+		},
 	}
 }
 </script>
