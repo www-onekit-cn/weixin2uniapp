@@ -1,7 +1,11 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+<<<<<<< HEAD
 			"path": "pages/radio/radio",
+=======
+			"path": "pages/text/text",
+>>>>>>> b268ba472ffc9fc8ceb8cc5d0bb997ca1de2ccee
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
