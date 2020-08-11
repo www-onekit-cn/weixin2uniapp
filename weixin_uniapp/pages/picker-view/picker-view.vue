@@ -1,21 +1,21 @@
 <template>
     <view>
-        <page-head :title="title"></page-head>
+  
         <view class="uni-padding-wrap">
 			<view class="uni-title">
 				日期：{{year}}年{{month}}月{{day}}日
 			</view>
 		</view>
         <onekit-picker-view v-if="visible" :indicator-style="indicatorStyle" :value="value" @change="bindChange">
-            <onekit-picker-view-column>
+            <picker-view-column>
                 <view class="item" v-for="(item,index) in years" :key="index">{{item}}年</view>
-            </onekit-picker-view-column>
-            <onekit-picker-view-column>
+            </picker-view-column>
+            <picker-view-column>
                 <view class="item" v-for="(item,index) in months" :key="index">{{item}}月</view>
-            </onekit-picker-view-column>
-            <onekit-picker-view-column>
+            </picker-view-column>
+            <picker-view-column>
                 <view class="item" v-for="(item,index) in days" :key="index">{{item}}日</view>
-            </onekit-picker-view-column>
+            </picker-view-column>
         </onekit-picker-view>
     </view>
 </template>
