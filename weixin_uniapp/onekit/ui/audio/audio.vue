@@ -1,5 +1,4 @@
 <template>
-	<view>
 		<audio
 			:src="src"
 			:id="Id"
@@ -14,7 +13,6 @@
 			@timeupdate="audio_timeupdate"
 			@ended="audio_ended"
 		/>
-	</view>
 </template>
 
 <script>

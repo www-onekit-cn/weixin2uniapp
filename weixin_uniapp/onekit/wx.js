@@ -275,12 +275,10 @@ export default class wx {
 	static onBackgroundFetchData(callback) {
 		return uni.onBackgroundFetchData(callback)
 	}
-	static getBackgroundFetchData(uni_object) {
-		var quick_success = uni_object.success;
-		var quick_fail = uni_object.fail;
-		var quick_complete = uni_object.complete;
+	static getBackgroundFetchData(object) {
+		uni.getBackgroundFetchData(object)
 	}
-	// static createContext() { return new CanvasContext(); }
+
 	static createCanvasContext(canvasId) {
 		return new CanvasContext(uni.createCanvasContext(canvasId));
 	}
@@ -740,7 +738,7 @@ export default class wx {
 	static offLocalServiceDiscoveryStop(callback) {
 		return uni.offLocalServiceDiscoveryStop(callback);
 	}
-	static createUDPSocket(){
+	static createUDPSocket() {
 		return uni.createUDPSocket()
 	}
 	///////// Open Interface //////////
