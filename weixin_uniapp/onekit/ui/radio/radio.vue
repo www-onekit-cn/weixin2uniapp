@@ -1,13 +1,13 @@
 <template>
-
-	<checkbox
+	<radio
 		:value="value"
-		:disabled="disabled"
 		:checked="checked"
+		:disabled="disabled"
 		:color="color"
+	
 	>
 		<slot/>
-	</checkbox>
+	</radio>
 </template>
 
 <script>
@@ -15,27 +15,23 @@
 		props:{
 			value:{
 				type:String,
-				default: ""
+				default:"",
+			},
+			checked:{
+				type:Boolean,
+				default:false,
 			},
 			disabled:{
 				type:Boolean,
-
-				default: false
-			},
-			checked:{
-				type:String,
-				default: "false"
+				default:false,
 			},
 			color:{
 				type:String,
-				default: "#09BB07"
+				default:"",
 			},
 		}
 	}
-	
 </script>
 
 <style>
-
-
 </style>
