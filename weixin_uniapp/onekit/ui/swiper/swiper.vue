@@ -86,13 +86,13 @@
 		methods: {
 			swiper_change:function(e){
 				this.$emit('change')
-			}
+			},
 			swiper_transition:function(e){
 				this.$emit('transition')
-			}
+			},
 			swiper_animationfinish:function(e){
 				this.$emit('animationfinish')
-			}
+			},
 		}
 	}
 </script>

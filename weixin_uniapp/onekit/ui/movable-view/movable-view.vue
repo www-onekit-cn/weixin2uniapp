@@ -48,19 +48,19 @@
 			scaleMin: {
 				type: Number,
 				default: 0.5
-			}
+			},
 			scaleMax: {
 				type: Number,
 				default: 10
-			}
+			},
 			scaleValue: {
 				type: Number,
 				default: 1
-			}
+			},
 			animation: {
 				type: Boolean,
 				default: true
-			}
+			},
 		},
 		methods: {
 			movable_change: function(e) {

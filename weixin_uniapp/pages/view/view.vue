@@ -1,4 +1,7 @@
 <template>
+	<onekit-view>
+		
+	</onekit-view>
 </template>
 
 <script>

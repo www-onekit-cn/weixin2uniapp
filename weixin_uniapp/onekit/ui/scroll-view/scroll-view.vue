@@ -85,23 +85,22 @@
 			},
 			scroll_scrolltolower: function(e) {
 				this.$emit('scrolltolower', e)
-			}
+			},
 			scroll_scroll: function(e) {
 				this.$emit('scroll', e)
-			}
+			},
 			scroll_refresherpulling: function(e) {
 				this.$emit('refresherpulling', e)
-			}
+			},
 			scroll_refresherrefresh: function(e) {
 				this.$emit('refresherrefresh', e)
-			}
+			},
 			scroll_refresherrestore: function(e) {
 				this.$emit('refresherrestore', e)
-			}
+			},
 			scroll_refresherabort: function(e) {
 				this.$emit('refresherabort', e)
-			}
-
+			},
 		},
 	}
 </script>
