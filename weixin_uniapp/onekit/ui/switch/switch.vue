@@ -4,8 +4,8 @@
 			:checked="checked"
 			:disabled="disabled"
 			:type="type"
-			@change="switch_change"
 			:color="color"
+			@change="switch_change"
 		>
 		<slot/>
 		</switch>
@@ -14,6 +14,7 @@
 
 <script>
 	export default {
+		behaviors: ['uni://form-field'],
 			props:{
 				checked:{
 					type:Boolean,

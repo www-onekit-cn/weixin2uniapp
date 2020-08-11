@@ -1,33 +1,36 @@
 <template>
-		<icon class="onekit-icon"
-			:type="type"
-			:size="size"
-			:color="color"
-		>
-		<slot />
-		</icon>
-
+	<view
+	id="Id"
+	:type="type"
+	:size="size"
+	:color="color"
+	>
+	</view>
 </template>
 
 <script>
 	export default {
-		props:{
-			type:{
-				type:String,
-				default: ""
+		props: {
+			Id:{
+				type: String,
+				default: ''
 			},
-			size:{
-				type:Number/String,
-				default: 23/""
+			type: {
+				type: String,
+				default: ''
 			},
-			color:{
-				type:String,
-				default: ""
-			}
-		}
+			size: {
+				type: Number || String,
+				default: 23
+			},
+			color: {
+				type: String,
+				default: ''
+			},
+		},
+		methods: {}
 	}
 </script>
 
 <style>
-
 </style>

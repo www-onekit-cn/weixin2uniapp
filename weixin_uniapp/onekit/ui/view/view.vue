@@ -1,24 +1,44 @@
 <template>
-<!-- 	<view>
 		<view
-		:hover-class=""
-		:hover-stop-propagation=""
-		:hover-start-time=""
-		:hover-stay-time=""
-		@click="view_click"
+		:hover-class="hoverClass"
+		:hover-stop-propagation="hoverStopPropagation"
+		:hover-start-time="hoverStartTime"
+		:hover-stay-time="hoverStayTime"
+		@tap="view_tap"
 		>
+		<slot></slot>
 		</view>
-		
-	</view> -->
 </template>
 
 <script>
 export default{
 	props:{
+		hoverClass:{
+			type:String,
+			default: "none"
+		},
+		hoverStopPropagation:{
+			type:Boolean,
+			default:false
+		},
+		hoverStartTime:{
+			type:Number,
+			default:50
+		},
+		hoverStayTime:{
+			type:Number,
+			default:400
+		}
 		
 	},
 	methods:{
-		
+		// view_click:function(e){
+		// 	this.$emit('click',e.details)
+		// },
+		view_tap:function(e){
+			console.log("image load success",e)
+			this.$emit('tap',e.details)
+		},
 	}
 }
 </script>

@@ -1,25 +1,21 @@
 <template>
-	<checkbox-group
-		@change="checkbox_change"
+	<radio-group
+		@change="radio_group_change"
 	
 	>
 		<slot/>
-	</checkbox-group>
+	</radio-group>
 </template>
 
 <script>
 	export default{
 		behaviors: ['uni://form-field'],
-		props:{
-			
-		},
 		methods:{
-			checkbox_change(e){
-			        console.log("checkbox_change",e)
+			radio_group_change(e){
+			        console.log("radio_group_change",e)
 			        this.$emit('change',e.details)
 			       }, 
 		},
-		
 	}
 </script>
 
