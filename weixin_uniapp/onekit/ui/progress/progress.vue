@@ -1,0 +1,72 @@
+<template>
+	<progress
+	:percent="percent"
+	:show-info="showInfo"
+	:border-radius="borderadius"
+	:font-size="fontize"
+	:stroke-width="strokeWidth"
+	:activeColor="activeColor"
+	:backgroundColor="backgroundColor"
+	:active="active"
+	:active-mode="activeMode"
+	:duration="duration"
+	@activeend="progress_activeend"
+	>
+	<slot></slot>
+	</progress>
+</template>
+
+<script>
+	export default{
+		props:{
+			percent:{
+				type:Number,
+				default:0
+			},
+			showInfo:{
+				type:Boolean,
+				default:false
+			},
+			borderadius:{
+				type:Number||String,
+				default:'0'
+			},
+			fontize:{
+				type:Number||String,
+				default:'16'
+			},
+			strokeWidth:{
+				type:Number||String,
+				default:6
+			},
+			activeColor:{
+				type:String,
+				default:'#09BB07'
+			},
+			backgroundColor:{
+				type:String,
+				default:'#EBEBEB'
+			},
+			active:{
+				type:Boolean,
+				default:false
+			},
+			activeMode:{
+				type:String,
+				default:"backwards"
+			},
+			duration:{
+				type:Number,
+				default:30
+			}
+		},
+		methods:{
+			progress_activeend:function(e){
+				this.$emit('activeend',e)
+			}
+		}
+	}
+</script>
+
+<style>
+</style>
