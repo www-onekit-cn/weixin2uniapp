@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 	<view>
 		<page-head title="form"></page-head>
 		<view class="uni-padding-wrap uni-common-mt">
@@ -47,7 +46,6 @@
 			</form>
 		</view>
 	</view>
-=======
 	<view class="container">
 	  <view class="page-body">
 	    <onekit-form catchsubmit="formSubmit" catchreset="formReset">
@@ -96,10 +94,9 @@
 	  </view>
 	</view>
 	</template>  
->>>>>>> b268ba472ffc9fc8ceb8cc5d0bb997ca1de2ccee
+
 </template>
 <script>
-<<<<<<< HEAD
 	var  graceChecker = require("../../common/graceChecker.js");
 	export default {
 		data() {
@@ -135,7 +132,6 @@
 	.uni-form-item .title {
 		padding: 20rpx 0;
 	}
-=======
 	export default {
 		data() {
 			return {
@@ -187,5 +183,4 @@
 
 <style>
 
->>>>>>> b268ba472ffc9fc8ceb8cc5d0bb997ca1de2ccee
 </style>
