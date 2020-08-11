@@ -1,0 +1,68 @@
+<template>
+	<editor
+		:read-only="readOnly"
+		:placeholder="placeholder"
+		:show-img-size="showImgSize"
+		:show-img-toolbar="showImgToolbar"
+		:show-img-resize="showImgResize"	
+		@ready="editor_ready"
+		@focus="editor_focus"
+		@blur="editor_blur"
+		@input="editor_input"
+		@statuschange="editor_statuschange"
+	>
+		<slot/>
+	</editor>
+</template>
+
+<script>
+	export default{
+		props:{
+			readOnly:{
+				type:Boolean,
+				default:false
+			},
+			placeholder:{
+				type:String,
+				default: ""
+			},
+			showImgSize:{
+				type:Boolean,
+				default:false
+			},
+			showImgToolbar:{
+				type:Boolean,
+				default:false
+			},
+			showImgResize:{
+				type:Boolean,
+				default:false
+			},
+		},
+		methods:{
+			editor_ready(e){
+			        console.log("editor_ready",e)
+			        this.$emit('ready',e.details)
+			       }, 
+			editor_focus(e){
+			        console.log("editor_focus",e)
+			        this.$emit('focus',e.details)
+			       }, 
+			editor_blur(e){
+			        console.log("editor_blur",e)
+			        this.$emit('blur',e.details)
+			       }, 
+			editor_input(e){
+			        console.log("editor_input",e)
+			        this.$emit('input',e.details)
+			       }, 
+			editor_statuschange(e){
+			        console.log("editor_statuschange",e)
+			        this.$emit('statuschange',e.details)
+			       }, 
+		},
+	}
+</script>
+
+<style>
+</style>
