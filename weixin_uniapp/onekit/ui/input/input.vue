@@ -1,5 +1,7 @@
 <template>
 	<input
+		:class="['onekit-input',class_]"
+		:style="style_"
 		:value="value"	
 		:type="type"
 		:password="password"
@@ -33,6 +35,14 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			value:{
 				type:String,
 				default: ""

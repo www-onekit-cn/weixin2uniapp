@@ -1,5 +1,7 @@
 <template>
 	<textarea
+		:class="['onekit-textarea',class_]"
+		:style="style_"
 		:value="value"
 		:placeholder="placeholder"
 		:placeholder-style="placeholderStyle"
@@ -27,6 +29,14 @@
 <script>
 	export default{
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			value:{
 				type:String,
 				default: ""

@@ -1,5 +1,7 @@
 <template>
 	<form
+		:class="['onekit-form',class_]"
+		:style="style_"
 		:report-submit="reportSubmit"
 		:report-submit-timeout="reportSubmitTimeout"
 		:bindsubmit="bind_submit"
@@ -13,6 +15,14 @@
 	export default {
 		behaviors: ['uni://form-field'],
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			reportSubmit:{
 				type:Boolean,
 				default: false

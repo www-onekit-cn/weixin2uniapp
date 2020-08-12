@@ -1,14 +1,16 @@
 <template>
 	<view>
 		<image 
-		:src="src"
-		:mode="mode"
-		:lazy-load="lazyLoad"
-		:webp="webp"
-		:show-menu-by-longpress="showMenuByLongpress"
-		@error="image_error"
-		@load="image_load"
-		
+			:class="['onekit-image',class_]"
+			:style="style_"
+			:src="src"
+			:mode="mode"
+			:lazy-load="lazyLoad"
+			:webp="webp"
+			:show-menu-by-longpress="showMenuByLongpress"
+			@error="image_error"
+			@load="image_load"
+			
 		
 		
 		/>
@@ -19,6 +21,14 @@
 	export default{
 		props: {
 			src:{
+				class_:{
+					type:String,
+					default:''
+				},
+				style_:{
+					type:String,
+					defaul:''
+				},
 				type:String,
 				default: ""
 			},
