@@ -1,7 +1,7 @@
 <template>
 		<view
-		:class="onekit-view {{class_}}"
-		:style="{{style_}}"
+		:class="onekit-view"
+		:style="style_"
 		:hover-class="hoverClass"
 		:hover-stop-propagation="hoverStopPropagation"
 		:hover-start-time="hoverStartTime"
