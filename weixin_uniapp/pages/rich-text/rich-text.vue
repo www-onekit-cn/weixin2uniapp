@@ -8,7 +8,7 @@
 					<scroll-view scroll-y>{{htmlSnip}}</scroll-view>
 					<button type="primary" @tap="renderHtml">渲染HTML</button>
 					<block v-if="renderedByHtml">
-						<rich-text :nodes="htmlSnip"></rich-text>
+						<onekit-rich-text :nodes="htmlSnip"></onekit-rich-text>
 					</block>
 				</onekit-view>
 			</onekit-view>
@@ -19,7 +19,7 @@
 					<scroll-view scroll-y>{{nodeSnip}}</scroll-view>
 					<button type="primary" @tap="renderNode">渲染Node</button>
 					<block v-if="renderedByNode">
-						<rich-text :nodes="nodes"></rich-text>
+						<onekit-rich-text :nodes="nodes"></onekit-rich-text>
 					</block>
 				</onekit-view>
 			</onekit-view>

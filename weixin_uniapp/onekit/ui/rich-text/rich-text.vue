@@ -8,7 +8,7 @@
 	export default {
 		props: {
 			nodes: {
-				type: Array || String,
+				type:String||Array,
 				default: []
 			},
 			space: {
