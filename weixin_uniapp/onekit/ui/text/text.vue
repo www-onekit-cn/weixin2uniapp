@@ -1,11 +1,7 @@
 <template>
 	<view>
-		<text
-			:selectable="selectable"
-			:space="space"
-			:decode="decode"
-		>
-		<slot />
+		<text :class="['onekit-text',class_]" :style="style_" :selectable="selectable" :space="space" :decode="decode">
+			<slot />
 		</text>
 	</view>
 </template>
@@ -13,16 +9,24 @@
 <script>
 	export default {
 		props: {
-			selectable:{
-				type:Boolean,
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
+			selectable: {
+				type: Boolean,
 				default: false
 			},
-			disabled:{
-				type:String,
+			disabled: {
+				type: String,
 				default: ''
 			},
-			disabled:{
-				type:Boolean,
+			disabled: {
+				type: Boolean,
 				default: false
 			},
 		}

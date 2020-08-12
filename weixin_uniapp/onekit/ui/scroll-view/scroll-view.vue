@@ -1,11 +1,12 @@
 <template>
-	<scroll-view :scroll-x="scrollX" :scroll-y="scrollY" :upper-threshold="upperThreshold" :lower-threshold="lowerThreshold"
-	 :scroll-top="scrollTop" :scroll-left="scrollLeft" :scroll-into-view="scrollIntoView" :scroll-with-animation="scrollWithAnimation"
-	 :enable-back-to-top="enableBackToTop" :enable-flex="enableFlex" :scroll-anchoring="scrollAnchoring"
-	 :refresher-enabled="refresherEnabled" :refresher-threshold="refresherThreshold" :refresher-default-style="refresherDefaultStyle"
-	 :refresher-background="refresherBackground" :refresher-triggered="refresherTriggered" @scrolltoupper="scroll_scrolltoupper"
-	 @scrolltolower="scroll_scrolltolower" @scroll="scroll_scroll" @refresherpulling="scroll_refresherpulling"
-	 @refresherrefresh="scroll_refresherrefresh" @refresherrestore="scroll_refresherrestore" @refresherabort="scroll_refresherabort">
+	<scroll-view :class="['onekit-scroll-view',class_]" :style="style_" :scroll-x="scrollX" :scroll-y="scrollY"
+	 :upper-threshold="upperThreshold" :lower-threshold="lowerThreshold" :scroll-top="scrollTop" :scroll-left="scrollLeft"
+	 :scroll-into-view="scrollIntoView" :scroll-with-animation="scrollWithAnimation" :enable-back-to-top="enableBackToTop"
+	 :enable-flex="enableFlex" :scroll-anchoring="scrollAnchoring" :refresher-enabled="refresherEnabled"
+	 :refresher-threshold="refresherThreshold" :refresher-default-style="refresherDefaultStyle" :refresher-background="refresherBackground"
+	 :refresher-triggered="refresherTriggered" @scrolltoupper="scroll_scrolltoupper" @scrolltolower="scroll_scrolltolower"
+	 @scroll="scroll_scroll" @refresherpulling="scroll_refresherpulling" @refresherrefresh="scroll_refresherrefresh"
+	 @refresherrestore="scroll_refresherrestore" @refresherabort="scroll_refresherabort">
 		<slot></slot>
 	</scroll-view>
 </template>
@@ -13,6 +14,14 @@
 <script>
 	export default {
 		props: {
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			scrollX: {
 				type: Boolean,
 				default: false

@@ -1,5 +1,6 @@
 <template>
 	<swiper
+	:class="['onekit-swiper',class_]" :style="style_"
 	:indicator-dots="indicatorDots"
 	:indicator-color="indicatorColor"
 	:indicator-active-color="indicatorActiveColor"
@@ -25,6 +26,14 @@
 <script>
 	export default {
 		props: {
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			indicatorDots: {
 				type: Boolean,
 				default: false

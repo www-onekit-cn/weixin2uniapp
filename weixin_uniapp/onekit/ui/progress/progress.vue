@@ -1,5 +1,7 @@
 <template>
 	<progress
+	:class="['onekit-progress',class_]"
+	:style="style_"
 	:percent="percent"
 	:show-info="showInfo"
 	:border-radius="borderadius"
@@ -7,37 +9,46 @@
 	:stroke-width="strokeWidth"
 	:activeColor="activeColor"
 	:backgroundColor="backgroundColor"
+	:color="color"
 	:active="active"
 	:active-mode="activeMode"
 	:duration="duration"
-	@activeend="progress_activeend"
-	>
-	<slot></slot>
-	</progress>
+	@activeend="progress_activeend"/>
 </template>
 
 <script>
 	export default{
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			percent:{
-				type:Number,
-				default:0
+				type:String,
 			},
 			showInfo:{
 				type:Boolean,
 				default:false
 			},
 			borderadius:{
-				type:Number||String,
+				type:String,
 				default:'0'
 			},
 			fontize:{
-				type:Number||String,
+				type:String,
 				default:'16'
 			},
 			strokeWidth:{
-				type:Number||String,
-				default:6
+				type:String,
+				default:'6'
+			},
+			color:{
+				type:String,
+				default:'#09BB07'
 			},
 			activeColor:{
 				type:String,
@@ -58,6 +69,16 @@
 			duration:{
 				type:Number,
 				default:30
+			}
+		},
+		data(){
+			return{}
+		},
+		created:function(e){
+			if(this.$props.color){
+				var color = this.$props.color;
+				console.log("xxxx",color)
+				this.$props.activeColor = color;
 			}
 		},
 		methods:{

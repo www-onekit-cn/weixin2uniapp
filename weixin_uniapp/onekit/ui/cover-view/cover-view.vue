@@ -23,7 +23,8 @@
 				default: ''
 			}
 		},
-		methods:{}
+		methods:{
+		}
 	}
 </script>
 
