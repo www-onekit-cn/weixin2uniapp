@@ -1,5 +1,7 @@
 <template>
 	<label
+		:class="['onekit-label',class_]"
+		:style="style_"
 		:for="onekitFor"
 	>
 	<slot/>
@@ -9,6 +11,14 @@
 <script>
 	export default{
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			onekitFor:{
 				type:String,
 				default:"",

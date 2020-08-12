@@ -1,5 +1,7 @@
 <template>
 	<checkbox
+		:class="['onekit-checkbox',class_]"
+		:style="style_"
 		:value="value"
 		:disabled="disabled"
 		:checked="checked"
@@ -13,6 +15,14 @@
 <script>
 	export default{
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			value:{
 				type:String,
 				default: ""

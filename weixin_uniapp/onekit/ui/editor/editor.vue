@@ -1,5 +1,7 @@
 <template>
 	<editor
+		:class="['onekit-editor',class_]"
+		:style="style_"
 		:read-only="readOnly"
 		:placeholder="placeholder"
 		:show-img-size="showImgSize"
@@ -18,6 +20,14 @@
 <script>
 	export default{
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			readOnly:{
 				type:Boolean,
 				default:false

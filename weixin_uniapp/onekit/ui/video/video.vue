@@ -1,6 +1,8 @@
 <template>
 	<view>
 		<video
+			:class="['onekit-video',class_]"
+			:style="style_"
 			:src="src"
 			:duration="duration" 
 			:controls="controls" 
@@ -47,6 +49,14 @@
 	export default {
 		
 		props: {
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 					src:{
 			            type: String,
 			            value: "",

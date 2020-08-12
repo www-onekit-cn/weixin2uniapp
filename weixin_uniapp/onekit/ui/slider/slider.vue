@@ -1,5 +1,7 @@
 <template>
 	<slider
+		:class="['onekit-slider',class_]"
+		:style="style_"
 		:min="min"
 		:max="max"
 		:step="step"
@@ -21,6 +23,14 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 				min:{
 					type:Number,
 					default: 0

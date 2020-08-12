@@ -1,5 +1,8 @@
 <template>
 	<button
+		:class="['onekit-button',class_]"
+		:style="style_"
+		:id="id_"
 		:size="size"
 		:type="type"
 		:plain="plain"
@@ -35,77 +38,89 @@
 	export default {
 		
 		props: {
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 			size:{
 				type:String,
-				default: ""
+				default: "default"
 			},
 			type:{
 				type:String,
-				default: ""
+				default: "default"
 			},
 			plain:{
 				type: Boolean,
 				default: false
 			},
 			disabled:{
+				type:Boolean,
+				default:false
+			},
+			loading:{
 				type: Boolean,
 				default: false
 			},
-			loading:{
+			formType:{
 				type:String,
 				default: ""
 			},
-			formType:{
-				type:String,
-				default: "未知音频"
-			},
 			openType:{
 				type:String,
-				default: "未知作者"
+				default: ""
 			},
 			hoverClass:{
 				type:String,
-				default: "未知作者"
+				default: "button-hover"
 			},
 			hoverStopPropagation:{
-				type:String,
-				default: "未知作者"
+				type: Boolean,
+				default: false
 			},
 			hoverStartTime:{
-				type:String,
-				default: "未知作者"
+				type:Number,
+				default: 20
 			},
 			hoverStayTime:{
-				type:String,
-				default: "未知作者"
+				type:Number,
+				default: 70
 			},
 			lang:{
 				type:String,
-				default: "未知作者"
+				default: "en"
 			},
 			sessionFrom:{
 				type:String,
-				default: "未知作者"
+				default: ""
 			},
 			sendMessageTitle:{
 				type:String,
-				default: "未知作者"
+				default: "当前标题"
 			},
 			sendMessagePath:{
 				type:String,
-				default: "未知作者"
+				default: "当前分享路径"
 			},
 			sendMessageImg:{
 				type:String,
-				default: "未知作者"
+				default: "截图"
 			},
 			appParameter:{
 				type:String,
-				default: "未知作者"
+				default: ""
 			},
 			showMessageCard:{
-				type:String,
-				default: "未知作者"
+				type:Boolean,
+				default: false
 			},
 		  },
 		  methods:{

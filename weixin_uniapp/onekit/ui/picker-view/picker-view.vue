@@ -1,5 +1,7 @@
 <template>
 	<picker-view
+		:class="['onekit-picker-view',class_]"
+		:style="style_"
 		:value="value"
 		:indicator-style="indicatorStyle"
 		:indicator-class="indicatorClass"
@@ -20,6 +22,14 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 				value:{
 					type:Array,
 					default:"",

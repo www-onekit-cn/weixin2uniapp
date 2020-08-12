@@ -1,5 +1,7 @@
 <template>
 	<radio
+		:class="['onekit-radio',class_]"
+		:style="style_"
 		:value="value"
 		:checked="checked"
 		:disabled="disabled"
@@ -14,6 +16,14 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 			value:{
 				type:String,
 				default:"",

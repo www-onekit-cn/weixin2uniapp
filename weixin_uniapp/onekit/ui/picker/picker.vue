@@ -1,6 +1,7 @@
 <template>
 	<picker
-		
+		:class="['onekit-picker',class_]"
+		:style="style_"
 		:disabled="disabled"
 		:mode="mode"
 		:range="range"
@@ -25,6 +26,14 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
 				disabled:{
 					type:Boolean,
 					default:false,

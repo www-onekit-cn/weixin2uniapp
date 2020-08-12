@@ -1,5 +1,7 @@
 <template>
 	<radio-group
+		:class="['onekit-radio-group',class_]"
+		:style="style_"
 		@change="radio_group_change"
 	
 	>
@@ -10,6 +12,16 @@
 <script>
 	export default{
 		behaviors: ['uni://form-field'],
+		props:{
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
+		},
 		methods:{
 			radio_group_change(e){
 			        console.log("radio_group_change",e)
