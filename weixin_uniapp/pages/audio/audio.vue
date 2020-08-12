@@ -15,6 +15,7 @@
 </template>
 
 <script>
+	import OnekitPage from "../../onekit/OnekitPage.js";
 	export default {
 	    data() {
 	        return {

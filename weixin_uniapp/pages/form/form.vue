@@ -48,6 +48,7 @@
 	</view>
 </template>
 <script>
+	import OnekitPage from "../../onekit/OnekitPage.js";
 	var  graceChecker = require("../../common/graceChecker.js");
 	export default {
 		data() {

@@ -60,6 +60,7 @@
 	</view>
 </template>
 <script>
+	import OnekitPage from "../../onekit/OnekitPage.js";
 	
 	function getDate(type) {
 		const date = new Date();
