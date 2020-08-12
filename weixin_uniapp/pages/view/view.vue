@@ -1,26 +1,26 @@
 <template>
-<onekit-view class="container">
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="page-section-title">
+<onekit-view class_="container">
+  <onekit-view class_="page-body">
+    <onekit-view class_="page-section">
+      <onekit-view class_="page-section-title">
         <text>flex-direction: row\n横向布局</text>
       </onekit-view>
-      <onekit-view class="page-section-spacing">
-        <onekit-view class="flex-wrp" style="flex-direction:row;">
-          <onekit-view class="flex-item demo-text-1"></onekit-view>
-          <onekit-view class="flex-item demo-text-2"></onekit-view>
-          <onekit-view class="flex-item demo-text-3"></onekit-view>
+      <onekit-view class_="page-section-spacing">
+        <onekit-view class_="flex-wrp" style_="flex-direction:row;">
+          <onekit-view class_="flex-item demo-text-1"></onekit-view>
+          <onekit-view class_="flex-item demo-text-2"></onekit-view>
+          <onekit-view class_="flex-item demo-text-3"></onekit-view>
         </onekit-view>
       </onekit-view>
     </onekit-view>
-    <onekit-view class="page-section">
-      <onekit-view class="page-section-title">
+    <onekit-view class_="page-section">
+      <onekit-view class_="page-section-title">
         <text>flex-direction: column\n纵向布局</text>
       </onekit-view>
-      <onekit-view class="flex-wrp" style="flex-direction:column;">
-        <onekit-view class="flex-item flex-item-V demo-text-1"></onekit-view>
-        <onekit-view class="flex-item flex-item-V demo-text-2"></onekit-view>
-        <onekit-view class="flex-item flex-item-V demo-text-3"></onekit-view>
+      <onekit-view class_="flex-wrp" style_="flex-direction:column;">
+        <onekit-view class_="flex-item flex-item-V demo-text-1"></onekit-view>
+        <onekit-view class_="flex-item flex-item-V demo-text-2"></onekit-view>
+        <onekit-view class_="flex-item flex-item-V demo-text-3"></onekit-view>
       </onekit-view>
     </onekit-view>
   </onekit-view>

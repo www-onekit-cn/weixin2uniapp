@@ -1,5 +1,7 @@
 <template>
 		<view
+		:class="onekit-view {{class_}}"
+		:style="{{style_}}"
 		:hover-class="hoverClass"
 		:hover-stop-propagation="hoverStopPropagation"
 		:hover-start-time="hoverStartTime"
@@ -13,6 +15,14 @@
 <script>
 export default{
 	props:{
+		class_:{
+			type:String,
+			default:''
+		},
+		style_:{
+			type:String,
+			defaul:''
+		},
 		hoverClass:{
 			type:String,
 			default: "none"
