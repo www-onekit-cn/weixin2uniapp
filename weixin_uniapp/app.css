@@ -10,21 +10,21 @@ page {
   display: flex;
   justify-content: center;
 }
-page>onekit-view {
+page>.onekit-view {
   width: 100vw;
   max-width: 600px;
 }
-onekit-checkbox, onekit-radio{
+.onekit-checkbox, .onekit-radio{
   margin-right: 5px;
 }
-onekit-button{
+.onekit-button{
   margin-top: 10px;
   margin-bottom: 10px;
 }
 form{
   width: 100%;
 }
-onekit-input {
+.onekit-input {
   width: 100%;
 }
 
