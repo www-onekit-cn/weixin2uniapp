@@ -1,6 +1,6 @@
 <template>
 		<view
-		:class="onekit-view"
+		:class="['onekit-view',class_]"
 		:style="style_"
 		:hover-class="hoverClass"
 		:hover-stop-propagation="hoverStopPropagation"
