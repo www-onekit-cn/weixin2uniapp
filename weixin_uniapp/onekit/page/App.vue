@@ -12,5 +12,5 @@
 	}
 </script>
 <style>
-@import url("/onekit/weixin.css");
+@import url("/app.css");
 </style>
