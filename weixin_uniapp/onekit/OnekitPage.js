@@ -9,7 +9,6 @@ export default function(options){
 		},
 		methods:{
 			data(){
-				console.log(_data);
 				return _data;	
 			},
 			setData(data){
