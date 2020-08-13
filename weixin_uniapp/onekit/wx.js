@@ -4,8 +4,8 @@ import CameraContext from "./api/CameraContext"
 import InnerAudioContext from "./api/InnerAudioContext"
 import LivePlayerContext from "./api/LivePlayerContext"
 import WORKER from "./api/WORKER"
-import wx_cloud from "./wx.cloud"
-import onekit from "./onekit"
+import wx_cloud from "./wx.cloud.js"
+import onekit from "./onekit.js"
 import UpdateManager from './api/UpdateManager.js'
 import Animation from './api/Animation.js'
 export default class wx {
