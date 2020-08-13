@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<text :class="['onekit-text',class_]" :style="style_" :selectable="selectable" :space="space" :decode="decode">
+		<text :class="['onekit-text',class_]" :style="style_" :id="id_" :selectable="selectable" :space="space" :decode="decode">
 			<slot />
 		</text>
 	</view>
@@ -14,6 +14,10 @@
 				default:''
 			},
 			style_:{
+				type:String,
+				defaul:''
+			},
+			id_:{
 				type:String,
 				defaul:''
 			},

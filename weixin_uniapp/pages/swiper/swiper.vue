@@ -16,7 +16,7 @@
 					<onekit-view class_="weui-cell weui-cell_switch">
 						<onekit-view class_="weui-cell__bd">指示点</onekit-view>
 						<onekit-view class_="weui-cell__ft">
-							<switch checked="{{indicatorDots}}" @change="changeIndicatorDots" />
+							<switch checked="indicatorDots" @change="changeIndicatorDots" />
 						</onekit-view>
 					</onekit-view>
 					<onekit-view class_="weui-cell weui-cell_switch">
@@ -33,12 +33,12 @@
 					<text>幻灯片切换时长(ms)</text>
 					<text class_="info">{{duration}}</text>
 				</onekit-view>
-				<slider @change="durationChange" value="{{duration}}" min="500" max="2000" />
+				<slider @change="durationChange" value="duration" min="500" max="2000" />
 				<onekit-view class_="page-section-title">
 					<text>自动播放间隔时长(ms)</text>
 					<text class_="info">{{interval}}</text>
 				</onekit-view>
-				<slider @change="intervalChange" value="{{interval}}" min="2000" max="10000" />
+				<slider @change="intervalChange" value="interval" min="2000" max="10000" />
 			</onekit-view>
 		</onekit-view>
 	</onekit-view>
