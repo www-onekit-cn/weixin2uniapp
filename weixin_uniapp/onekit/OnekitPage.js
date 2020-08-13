@@ -2,15 +2,20 @@ export default function(options){
 	const _data = options.data || {};
 	const uniapp_options = {
 		created(){
+			Object.defineProperty(this, 'data', {
+			  get: function () {
+			    return _data;
+			  },
+			  set: function (data) {
+			    _data = data;
+			  }
+			});
 			this.setData(_data);
 			if(this.onLoad){
 				this.onLoad.apply(this);
 			}
 		},
 		methods:{
-			data(){
-				return _data;	
-			},
 			setData(data){
 				for(const key of Object.keys(data)){
 					this[key] = data[key];
