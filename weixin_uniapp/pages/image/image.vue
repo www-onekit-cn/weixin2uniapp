@@ -1,18 +1,18 @@
 <template>
-	<view class="page">
-	  <view class="page__hd">
-	    <text class="page__title">image</text>
-	    <text class="page__desc">图片</text>
-	  </view>
-	  <view class="page__bd">
-	    <view class="section section_gap" v-for="(item,index) in array" :key="index">
-	      <view class="section__title">{{item.text}}</view>
-	      <view class="section__ctn">
-	        <onekit-image style="width: 200px; height: 200px; background-color: #eeeeee;" :mode="item.mode" :src="src"></onekit-image>
-	      </view>
-	    </view>
-	  </view>
-	</view>
+	<onekit-view class_="page">
+	  <onekit-view class_="page__hd">
+	    <text class_="page__title">image</text>
+	    <text class_="page__desc">图片</text>
+	  </onekit-view>
+	  <onekit-view class_="page__bd">
+	    <onekit-view class_="section section_gap" v-for="(item,index) in array" :key="index">
+	      <onekit-view class_="section__title">{{item.text}}</onekit-view>
+	      <onekit-view class_="section__ctn">
+	        <onekit-image style_="width: 200px; height: 200px; background-color: #eeeeee;" :mode="item.mode" :src="src"></onekit-image>
+	      </onekit-view>
+	    </onekit-view>
+	  </onekit-view>
+	</onekit-view>
 </template>
 
 <script>

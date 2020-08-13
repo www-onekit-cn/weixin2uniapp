@@ -2,6 +2,7 @@
 	<label
 		:class="['onekit-label',class_]"
 		:style="style_"
+		:id="id_"
 		:for="onekitFor"
 	>
 	<slot/>
@@ -16,6 +17,10 @@
 				default:''
 			},
 			style_:{
+				type:String,
+				defaul:''
+			},
+			id_:{
 				type:String,
 				defaul:''
 			},

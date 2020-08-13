@@ -2,6 +2,7 @@
 	<input
 		:class="['onekit-input',class_]"
 		:style="style_"
+		:id="id_"
 		:value="value"	
 		:type="type"
 		:password="password"
@@ -43,6 +44,10 @@
 				type:String,
 				defaul:''
 			},
+			id_:{
+				type:String,
+				default:''
+			},
 			value:{
 				type:String,
 				default: ""
@@ -73,7 +78,7 @@
 			},
 			maxlength:{
 				type:Number,
-				default: 140
+				default:140
 			},
 			cursorSpacing:{
 				type:Number,
@@ -114,24 +119,23 @@
 		},
 		methods:{
 		  	input_input(e){
-		  	        console.log("input_input",e)
-		  	        this.$emit('input',e.details)
+		  	        
+		  	        this.$emit('input',e)
 		  	       }, 
 		  	input_focus(e){
-		  	        console.log("input_focus",e)
-		  	        this.$emit('focus',e.details)
+	
+		  	        this.$emit('focus',e)
 		  	       }, 
 		  	input_blur(e){
-		  	        console.log("input_blur",e)
-		  	        this.$emit('blur',e.details)
+		  	        
+		  	        this.$emit('blur',e)
 		  	       }, 
 		  	input_confirm(e){
-		  	        console.log("input_confirm",e)
-		  	        this.$emit('confirm',e.details)
+		  	        
+		  	        this.$emit('confirm',e)
 		  	       }, 
 		  	input_keyboardheightchange(e){
-		  	        console.log("input_keyboardheightchange",e)
-		  	        this.$emit('keyboardheightchange',e.details)
+		  	        this.$emit('keyboardheightchange',e)
 		  	       }, 
 			
 		},

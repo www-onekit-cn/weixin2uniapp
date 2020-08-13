@@ -1,104 +1,107 @@
 <template>
-	<view>
-
-		<view class="uni-common-mt">
-			<view class="uni-form-item uni-column">
-				<view class="title">表单组件在label内</view>
-				<onekit-checkbox-group class="uni-list" @change="checkboxChange">
-					<onekit-label class="uni-list-cell uni-list-cell-pd" v-for="item in checkboxItems" :key="item.name">
-						<view>
-							<onekit-checkbox :value="item.name" :checked="item.checked"></onekit-checkbox>
-						</view>
-						<view>{{item.value}}</view>
-					</onekit-label>
-				</onekit-checkbox-group>
-			</view>
-
-			<view class="uni-form-item uni-column">
-				<view class="title">label用for标识表单组件</view>
-				<radio-group class="uni-list" @change="radioChange">
-					<view class="uni-list-cell uni-list-cell-pd" v-for="(item,index) in radioItems" :key="index">
-						<view>
-							<radio :id="item.name" :value="item.name" :checked="item.checked"></radio>
-						</view>
-                        <onekit-label class="label-2-text" :for="item.name">
-                            <text>{{item.value}}</text>
-                        </onekit-label>
-					</view>
-				</radio-group>
-			</view>
-
-			<view class="uni-form-item uni-column">
-				<view class="title">label内有多个时选中第一个</view>
-				<onekit-checkbox-group class="uni-list" @change="checkboxChange">
-					<onekit-label class="label-3">
-						<view class="uni-list-cell uni-list-cell-pd">
-							<onekit-checkbox class="checkbox-3">选项一</onekit-checkbox>
-						</view>
-						<view class="uni-list-cell uni-list-cell-pd">
-							<onekit-checkbox class="checkbox-3">选项二</onekit-checkbox>
-						</view>
-						<view class="uni-link uni-center" style="margin-top:20rpx;">点击该label下的文字默认选中第一个checkbox</view>
-					</onekit-label>
-				</onekit-checkbox-group>
-			</view>
-
-		</view>
-	</view>
+	
+	<onekit-view class_="container">
+	
+	  <onekit-view class_="page-body">
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">表单组件在label内</onekit-view>
+	      <checkbox-group class="group" @change="checkboxChange">
+	        <onekit-view class_="label-1" v-for="item in checkboxItems" :key="item.name">
+	          <onekit-label>
+	            <checkbox :value="item.name" :checked="item.checked"></checkbox>
+	            <text class="label-1-text">{{item.value}}</text>
+	          </onekit-label>
+	        </onekit-view>
+	      </checkbox-group>
+	    </onekit-view>
+	
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">label用for标识表单组件</onekit-view>
+	      <radio-group class="group" @change="radioChange">
+	        <onekit-view class_="label-2" v-for="item in radioItems" :key="item.name">
+	          <radio :id="item.name" :value="item.name" :checked="item.checked"></radio>
+	          <onekit-label class_="label-2-text" :for="item.name"><text>{{item.name}}</text></onekit-label>
+	        </onekit-view>
+	      </radio-group>
+	    </onekit-view>
+	
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">label内有多个时选中第一个</onekit-view>
+	      <onekit-label class_="label-3">
+	        <checkbox class="checkbox-3">选项一</checkbox>
+	        <checkbox class="checkbox-3">选项二</checkbox>
+	        <onekit-view class_="label-3-text">点击该label下的文字默认选中第一个checkbox</onekit-view>
+	      </onekit-label>
+	    </onekit-view>
+	  </onekit-view>
+	
+	</onekit-view>
 </template>
 <script>
 	import OnekitPage from "../../onekit/OnekitPage.js";
-	export default {
-		data() {
-			return {
-				title: 'label',
-				checkboxItems: [{
-						name: 'USA',
-						value: '美国'
-					},
-					{
-						name: 'CHN',
-						value: '中国',
-						checked: 'true'
-					}
-				],
-				radioItems: [{
-						name: 'USA',
-						value: '美国'
-					},
-					{
-						name: 'CHN',
-						value: '中国',
-						checked: 'true'
-					}
-				],
-				hidden: false
-			}
-		},
-		methods: {
-			checkboxChange: function(e) {
-				var checked = e.detail.value
-				console.log(checked)
+	export default OnekitPage({
+	  onShareAppMessage() {
+	    return {
+	      title: 'label',
+	      path: 'page/component/pages/onekit-label/onekit-label'
+	    }
+	  },
+	
+	  data: {
+	    checkboxItems: [
+	      {name: 'USA', value: '美国'},
+	      {name: 'CHN', value: '中国', checked: 'true'}
+	    ],
+	    radioItems: [
+	      {name: 'USA', value: '美国'},
+	      {name: 'CHN', value: '中国', checked: 'true'}
+	    ],
+	    hidden: false
+	  },
+	
+	  checkboxChange(e) {
+	    const checked = e.detail.value
+	    const changed = {}
+	    for (let i = 0; i < this.data.checkboxItems.length; i++) {
+	      if (checked.indexOf(this.data.checkboxItems[i].name) !== -1) {
+	        changed['checkboxItems[' + i + '].checked'] = true
+	      } else {
+	        changed['checkboxItems[' + i + '].checked'] = false
+	      }
+	    }
+	    this.setData(changed)
+	  },
+	
+	  radioChange(e) {
+	    const checked = e.detail.value
+	    const changed = {}
+	    for (let i = 0; i < this.data.radioItems.length; i++) {
+	      if (checked.indexOf(this.data.radioItems[i].name) !== -1) {
+	        changed['radioItems[' + i + '].checked'] = true
+	      } else {
+	        changed['radioItems[' + i + '].checked'] = false
+	      }
+	    }
+	    this.setData(changed)
+	  },
+	
+	  tapEvent() {
+	    console.log('按钮被点击')
+	  }
+	})
 
-			},
-			radioChange: function(e) {
-				var checked = e.detail.value
-				console.log(checked)
-			}
-		}
-	}
 </script>
 
 <style>
-	.uni-list-cell {
-		justify-content: flex-start
+	.label-1, .label-2{
+	  margin: 15px 0;
 	}
-
-	.uni-list .label-3 {
-		padding: 0;
+	.label-3-text{
+	  color: #576B95;
+	  font-size: 14px;
 	}
-    
-    .label-2-text {
-        flex: 1;
-    }
+	.checkbox-3{
+	  display: block;
+	  margin: 15px 0;
+	}
 </style>

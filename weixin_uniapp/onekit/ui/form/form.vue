@@ -2,10 +2,11 @@
 	<form
 		:class="['onekit-form',class_]"
 		:style="style_"
+		:id="id_"
 		:report-submit="reportSubmit"
 		:report-submit-timeout="reportSubmitTimeout"
-		:bindsubmit="bind_submit"
-		:bindreset="bind_reset"
+		@submit="form_submit"
+		@reset="form_reset"
 	>
 	<slot />
 	</form>
@@ -16,6 +17,10 @@
 		behaviors: ['uni://form-field'],
 		props:{
 			class_:{
+				type:String,
+				default:''
+			},
+			id_:{
 				type:String,
 				default:''
 			},
@@ -33,13 +38,11 @@
 			}
 		},
 		methods:{
-			bind_submit(e){
-				console.log("bindsubmit success",e)
-				this.$emit('submit',e.details)
+			form_submit(e){
+				this.$emit('submit',e)
 			},
-			bind_reset(e){
-				console.log("bindreset success",e)
-				this.$emit('reset',e.details)
+			form_reset(e){
+				this.$emit('reset',e)
 			}
 		}
 	}

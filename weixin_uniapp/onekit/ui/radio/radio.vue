@@ -2,11 +2,11 @@
 	<radio
 		:class="['onekit-radio',class_]"
 		:style="style_"
+		:id="id_"
 		:value="value"
-		:checked="checked"
+		:checked=checked
 		:disabled="disabled"
 		:color="color"
-	
 	>
 		<slot/>
 	</radio>
@@ -24,13 +24,17 @@
 				type:String,
 				defaul:''
 			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 			value:{
 				type:String,
 				default:"",
 			},
 			checked:{
 				type:Boolean,
-				default:false,
+				default:null,
 			},
 			disabled:{
 				type:Boolean,
@@ -38,8 +42,11 @@
 			},
 			color:{
 				type:String,
-				default:"",
+				default:"rgb(7,193,96)",
 			},
+		},
+		methods:{
+			
 		}
 	}
 </script>
