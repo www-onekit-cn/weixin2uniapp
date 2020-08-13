@@ -2,6 +2,7 @@
 		<view
 		:class="['onekit-view',class_]"
 		:style="style_"
+		:id="id_"
 		:hover-class="hoverClass"
 		:hover-stop-propagation="hoverStopPropagation"
 		:hover-start-time="hoverStartTime"
@@ -20,6 +21,10 @@ export default{
 			default:''
 		},
 		style_:{
+			type:String,
+			defaul:''
+		},
+		id_:{
 			type:String,
 			defaul:''
 		},

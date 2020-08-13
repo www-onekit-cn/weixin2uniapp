@@ -77,7 +77,6 @@
 		created:function(e){
 			if(this.$props.color){
 				var color = this.$props.color;
-				console.log("xxxx",color)
 				this.$props.activeColor = color;
 			}
 		},
