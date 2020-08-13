@@ -1121,6 +1121,10 @@ export default class wx {
 	static createVideoDecoder() {
 		return console.log("暂不支持！")
 	}
+	/////////////////////////////////////
+	static stopLocationUpdate(){}
+	static startLocationUpdateBackground(){}
+	static startLocationUpdate(){}
 	static createIntersectionObserver(object) {
 		return uni.createIntersectionObserver(object)
 	}
