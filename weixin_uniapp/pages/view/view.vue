@@ -7,9 +7,9 @@
 				</onekit-view>
 				<onekit-view class_="page-section-spacing">
 					<onekit-view class_="flex-wrp" style_="flex-direction:row;">
-						<onekit-view class_="flex-item demo-text-1"></onekit-view>
-						<onekit-view class_="flex-item demo-text-2"></onekit-view>
-						<onekit-view class_="flex-item demo-text-3"></onekit-view>
+						<onekit-view class_="flex-item, demo-text-1"></onekit-view>
+						<onekit-view class_="flex-item ,demo-text-2"></onekit-view>
+						<onekit-view class_="flex-item ,demo-text-3"></onekit-view>
 					</onekit-view>
 				</onekit-view>
 			</onekit-view>
@@ -18,9 +18,9 @@
 					<text>flex-direction: column\n纵向布局</text>
 				</onekit-view>
 				<onekit-view class_="flex-wrp" style_="flex-direction:column;">
-					<onekit-view class_="flex-item flex-item-V demo-text-1"></onekit-view>
-					<onekit-view class_="flex-item flex-item-V demo-text-2"></onekit-view>
-					<onekit-view class_="flex-item flex-item-V demo-text-3"></onekit-view>
+					<onekit-view class_="flex-item, flex-item-V, demo-text-1"></onekit-view>
+					<onekit-view class_="flex-item ,flex-item-V ,demo-text-2"></onekit-view>
+					<onekit-view class_="flex-item ,flex-item-V ,demo-text-3"></onekit-view>
 				</onekit-view>
 			</onekit-view>
 		</onekit-view>

@@ -276,7 +276,8 @@ export default class wx {
 		return uni.onBackgroundFetchData(callback)
 	}
 	static getBackgroundFetchData(object) {
-		uni.getBackgroundFetchData(object)
+		console.log("")
+		//uni.getBackgroundFetchData(object)
 	}
 
 	static createCanvasContext(canvasId) {
@@ -572,6 +573,9 @@ export default class wx {
 	static chooseImage(object) {
 		return uni.chooseImage(object);
 	}
+	static previewMedia(object) {
+		return console.log("暂不支持！")
+	} 
 	static chooseMessageFile(object) {
 		return console.log("暂不支持！")
 	} //uni.chooseMessageFile(object)
