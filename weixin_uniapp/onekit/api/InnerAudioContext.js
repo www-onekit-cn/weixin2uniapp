@@ -1,91 +1,91 @@
-export default class InnerAudioContext{
-  constructor(swanInnerAudioContext) {
-    this.swanInnerAudioContext = swanInnerAudioContext;
-  }
-  play(){
-    return  this.swanInnerAudioContext.play();
-  }
-  pause(){
-    return  this.swanInnerAudioContext.pause();
-  }
-  stop(){
-    return  this.swanInnerAudioContext.stop();
-  }
+export default class InnerAudioContext {
+	constructor(uniInnerAudioContext) {
+		this.uniInnerAudioContext = uniInnerAudioContext;
+	}
+	play() {
+		return this.uniInnerAudioContext.play();
+	}
+	pause() {
+		return this.uniInnerAudioContext.pause();
+	}
+	stop() {
+		return this.uniInnerAudioContext.stop();
+	}
 
-  seek(position){
-    return  this.swanInnerAudioContext.seek(position);
-  }
-onCanplay(callback){
-  return  this.swanInnerAudioContext.onCanplay(callback);
-}
-offCanplay(callback){
-  return  this.swanInnerAudioContext.offCanplay(callback);
-}
+	seek(position) {
+		return this.uniInnerAudioContext.seek(position);
+	}
+	onCanplay(callback) {
+		return this.uniInnerAudioContext.onCanplay(callback);
+	}
+	offCanplay(callback) {
+		return this.uniInnerAudioContext.offCanplay(callback);
+	}
 
-onPlay(callback){
-  return  this.swanInnerAudioContext.onPlay(callback);
-}
-offPlay(callback){
-  return  this.swanInnerAudioContext.offPlay(callback);
-}
+	onPlay(callback) {
+		return this.uniInnerAudioContext.onPlay(callback);
+	}
+	offPlay(callback) {
+		return this.uniInnerAudioContext.offPlay(callback);
+	}
 
-onPause(callback){
-  return  this.swanInnerAudioContext.onPause(callback);
-}
-offPause(callback){
-  return  this.swanInnerAudioContext.offPause(callback);
-}
+	onPause(callback) {
+		return this.uniInnerAudioContext.onPause(callback);
+	}
+	offPause(callback) {
+		return this.uniInnerAudioContext.offPause(callback);
+	}
 
-onStop(callback){
-  return  this.swanInnerAudioContext.onStop(callback);
-}
-offStop(callback){
-  return  this.swanInnerAudioContext.offStop(callback);
-}
+	onStop(callback) {
+		return this.uniInnerAudioContext.onStop(callback);
+	}
+	offStop(callback) {
+		return this.uniInnerAudioContext.offStop(callback);
+	}
 
-onEnded(callback){
-  return  this.swanInnerAudioContext.onEnded(callback);
-}
-offEnded(callback){
-  return  this.swanInnerAudioContext.offEnded(callback);
-}
+	onEnded(callback) {
+		return this.uniInnerAudioContext.onEnded(callback);
+	}
+	offEnded(callback) {
+		return this.uniInnerAudioContext.offEnded(callback);
+	}
 
-onTimeUpdate(callback){
-  return this.swanInnerAudioContext.onTimeUpdate(callback);
-}
-offTimeUpdate(callback){
-  return this.swanInnerAudioContext.offTimeUpdate(callback);
-}
+	onTimeUpdate(callback) {
+		return this.uniInnerAudioContext.onTimeUpdate(callback);
+	}
+	offTimeUpdate(callback) {
+		return this.uniInnerAudioContext.offTimeUpdate(callback);
+	}
 
-onError(callback){
-  return this.swanInnerAudioContext.onError(callback);
-}
-offError(callback){
-  return this.swanInnerAudioContext.offError(callback);
-}
+	onError(callback) {
+		return this.uniInnerAudioContext.onError(callback);
+	}
+	offError(callback) {
+		return this.uniInnerAudioContext.offError(callback);
+	}
 
-onWaiting(callback){
-  return this.swanInnerAudioContext.onWaiting(callback);
-}
-offWaiting(callback){
-  return this.swanInnerAudioContext.offWaiting(callback);
-}
+	onWaiting(callback) {
+		return this.uniInnerAudioContext.onWaiting(callback);
+	}
+	offWaiting(callback) {
+		return this.uniInnerAudioContext.offWaiting(callback);
+	}
 
-onSeeking(callback){
-  return this.swanInnerAudioContext.onSeeking(callback);
-}
-offSeeking(callback){
-  return this.swanInnerAudioContext.offSeeking(callback);
-}
+	onSeeking(callback) {
+		return this.uniInnerAudioContext.onSeeking(callback);
+	}
+	offSeeking(callback) {
+		return this.uniInnerAudioContext.offSeeking(callback);
+	}
 
-onSeeked(callback){
-  return this.swanInnerAudioContext.onSeeked(callback);
-}
-offSeeked(callback){
-  return this.swanInnerAudioContext.offSeeked(callback);
-}
- 
- 
+	onSeeked(callback) {
+		return this.uniInnerAudioContext.onSeeked(callback);
+	}
+	offSeeked(callback) {
+		return this.uniInnerAudioContext.offSeeked(callback);
+	}
+
+
 
 
 

@@ -3,7 +3,7 @@ export default class CloudContext {
 
   constructor(server) {
     this.guid = onekit.guid();
-    this.socketTask = swan.connectSocket({
+    this.socketTask = uni.connectSocket({
       url: `${server}cloudcontext/${this.guid}_`,
     });
    this.socketTask.onOpen(() => {

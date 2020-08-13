@@ -1,38 +1,38 @@
-export default class VideoContext{
-  constructor(swanVideoContext) {
-    this.swanVideoContext = swanVideoContext;
-  }
-  play(){
-    return  this.swanVideoContext.play();
-  }
-  pause(){
-    return  this.swanVideoContext.pause();
-  }
-  stop(){
-    return  this.swanVideoContext.stop();
-  }
-  seek(position){
-    return this.swanVideoContext.seek(position);
-  }
- sendDanmu(data){
-    return this.swanVideoContext.playbackRate(data);
-  }
-  playbackRate(rate){
-    return this.swanVideoContext.playbackRate(rate);
-  }
-  requestFullScreen(direction){
-    return this.swanVideoContext.requestFullScreen(direction);
-  }
-  exitFullScreen(){
-      return this.swanVideoContext.exitFullScreen();
-    } 
-  showStatusBar(){
-      return this.swanVideoContext.showStatusBar();
-    }
-  hideStatusBar(){
-      return this.swanVideoContext.hideStatusBar();
-    }
-  
+export default class VideoContext {
+	constructor(uniVideoContext) {
+		this.uniVideoContext = uniVideoContext;
+	}
+	play() {
+		return this.uniVideoContext.play();
+	}
+	pause() {
+		return this.uniVideoContext.pause();
+	}
+	stop() {
+		return this.uniVideoContext.stop();
+	}
+	seek(position) {
+		return this.uniVideoContext.seek(position);
+	}
+	sendDanmu(data) {
+		return this.uniVideoContext.playbackRate(data);
+	}
+	playbackRate(rate) {
+		return this.uniVideoContext.playbackRate(rate);
+	}
+	requestFullScreen(direction) {
+		return this.uniVideoContext.requestFullScreen(direction);
+	}
+	exitFullScreen() {
+		return this.uniVideoContext.exitFullScreen();
+	}
+	showStatusBar() {
+		return this.uniVideoContext.showStatusBar();
+	}
+	hideStatusBar() {
+		return this.uniVideoContext.hideStatusBar();
+	}
+
 
 
 

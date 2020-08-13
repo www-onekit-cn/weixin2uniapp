@@ -7,6 +7,7 @@ import WORKER from "./api/WORKER"
 import wx_cloud from "./wx.cloud.js"
 import onekit from "./onekit.js"
 import UpdateManager from './api/UpdateManager.js'
+import BackgroundAudioContext from './api/BackgroundAudioContext.js'
 import Animation from './api/Animation.js'
 export default class wx {
 	/////////////////// animation //////////////////////////
@@ -273,11 +274,10 @@ export default class wx {
 		};
 	};
 	static onBackgroundFetchData(callback) {
-		return uni.onBackgroundFetchData(callback)
+		console.log("暂不支持")
 	}
 	static getBackgroundFetchData(object) {
-		console.log("")
-		//uni.getBackgroundFetchData(object)
+		console.log("暂不支持")
 	}
 
 	static createCanvasContext(canvasId) {
@@ -577,28 +577,30 @@ export default class wx {
 		return console.log("暂不支持！")
 	} 
 	static chooseMessageFile(object) {
-		return console.log("暂不支持！")
-	} //uni.chooseMessageFile(object)
+		uni.chooseMessageFile(object)
+	}
 	////////////////////////////////////////////////////////////////
 
 	static saveVideoToPhotosAlbum(object) {
 		return uni.saveVideoToPhotosAlbum(object)
 	}
+	static openVideoEditor(object){
+		return uni.openVideoEditor(object)
+	}
+	static getVideoInfo(object){
+		return uni.getVideoInfo(object)
+	}
+	static compressVideo(object){
+		return uni.compressVideo(object)
+	}
 	static chooseVideo(object) {
 		return uni.chooseVideo(object)
 	}
 	static chooseMedia(object) {
-		return console.log("暂不支持！")
-	}
-	static createVideoContext(object) {
-		return uni.createVideoContext(object)
+		return uni.chooseMedia(object)
 	}
 	static stopVoice(object) {
-		object.success = function() {
-			console.log("VVV    ")
-		}
-
-		return uni.stopVoice(object)
+		return new InnerAudioContext(uni.createInnerAudioContext(audioId).play());
 	}
 	static pauseVoice(object) {
 		return uni.pauseVoice(object)
@@ -643,8 +645,8 @@ export default class wx {
 	static getBackgroundAudioPlayerState(object) {
 		return uni.getBackgroundAudioPlayerState(object)
 	}
-	static getBackgroundAudioManager(object) {
-		return uni.getBackgroundAudioManager(object)
+	static getBackgroundAudioManager() {
+		return new BackgroundAudioContext(uni.getBackgroundAudioManager());
 	}
 	static createLivePusherContext(object) {
 		return uni.createLivePusherContext(object)
@@ -1075,6 +1077,49 @@ export default class wx {
 	////////////// WXML ///////////////
 	static createSelectorQuery(object) {
 		return uni.createSelectorQuery(object)
+	}
+	static createMediaContainer() {
+		return uni.createMediaContainer()
+	}
+	////////////////////////////////////
+	static updateVoIPChatMuteConfig() {
+		return console.log("暂不支持！")
+	}
+	static subscribeVoIPVideoMembers() {
+		return console.log("暂不支持！")
+	}
+	static onVoIPVideoMembersChanged() {
+		return console.log("暂不支持！")
+	}
+	static onVoIPChatSpeakersChanged() {
+		return console.log("暂不支持！")
+	}
+	static onVoIPChatMembersChanged() {
+		return console.log("暂不支持！")
+	}
+	static onVoIPChatInterrupted() {
+		return console.log("暂不支持！")
+	}
+	static offVoIPVideoMembersChanged() {
+		return console.log("暂不支持！")
+	}
+	static offVoIPChatMembersChanged() {
+		return console.log("暂不支持！")
+	}
+	static offVoIPChatInterrupted() {
+		return console.log("暂不支持！")
+	}
+	static joinVoIPChat() {
+		return console.log("暂不支持！")
+	}
+	static exitVoIPChat() {
+		return console.log("暂不支持！")
+	}
+	static createMediaRecorder() {
+		return console.log("暂不支持！")
+	}
+	static createVideoDecoder() {
+		return console.log("暂不支持！")
 	}
 	static createIntersectionObserver(object) {
 		return uni.createIntersectionObserver(object)

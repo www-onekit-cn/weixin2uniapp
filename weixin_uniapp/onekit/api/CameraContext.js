@@ -1,18 +1,18 @@
 export default class VideoContext{
-  constructor(swanCameraContext) {
-    this.swanCameraContext = swanCameraContext;
+  constructor(uniCameraContext) {
+    this.uniCameraContext = uniCameraContext;
   }
   takePhoto(){
-    return  this.swanCameraContext.takePhoto();
+    return  this.uniCameraContext.takePhoto();
   }
   setZoom(){
-    return  this.swanCameraContext.setZoom();
+    return  this.uniCameraContext.setZoom();
   }
   startRecord(){
-    return  this.swanCameraContext.startRecord();
+    return  this.uniCameraContext.startRecord();
   }
   stopRecord(position){
-    return this.swanCameraContext.stopRecord(position);
+    return this.uniCameraContext.stopRecord(position);
   }
 
 

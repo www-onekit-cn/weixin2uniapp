@@ -1,7 +1,6 @@
 export default class wx_cloud {
 
 	init(options) {
-
 		/*
 		basement.user.getInfo().then(user => {
 		  wx_cloud._openid = user.userId
@@ -27,7 +26,6 @@ class wx_cloud_database {
 	constructor(env) {}
 	collection(collectionName) {}
 	RegExp(initOptions) {
-
 	}
 	serverDate(options) {
 
@@ -85,13 +83,10 @@ class wx_cloud_collection {
 	add(options) {}
 	orderBy(fieldName, order) {}
 	limit(number) {
-
 	}
 	skip(number) {
-
 	}
 	field(definition) {
-
 	}
 	get(options) {}
 }
@@ -101,106 +96,51 @@ class wx_cloud_document {
 	update(options) {}
 	set(options) {}
 	remove(options) {}
-	field(definition) {
-
-	}
+	field(definition) {}
 }
 class wx_cloud_command {
 	geoNear(options) {
-
 	}
 	geoWithin(options) {
-
 	}
 	geoIntersects(options) {
-
 	}
 	eq(value) {
-		return {
-			$eq: value
-		};
 	}
 	neq(value) {
-		return {
-			$ne: value
-		};
 	}
 	lt(value) {
-		return {
-			$lt: value
-		};
 	}
 	lte(value) {
-		return {
-			$lte: value
-		};
 	}
 	gt(value) {
-		return {
-			$gt: value
-		};
 	}
 	gte(value) {
-		return {
-			$gte: value
-		};
-	} in (value) {
-		return {
-			$in: value
-		};
+	} 
+	in (value) {
 	}
 	nin(value) {
-		return {
-			$nin: value
-		};
 	}
 	and(value) {
-		return {
-			$and: value
-		};
 	}
 	or(value) {
-		return {
-			$or: value
-		};
 	}
 	set(value) {
-		return {
-			$set: value
-		};
 	}
 	remove() {
-
 	}
 	inc(value) {
-		return {
-			$inc: value
-		};
 	}
 	mul(value) {
-		return {
-			$mul: value
-		};
 	}
 	push(value) {
-		return {
-			$push: value
-		};
 	}
 	pop(value) {
-		return {
-			$pop: value
-		};
 	}
 	shift(value) {
-		return {
-			$shift: value
-		};
 	}
 	unshift(value) {
-		return {
-			$unshift: value
-		};
+		
 	}
 }
 class wx_cloud_engine {

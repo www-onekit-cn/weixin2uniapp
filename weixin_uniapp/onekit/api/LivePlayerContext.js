@@ -1,30 +1,30 @@
-export default class LivePlayerContext{
-  constructor(swanLivePlayerContext) {
-    this.swanLivePlayerContext = swanLivePlayerContext;
-  }
-  play(){
-    return  this.swanLivePlayerContext.play();
-  }
-  pause(){
-    return  this.swanLivePlayerContext.pause();
-  }
-  stop(){
-    return  this.swanLivePlayerContext.stop();
-  }
+export default class LivePlayerContext {
+	constructor(uniLivePlayerContext) {
+		this.uniLivePlayerContext = uniLivePlayerContext;
+	}
+	play() {
+		return this.uniLivePlayerContext.play();
+	}
+	pause() {
+		return this.uniLivePlayerContext.pause();
+	}
+	stop() {
+		return this.uniLivePlayerContext.stop();
+	}
 
-  mute(){
-    return this.swanLivePlayerContext.mute();
-  }
-  resume(data){
-    return this.swanLivePlayerContext.resume(data);
-  }
-  requestFullScreen(direction){
-    return this.swanLivePlayerContext.requestFullScreen(direction);
-  }
-  exitFullScreen(){
-      return this.swanLivePlayerContext.exitFullScreen();
-    }
- 
+	mute() {
+		return this.uniLivePlayerContext.mute();
+	}
+	resume(data) {
+		return this.uniLivePlayerContext.resume(data);
+	}
+	requestFullScreen(direction) {
+		return this.uniLivePlayerContext.requestFullScreen(direction);
+	}
+	exitFullScreen() {
+		return this.uniLivePlayerContext.exitFullScreen();
+	}
+
 
 
 }
