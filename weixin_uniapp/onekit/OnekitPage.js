@@ -1,12 +1,21 @@
 export default function(options){
+	const _data = options.data || {};
 	const uniapp_options = {
-		data(){
-			return options.data;
+		created(){
+			this.setData(_data);
+			if(this.onLoad){
+				this.onLoad.apply(this);
+			}
 		},
 		methods:{
+			data(){
+				console.log(_data);
+				return _data;	
+			},
 			setData(data){
 				for(const key of Object.keys(data)){
 					this[key] = data[key];
+					_data[key] = data[key];
 				}
 			}
 		}
