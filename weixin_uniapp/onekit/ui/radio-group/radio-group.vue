@@ -25,7 +25,7 @@
 		methods:{
 			radio_group_change(e){
 			        console.log("radio_group_change",e)
-			        this.$emit('change',e.details)
+			        this.$emit('change',e)
 			       }, 
 		},
 	}

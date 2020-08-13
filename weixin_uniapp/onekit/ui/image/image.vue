@@ -3,6 +3,7 @@
 		<image 
 			:class="['onekit-image',class_]"
 			:style="style_"
+			:id="id_"
 			:src="src"
 			:mode="mode"
 			:lazy-load="lazyLoad"
@@ -20,15 +21,19 @@
 <script>
 	export default{
 		props: {
+			class_:{
+				type:String,
+				default:''
+			},
+			style_:{
+				type:String,
+				defaul:''
+			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 			src:{
-				class_:{
-					type:String,
-					default:''
-				},
-				style_:{
-					type:String,
-					defaul:''
-				},
 				type:String,
 				default: ""
 			},
@@ -52,11 +57,9 @@
 		  },
 		  methods:{
 		  	image_load(e){
-		  	      //  console.log("image load success",e)
 		  	        this.$emit('load',e.details)
 		  	       }, 
 			image_error(e){
-			      //  console.log("image error",e)
 			        this.$emit('error',e.details)
 			       }, 
 			
