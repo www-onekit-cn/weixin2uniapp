@@ -1,13 +1,19 @@
 <script>
+	import app from "../../app.js"
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			return app.onLaunch.apply(this);
 		},
 		onShow: function() {
-			console.log('App Show')
+			return app.onShow.apply(this);
 		},
 		onHide: function() {
-			console.log('App Hide')
+			return app.onHide.apply(this);
+		},
+		onError: function() {
+			return app.onError.apply(this);
+		},
+		onUniNViewMessage: function() {
 		}
 	}
 </script>

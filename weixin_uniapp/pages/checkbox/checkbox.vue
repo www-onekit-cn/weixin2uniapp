@@ -53,7 +53,7 @@
 	
 	  checkboxChange(e) {
 	    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-	    const items = this.data().items
+	    const items = this.data.items
 	    const values = e.detail.value
 	    for (let i = 0, lenI = items.length; i < lenI; ++i) {
 	      items[i].checked = false
