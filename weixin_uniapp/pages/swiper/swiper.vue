@@ -3,11 +3,11 @@
 	<onekit-view class_="container">
 		<onekit-view class_="page-body">
 			<onekit-view class_="page-section page-section-spacing swiper">
-				<onekit-swiper indicator-dots="indicatorDots" autoplay="autoplay" interval="interval" duration="duration">
-					<block wx:for="background" wx:key="*this">
-						<swiper-item>
-							<onekit-view class_=["swiper-item {{item}}"]></onekit-view>
-						</swiper-item>
+				<onekit-swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+					<block v-for="(items,index) in background" :key="index">
+						<onekit-swiper-item>
+							<onekit-view class_="swiper-item item"></onekit-view>
+						</onekit-swiper-item>
 					</block>
 				</onekit-swiper>
 			</onekit-view>
@@ -16,13 +16,13 @@
 					<onekit-view class_="weui-cell weui-cell_switch">
 						<onekit-view class_="weui-cell__bd">指示点</onekit-view>
 						<onekit-view class_="weui-cell__ft">
-							<switch checked="indicatorDots" @change="changeIndicatorDots" />
+							<switch :checked="indicatorDots" @change="changeIndicatorDots" />
 						</onekit-view>
 					</onekit-view>
 					<onekit-view class_="weui-cell weui-cell_switch">
 						<onekit-view class_="weui-cell__bd">自动播放</onekit-view>
 						<onekit-view class_="weui-cell__ft">
-							<switch checked="autoplay" @change="changeAutoplay" />
+							<switch :checked="autoplay" @change="changeAutoplay" />
 						</onekit-view>
 					</onekit-view>
 				</onekit-view>
@@ -33,12 +33,12 @@
 					<text>幻灯片切换时长(ms)</text>
 					<text class_="info">{{duration}}</text>
 				</onekit-view>
-				<slider @change="durationChange" value="duration" min="500" max="2000" />
+				<slider @change="durationChange" :value="duration" :min="500" :max="2000" />
 				<onekit-view class_="page-section-title">
 					<text>自动播放间隔时长(ms)</text>
 					<text class_="info">{{interval}}</text>
 				</onekit-view>
-				<slider @change="intervalChange" value="interval" min="2000" max="10000" />
+				<slider @change="intervalChange" :value="interval" :min="2000" :max="10000" />
 			</onekit-view>
 		</onekit-view>
 	</onekit-view>
