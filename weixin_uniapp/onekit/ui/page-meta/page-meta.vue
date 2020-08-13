@@ -1,0 +1,74 @@
+<template>
+	<page-meta
+		:background-text-style="backgroundTextStyle"
+		:background-color="backgroundColor"
+		:background-color-top="backgroundColorTop"
+		:background-color-bottom="backgroundColorBottom"
+		:scroll-top="scrollTop"
+		:scroll-duration="scrollDuration"
+		:page-style="pageStyle"
+		:root-font-size="rootFontSize"
+		
+		@resize="pageMeta_resize"
+		@scroll="pageMeta_scroll"
+		@scrolldone="pageMeta_scrolldone"
+	></page-meta>
+	<slot />
+</template>
+
+<script>
+	export default {
+		props:{
+			backgroundTextStyle:{
+				type:String,
+				default:""
+			},
+			backgroundColor:{
+				type:String,
+				default:""
+			},
+			backgroundColorTop:{
+				type:String,
+				default:""
+			},
+			backgroundColorBottom:{
+				type:String,
+				default:""
+			},
+			scrollTop:{
+				type:String,
+				default:""
+			},
+			scrollDuration:{
+				type:Number,
+				default:300
+			},
+			pageStyle:{
+				type:String,
+				default:""
+			},
+			rootFontSize:{
+				type:String,
+				default:""
+			}
+		},
+		methods:{
+			pageMeta_resize(e){
+			        console.log("pageMeta_resize",e)
+			        this.$emit('resize',e.details)
+			},
+			pageMeta_scroll(e){
+			        console.log("pageMeta_scroll",e)
+			        this.$emit('scroll',e.details)
+			},
+			pageMeta_scrolldone(e){
+			        console.log("pageMeta_scrolldone",e)
+			        this.$emit('scrolldone',e.details)
+			},
+		}
+	}
+</script>
+
+<style>
+
+</style>
