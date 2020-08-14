@@ -1,7 +1,16 @@
 <template>
-	<picker-view :class="['onekit-picker-view',class_]" :style="style_" :id="id_" :value="value" :indicator-style="indicatorStyle"
-	 :indicator-class="indicatorClass" :mask-style="maskStyle" :mask-class="maskClass" @change="picker_view_change"
-	 @pickstart="picker_view_pickstart" @pickend="picker_view_pickend">
+	<picker-view 
+	:class="['onekit-picker-view',class_]" 
+	:style="style_" 
+	:id="id_" 
+	:value="value" 
+	:indicator-style="indicatorStyle"
+	 :indicator-class="indicatorClass" 
+	 :mask-style="maskStyle" 
+	 :mask-class="maskClass" 
+	 @change="picker_view_change"
+	 @pickstart="picker_view_pickstart" 
+	 @pickend="picker_view_pickend">
 		<slot />
 	</picker-view>
 </template>
@@ -18,7 +27,7 @@
 				type: String,
 				defaul: ''
 			},
-			id: {
+			id_: {
 				type: String,
 				defaul: ''
 			},
@@ -45,15 +54,12 @@
 		},
 		methods: {
 			picker_view_change(e) {
-				console.log("picker_view_change", e)
 				this.$emit('change', e)
 			},
 			picker_view_pickstart(e) {
-				console.log("picker_view_pickstart", e)
 				this.$emit('pickstart', e)
 			},
 			picker_view_pickend(e) {
-				console.log("picker_view_pickend", e)
 				this.$emit('pickend', e)
 			},
 

@@ -60,24 +60,19 @@
 		  },
 		  methods:{
 		  	audio_play(e){
-		  	        console.log("play audio success",e)
-		  	        this.$emit('play',e.details)
+		  	        this.$emit('play',e)
 		  	       }, 
 			audio_error(e){
-			        console.log("play audio error",e)
-			        this.$emit('error',e.details)
+			        this.$emit('error',e)
 			       }, 
 			audio_pause(e){
-			        console.log("play audio pause",e)
-			        this.$emit('pause',e.details)
+			        this.$emit('pause',e)
 			       }, 
 			audio_timeupdate(e){
-			        console.log("play audio timeupdate",e)
-			        this.$emit('timeupdate',e.details)
+			        this.$emit('timeupdate',e)
 			       }, 	 
 			audio_ended(e){
-			        console.log("play audio ended",e)
-			        this.$emit('ended',e.details)
+			        this.$emit('ended',e)
 			       }, 	   
 		  },
 

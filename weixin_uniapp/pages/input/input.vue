@@ -14,7 +14,7 @@
         <onekit-view class_="weui-cells__title">控制最大输入长度的input</onekit-view>
         <onekit-view class_="weui-cells weui-cells_after-title">
           <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" :maxlength=10 placeholder="最大输入长度为10" />
+            <onekit-input class_="weui-input" :maxlength="10" placeholder="最大输入长度为10" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
@@ -22,7 +22,7 @@
         <onekit-view class_="weui-cells__title">实时获取输入值：{{inputValue}}</onekit-view>
         <onekit-view class_="weui-cells weui-cells_after-title">
           <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input"  :maxlength=10 @input="KeyInput" placeholder="输入同步到view中"/>
+            <onekit-input class_="weui-input"  :maxlength="10" @input="KeyInput" placeholder="输入同步到view中"/>
           </onekit-view>
         </onekit-view>
       </onekit-view>
@@ -131,6 +131,7 @@
       HideKeyboard(e) {
         if (e.detail.value === '123') {
           // 收起键盘
+		  
           wx.hideKeyboard()
         }
       }

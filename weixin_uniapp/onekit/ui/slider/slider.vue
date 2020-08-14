@@ -2,6 +2,7 @@
 	<slider
 		:class="['onekit-slider',class_]"
 		:style="style_"
+		:id="id_"
 		:min="min"
 		:max="max"
 		:step="step"
@@ -31,10 +32,14 @@
 				type:String,
 				defaul:''
 			},
-				min:{
-					type:Number,
-					default: 0
-				},
+			id_:{
+				type:String,
+				defaul:''
+			},
+			min:{
+				type:Number,
+				default: 0
+			},
 			max:{
 				type:Number,
 				default: 100
@@ -74,12 +79,10 @@
 		},
 		methods:{
 				slider_change(e){
-				        console.log("slider_change",e)
-				        this.$emit('change',e.details)
+				        this.$emit('change',e)
 				       }, 
 				slider_changing(e){
-				        console.log("slider_changing",e)
-				        this.$emit('changing',e.details)
+				        this.$emit('changing',e)
 				       }, 
 		}
 	}

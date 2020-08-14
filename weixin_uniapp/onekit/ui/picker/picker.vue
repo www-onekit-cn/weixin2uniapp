@@ -2,6 +2,7 @@
 	<picker
 		:class="['onekit-picker',class_]"
 		:style="style_"
+		:id="id_"
 		:disabled="disabled"
 		:mode="mode"
 		:range="range"
@@ -34,6 +35,10 @@
 				type:String,
 				defaul:''
 			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 				disabled:{
 					type:Boolean,
 					default:false,
@@ -49,7 +54,10 @@
 					type:String,
 					default:"",
 				},
-				value:{},
+				value:{
+					type:Number|String,
+					default:0,
+				},
 				start:{
 					type:String,
 					default:"",
@@ -69,11 +77,9 @@
 		},
 		methods:{
 				picker_cancel(e){
-				        console.log("picker_cancel",e)
 				        this.$emit('cancel',e)
 				       }, 
 				picker_change(e){
-				        console.log("picker_change",e)
 				        this.$emit('change',e)
 				       }, 
 				

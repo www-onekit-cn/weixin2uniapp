@@ -2,6 +2,7 @@
 	<radio-group
 		:class="['onekit-radio-group',class_]"
 		:style="style_"
+		:id="id_"
 		@change="radio_group_change"
 	
 	>
@@ -21,10 +22,13 @@
 				type:String,
 				defaul:''
 			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 		},
 		methods:{
 			radio_group_change(e){
-			        console.log("radio_group_change",e)
 			        this.$emit('change',e)
 			       }, 
 		},
