@@ -1,4 +1,4 @@
-export default class WORKER
+export default class Worker
 {
     constructor(js){
        // this._worker = new Worker(js);

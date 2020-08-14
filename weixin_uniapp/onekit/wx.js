@@ -1,14 +1,16 @@
-import CanvasContext from "./api/CanvasContext"
+import RenderingContext from "./api/RenderingContext"
 import VideoContext from "./api/VideoContext"
 import CameraContext from "./api/CameraContext"
 import InnerAudioContext from "./api/InnerAudioContext"
 import LivePlayerContext from "./api/LivePlayerContext"
-import WORKER from "./api/WORKER"
+import Worker from "./api/Worker"
 import wx_cloud from "./wx.cloud.js"
 import onekit from "./onekit.js"
 import UpdateManager from './api/UpdateManager.js'
-import BackgroundAudioContext from './api/BackgroundAudioContext.js'
+import BackgroundAudioManager from './api/BackgroundAudioManager.js'
 import Animation from './api/Animation.js'
+import SocketTask from './api/SocketTask.js'
+import MapContext from './api/MapContext.js'
 export default class wx {
 	/////////////////// animation //////////////////////////
 	static createAnimation(object) {
@@ -281,7 +283,7 @@ export default class wx {
 	}
 
 	static createCanvasContext(canvasId) {
-		return new CanvasContext(uni.createCanvasContext(canvasId));
+		return new RenderingContext(uni.createCanvasContext(canvasId));
 	}
 	static createVideoContext(videoId, ui) {
 		return new VideoContext(uni.createVideoContext(videoId));
@@ -311,6 +313,10 @@ export default class wx {
 	static onBeaconUpdate(object) {
 		return uni.onBeaconUpdate(object);
 	}
+	static offBeaconUpdate(){}
+	static offBeaconServiceChangegetBeacons(){
+		
+	}
 	static getBeacons(object) {
 		return uni.getBeacons(object);
 	}
@@ -335,6 +341,12 @@ export default class wx {
 	static onGetWifiList(object) {
 		return uni.onGetWifiList(object);
 	}
+	static offWifiConnected(callback){
+		return uni.offWifiConnected(callback)
+	}
+	static offGetWifiList(callback){
+		return uni.offGetWifiList(callback)
+	}
 	static getWifiList(object) {
 		return uni.getWifiList(object);
 	}
@@ -344,9 +356,16 @@ export default class wx {
 	static connectWifi(object) {
 		return uni.connectWifi(object);
 	}
-	//
+	////////////////////////////////////////////
+	static setBLEMTU(object){
+		return uni.setBLEMTU(object);
+	}
+	////////////////////////
 	static onAccelerometerChange(callback) {
 		return uni.onAccelerometerChange(callback);
+	}
+	static offAccelerometerChange(){
+		return console.log("暂不支持")
 	}
 	static stopAccelerometer(object) {
 		return uni.stopAccelerometer(object);
@@ -356,9 +375,6 @@ export default class wx {
 	}
 	static getBatteryInfoSync(object) {
 		return uni.getBatteryInfoSync(object);
-	}
-	static _getBatteryInfo(result) {
-		return uni._getBatteryInfo(object);
 	}
 	static getBatteryInfo(object) {
 		return uni.getBatteryInfo(object);
@@ -373,6 +389,7 @@ export default class wx {
 	static onCompassChange(callback) {
 		return uni.onCompassChange(callback);
 	}
+	static offCompassChange(){console.log("暂不支持")}
 	static stopCompass(object) {
 		return uni.stopCompass(object);
 	}
@@ -385,6 +402,9 @@ export default class wx {
 	static onGyroscopeChange(callback) {
 		return uni.onGyroscopeChange(object);
 	}
+	static offGyroscopeChange(){
+		return console.log("暂不支持")
+	}
 	static stopGyroscope(object) {
 		return uni.stopGyroscope(object);
 	}
@@ -394,6 +414,9 @@ export default class wx {
 	//
 	static onDeviceMotionChange(object) {
 		return uni.onDeviceMotionChange(object);
+	}
+	static offDeviceMotionChange(){
+		return console.log("暂不支持")
 	}
 	static stopDeviceMotionListening(object) {
 		return uni.stopDeviceMotionListening(object);
@@ -414,12 +437,15 @@ export default class wx {
 	static onNetworkStatusChange(object) {
 		return uni.onNetworkStatusChange(object);
 	}
+	static offNetworkStatusChange(object) {
+		return console.log("");
+	}
 	//
 	static makePhoneCall = function(object) {
 		return uni.makePhoneCall(object);
 	}
 
-	static scanCode = function(object) {
+	static scanCode(object) {
 		return uni.scanCode(object);
 	}
 	//
@@ -430,8 +456,11 @@ export default class wx {
 		return uni.vibrateShort(object);
 	}
 	//
-	static onMemoryWarning(object) {
-		return uni.onMemoryWarning(object);
+	static onMemoryWarning(callback) {
+		return uni.onMemoryWarning(callback);
+	}
+	static offMemoryWarning(callback){
+		return uni.offMemoryWarning(callback)
 	}
 	//
 	static writeBLECharacteristicValue(object) {
@@ -446,11 +475,23 @@ export default class wx {
 	static onBLECharacteristicValueChange(object) {
 		return uni.onBLECharacteristicValueChange(object);
 	}
+	static offBLEConnectionStateChange(){
+		return console.log("暂不支持！")
+	}
+	static offBLECharacteristicValueChange(){
+		return console.log("暂不支持！")
+	}
 	static notifyBLECharacteristicValueChange(object) {
 		return uni.notifyBLECharacteristicValueChange(object);
 	}
+	static makeBluetoothPair(){
+		return console.log("暂不支持！")
+	}
 	static getBLEDeviceServices(object) {
 		return uni.getBLEDeviceServices(object);
+	}
+	static getBLEDeviceRSSI(object) {
+		return uni.getBLEDeviceRSSI(object);
 	}
 	static getBLEDeviceCharacteristics(object) {
 		return uni.getBLEDeviceCharacteristics(object);
@@ -485,7 +526,10 @@ export default class wx {
 	static closeBluetoothAdapter(object) {
 		return uni.closeBluetoothAdapter(object);
 	}
-	//
+	///////////////////////////////////////////
+	static createOffscreenCanvas(){
+		return new RenderingContext(uni.createOffscreenCanvas());
+	}
 	static stopHCE(object) {
 		return uni.stopHCE(object);
 	}
@@ -508,10 +552,12 @@ export default class wx {
 	static setKeepScreenOn(object) {
 		return uni.setKeepScreenOn(object);
 	}
-	static onUserCaptureScreen(object) {
-		return uni.onUserCaptureScreen(object);
+	static onUserCaptureScreen(callback) {
+		return uni.onUserCaptureScreen(callback);
 	}
-
+	static offUserCaptureScreen(callback){
+		return uni.offUserCaptureScreen(callback);
+	}
 	static getScreenBrightness(object) {
 		return uni.getScreenBrightness(object);
 	}
@@ -525,6 +571,9 @@ export default class wx {
 	//////////////////// File //////////
 	static getFileSystemManager(object) {
 		return uni.getFileSystemManager(object)
+	}
+	static saveFileToDisk(){
+		return console.log("暂不支持")
 	}
 	static getFileInfo(object) {
 		return uni.getFileInfo(object)
@@ -557,6 +606,9 @@ export default class wx {
 	////////// Media ////////////////////
 	static createMapContext(object) {
 		return uni.createMapContext(object)
+	}
+	static createMapContext(){
+		return new MapContext(uni.createMapContext(mapId,object))
 	}
 	static compressImage(object) {
 		return uni.compressImage(object)
@@ -646,7 +698,7 @@ export default class wx {
 		return uni.getBackgroundAudioPlayerState(object)
 	}
 	static getBackgroundAudioManager() {
-		return new BackgroundAudioContext(uni.getBackgroundAudioManager());
+		return new BackgroundAudioManager(uni.getBackgroundAudioManager());
 	}
 	static createLivePusherContext(object) {
 		return uni.createLivePusherContext(object)
@@ -696,6 +748,9 @@ export default class wx {
 	static connectSocket(object) {
 		return uni.connectSocket(object)
 	}
+	static connectSocket(object){
+		return new SocketTask(uni.connectSocket(object))
+	}
 	static onSocketError(callback) {
 		return uni.onSocketError(callback)
 	}
@@ -706,7 +761,7 @@ export default class wx {
 		return uni.onSocketClose(callback)
 	}
 	static onSocketOpen(callback) {
-		return uni.connectSocket(callback)
+		return uni.onSocketOpen(callback)
 	}
 	static sendSocketMessage(object) {
 		return uni.sendSocketMessage(object)
@@ -1072,7 +1127,7 @@ export default class wx {
 	}
 	////////////// Worker ///////////////
 	static createWorker(path) {
-		return new WORKER(path);
+		return new Worker(path);
 	}
 	////////////// WXML ///////////////
 	static createSelectorQuery(object) {
@@ -1122,9 +1177,24 @@ export default class wx {
 		return console.log("暂不支持！")
 	}
 	/////////////////////////////////////
-	static stopLocationUpdate(){}
-	static startLocationUpdateBackground(){}
-	static startLocationUpdate(){}
+	static onBLEPeripheralConnectionStateChanged() {
+		return console.log("功能开发中！")
+	}
+	static offBLEPeripheralConnectionStateChanged() {
+		return console.log("功能开发中！")
+	}
+	static createBLEPeripheralServer(){
+		return console.log("功能开发中！")
+	}
+	static stopLocationUpdate(){
+		return console.log("功能开发中！")
+	}
+	static startLocationUpdateBackground(){
+		return console.log("功能开发中！")
+	}
+	static startLocationUpdate(){
+		return console.log("功能开发中！")
+	}
 	static createIntersectionObserver(object) {
 		return uni.createIntersectionObserver(object)
 	}
