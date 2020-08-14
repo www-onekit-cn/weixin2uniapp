@@ -1,41 +1,57 @@
 <template>
-	<view>
-		<page-head :title="title"></page-head>
-		<view class="uni-padding-wrap uni-common-mt">
-			<view class="uni-title">显示当前value</view>
-			<view>
-				<onekit-slider value="50" @change="sliderChange" show-value />
-			</view>
-			
-			<view class="uni-title">设置步进step跳动</view>
-			<view>
-				<onekit-slider value="60" @change="sliderChange" step="5" />
-			</view>
+	
+	<onekit-view class_="container">
+	
+	  <onekit-view class_="page-body">
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">设置step</onekit-view>
+	      <onekit-view class_="body-view">
+	        <onekit-slider :value="60" @change="slider2change" :step="5"/>
+	      </onekit-view>
+	    </onekit-view>
+	
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">显示当前value</onekit-view>
+	      <onekit-view class_="body-view">
+	        <onekit-slider :value="50" @change="slider3change" show-value/>
+	      </onekit-view>
+	    </onekit-view>
+	
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">设置最小/最大值</onekit-view>
+	      <onekit-view class_="body-view">
+	        <onekit-slider :value="100" @change="slider4change" :min="50" :max="200" show-value/>
+	      </onekit-view>
+	    </onekit-view>
+	  </onekit-view>
 
-			<view class="uni-title">设置最小/最大值</view>
-			<view>
-				<onekit-slider value="100" @change="sliderChange" min="50" max="200" show-value />
-			</view>
-			
-			<view class="uni-title">不同颜色和大小的滑块</view>
-			<view>
-				<onekit-slider value="50" @change="sliderChange" activeColor="#FFCC33" backgroundColor="#000000" block-color="#8A6DE9" block-size="20" />
-			</view>
-		</view>
-	</view>
+	</onekit-view>
+
 </template>
 <script>
 	import OnekitPage from "../../onekit/OnekitPage.js";
-	export default {
-		data() {
-			return {
-				title: 'slider 滑块'
-			}
-		},
-		methods: {
-			sliderChange(e) {
-				console.log('value 发生变化：' + e.detail.value)
-			}
-		}
+	const pageData = {
+	  onShareAppMessage() {
+	    return {
+	      title: 'slider',
+	      path: 'page/component/pages/onekit-slider/onekit-slider'
+	    }
+	  },
 	}
+	
+	for (let i = 1; i < 5; ++i) {
+	  (function (index) {
+	    pageData['slider' + index + 'change'] = function (e) {
+	      console.log('slider' + index + '发生change事件，携带值为', e.detail.value)
+	    }
+	  }(i))
+	}
+	
+	export default OnekitPage(pageData)
+
 </script>
+<style>
+	slider {
+	  margin: 0;
+	}
+</style>

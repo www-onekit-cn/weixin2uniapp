@@ -126,19 +126,19 @@
 		  methods:{
 		  	button_getphonenumber(e){
 		  	        console.log("button_getphonenumber",e)
-		  	        this.$emit('getphonenumber',e.details)
+		  	        this.$emit('getphonenumber',e)
 		  	       }, 
 			button_getuserinfo(e){
 			        console.log("button_getuserinfo",e)
-			        this.$emit('getuserinfo',e.details)
+			        this.$emit('getuserinfo',e)
 			       }, 
 			button_opensetting(e){
 			        console.log("button_opensetting",e)
-			        this.$emit('opensetting',e.details)
+			        this.$emit('opensetting',e)
 			       }, 
 			button_launchapp(e){
 			        console.log("button_launchapp",e)
-			        this.$emit('launchapp',e.details)
+			        this.$emit('launchapp',e)
 			       }, 	 
 			   
 		  },

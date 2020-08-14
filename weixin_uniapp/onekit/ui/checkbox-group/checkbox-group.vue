@@ -2,6 +2,7 @@
 	<checkbox-group
 		:class="['onekit-checkbox-group',class_]"
 		:style="style_"
+		:id="id_"
 		@change="checkbox_change"
 	
 	>
@@ -21,11 +22,14 @@
 				type:String,
 				defaul:''
 			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 		},
 		methods:{
 			checkbox_change(e){
-			        console.log("checkbox_change",e)
-			        this.$emit('change',e.details)
+			        this.$emit('change',e)
 			       }, 
 		},
 		

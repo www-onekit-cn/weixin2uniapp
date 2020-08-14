@@ -1,34 +1,34 @@
 <template>
 	
-	<view class="container">
+	<onekit-view class_="container">
 	
-	  <view class="page-body">
-	    <view class="page-section page-section-gap">
-	      <view class="page-section-title">默认样式</view>
-	      <label class="checkbox">
-	        <checkbox value="cb" checked/>选中
-	      </label>
-	      <label class="checkbox">
-	        <checkbox value="cb" />未选中
-	      </label>
-	    </view>
+	  <onekit-view class_="page-body">
+	    <onekit-view class_="page-section page-section-gap">
+	      <onekit-view class_="page-section-title">默认样式</onekit-view>
+	      <onekit-label class_="checkbox">
+	        <onekit-checkbox value="cb" checked/>选中
+	      </onekit-label>
+	      <onekit-label class_="checkbox">
+	        <onekit-checkbox value="cb" />未选中
+	      </onekit-label>
+	    </onekit-view>
 	
-	    <view class="page-section">
-	      <view class="page-section-title">推荐展示样式</view>
-	      <view class="weui-cells weui-cells_after-title">
-	        <checkbox-group @change="checkboxChange">
-	          <label class="weui-cell weui-check__label" v-for="item in items" :key="item.value">
-	            <view class="weui-cell__hd">
-	              <checkbox :value="item.value" :checked="item.checked"/>
-	            </view>
-	            <view class="weui-cell__bd">{{item.name}}</view>
-	          </label>
-	        </checkbox-group>
-	      </view>
-	    </view>
-	  </view>
+	    <onekit-view class_="page-section">
+	      <onekit-view class_="page-section-title">推荐展示样式</onekit-view>
+	      <onekit-view class_="weui-cells weui-cells_after-title">
+	        <onekit-checkbox-group @change="checkboxChange">
+	          <onekit-label class_="weui-cell weui-check__label" v-for="item in items" :key="item.value">
+	            <onekit-view class_="weui-cell__hd">
+	              <onekit-checkbox :value="item.value" :checked="item.checked"/>
+	            </onekit-view>
+	            <onekit-view class_="weui-cell__bd">{{item.name}}</onekit-view>
+	          </onekit-label>
+	        </onekit-checkbox-group>
+	      </onekit-view>
+	    </onekit-view>
+	  </onekit-view>
 	
-	</view>
+	</onekit-view>
 </template>
 <script>
 	import OnekitPage from "../../onekit/OnekitPage.js";
@@ -36,7 +36,7 @@
 	  onShareAppMessage() {
 	    return {
 	      title: 'checkbox',
-	      path: 'page/component/pages/checkbox/checkbox'
+	      path: 'page/component/pages/onekit-checkbox/onekit-checkbox'
 	    }
 	  },
 	

@@ -2,6 +2,7 @@
 	<checkbox
 		:class="['onekit-checkbox',class_]"
 		:style="style_"
+		:id="id_"
 		:value="value"
 		:disabled="disabled"
 		:checked="checked"
@@ -23,17 +24,21 @@
 				type:String,
 				defaul:''
 			},
+			id_:{
+				type:String,
+				defaul:''
+			},
 			value:{
 				type:String,
 				default: ""
 			},
 			disabled:{
-				type:Boolean,
+				type:Boolean|String,
 				default: false
 			},
 			checked:{
-				type:String,
-				default: "false"
+				type:Boolean|String,
+				default:false
 			},
 			color:{
 				type:String,

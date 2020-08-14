@@ -2,6 +2,7 @@
 	<textarea
 		:class="['onekit-textarea',class_]"
 		:style="style_"
+		:id="id_"
 		:value="value"
 		:placeholder="placeholder"
 		:placeholder-style="placeholderStyle"
@@ -34,6 +35,10 @@
 				default:''
 			},
 			style_:{
+				type:String,
+				defaul:''
+			},
+			id_:{
 				type:String,
 				defaul:''
 			},

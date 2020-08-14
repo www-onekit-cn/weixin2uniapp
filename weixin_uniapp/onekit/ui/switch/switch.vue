@@ -3,6 +3,7 @@
 		<switch
 			:class="['onekit-switch',class_]"
 			:style="style_"
+			:id="id_"
 			:checked="checked"
 			:disabled="disabled"
 			:type="type"
@@ -26,9 +27,13 @@
 					type:String,
 					defaul:''
 				},
+				id_:{
+					type:String,
+					defaul:''
+				},
 				checked:{
 					type:Boolean,
-					default: false
+					default: null
 				},
 				disabled:{
 					type: Boolean,
@@ -45,8 +50,7 @@
 			},
 		methods: {
 		  	switch_change(e){
-		  	        console.log("switch change success",e)
-		  	        this.$emit('change',e.details)
+		  	        this.$emit('change',e)
 		  	}, 
 		}
 	}

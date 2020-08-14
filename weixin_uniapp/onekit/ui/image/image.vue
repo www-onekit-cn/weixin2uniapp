@@ -57,10 +57,10 @@
 		  },
 		  methods:{
 		  	image_load(e){
-		  	        this.$emit('load',e.details)
+		  	        this.$emit('load',e)
 		  	       }, 
 			image_error(e){
-			        this.$emit('error',e.details)
+			        this.$emit('error',e)
 			       }, 
 			
 		  },

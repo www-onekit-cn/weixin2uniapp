@@ -1,32 +1,53 @@
 <template>
-	<view>
-		<page-head :title="title"></page-head>
-		<view class="uni-title uni-common-pl">输入区域高度自适应，不会出现滚动条</view>
-		<view class="uni-textarea">
-			<onekit-textarea @blur="bindTextAreaBlur" auto-height />
-			</view>
-			<view class="uni-title uni-common-pl">占位符字体是红色的textarea</view>
-			<view class="uni-textarea">
-				<onekit-textarea placeholder-style="color:#F76260" placeholder="占位符字体是红色的"/>
-			</view>
-		</view>
+	
+	<onekit-view class_="container">
+	
+	  <onekit-view class_="page-body">
+	    <onekit-view class_="page-section">
+	      <onekit-view class_="page-section-title">输入区域高度自适应，不会出现滚动条</onekit-view>
+	      <onekit-view class_="textarea-wrp">
+	        <onekit-textarea @dblur="dTextAreaBlur" auto-height />
+	      </onekit-view>
+	    </onekit-view>
+	
+	    <onekit-view class_="page-section">
+	      <onekit-view class_="page-section-title">这是一个可以自动聚焦的textarea</onekit-view>
+	      <onekit-view class_="textarea-wrp">
+	        <onekit-textarea auto-focus="true" style="height: 3em" />
+	      </onekit-view>
+	    </onekit-view>
+	  </onekit-view>
+	
+	</onekit-view>
+
 </template>
 <script>
 	import OnekitPage from "../../onekit/OnekitPage.js";
-	export default {
-		data() {
-			return {
-				title: 'textarea',
-				focus: false
-			}
-		},
-		methods: {
-			bindTextAreaBlur: function (e) {
-				console.log(e.detail.value)
-			}
-		}
-	}
+	export default OnekitPage({
+	  onShareAppMessage() {
+	    return {
+	      title: 'textarea',
+	      path: 'page/component/pages/onekit-textarea/onekit-textarea'
+	    }
+	  },
+	
+	  data: {
+	    focus: false
+	  },
+	
+	  dTextAreaBlur(e) {
+	    console.log(e.detail.value)
+	  }
+	})
+
 </script>
 
 <style>
+	textarea {
+	    width: 350px;
+	    padding: 13px 0;
+	}
+	.textarea-wrp {
+	    padding: 0 13px;
+	}
 </style>

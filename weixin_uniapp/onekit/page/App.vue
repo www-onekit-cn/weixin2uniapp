@@ -2,16 +2,24 @@
 	import app from "../../app.js"
 	export default {
 		onLaunch: function() {
-			return app.onLaunch.apply(this);
+			if(app.onLaunch){
+				return app.onLaunch.apply(this);
+			}
 		},
 		onShow: function() {
+				if(app.onShow){
 			return app.onShow.apply(this);
+			}
 		},
 		onHide: function() {
+				if(app.onHide){
 			return app.onHide.apply(this);
+			}
 		},
 		onError: function() {
+				if(app.onError){
 			return app.onError.apply(this);
+			}
 		},
 		onUniNViewMessage: function() {
 		}

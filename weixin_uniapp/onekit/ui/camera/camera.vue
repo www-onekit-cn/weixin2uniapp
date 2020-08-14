@@ -3,6 +3,7 @@
 		<camera
 			:class="['onekit-camera',class_]"
 			:style="style_"
+			:id="id_"
 			:mode="mode"
 			:resolution="resolution"
 			:device-position="devicePosition"
@@ -26,6 +27,10 @@
 				default:''
 			},
 			style_:{
+				type:String,
+				defaul:''
+			},
+			id_:{
 				type:String,
 				defaul:''
 			},
@@ -53,21 +58,17 @@
 		  },
 		  methods:{
 		  	camera_stop(e){
-		  	        console.log("camera_stop",e)
-		  	        this.$emit('stop',e.details)
+		  	        this.$emit('stop',e)
 		  	       }, 
 			camera_error(e){
-				    console.log("camera_error",e)
-				    this.$emit('error',e.details)
+				    this.$emit('error',e)
 			}, 
 						  
 			camera_initdone(e){
-					console.log("camera_initdone",e)
-					this.$emit('camera_initdone',e.details)
+					this.$emit('camera_initdone',e)
 			}, 
 			camera_scancode(e){
-					console.log("camera_scancode",e)
-					this.$emit('scancode',e.details)
+					this.$emit('scancode',e)
 			},
 		  },
 	}

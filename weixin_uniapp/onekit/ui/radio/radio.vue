@@ -4,7 +4,7 @@
 		:style="style_"
 		:id="id_"
 		:value="value"
-		:checked=checked
+		:checked="checked"
 		:disabled="disabled"
 		:color="color"
 	>
@@ -42,7 +42,7 @@
 			},
 			color:{
 				type:String,
-				default:"rgb(7,193,96)",
+				default:"#09BB07",
 			},
 		},
 		methods:{
