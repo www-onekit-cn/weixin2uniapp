@@ -3,7 +3,7 @@ import VideoContext from "./api/VideoContext"
 import CameraContext from "./api/CameraContext"
 import InnerAudioContext from "./api/InnerAudioContext"
 import LivePlayerContext from "./api/LivePlayerContext"
-import Worker from "./api/Worker"
+import Worker from './api/Worker.js'
 import wx_cloud from "./wx.cloud.js"
 import onekit from "./onekit.js"
 import UpdateManager from './api/UpdateManager.js'
