@@ -3,7 +3,7 @@ import VideoContext from "./api/VideoContext"
 import CameraContext from "./api/CameraContext"
 import InnerAudioContext from "./api/InnerAudioContext"
 import LivePlayerContext from "./api/LivePlayerContext"
-import WorkerContext from './api/WorkerContext.js'
+import Worker from './api/Worker.js'
 import wx_cloud from "./wx.cloud.js"
 import onekit from "./onekit.js"
 import UpdateManager from './api/UpdateManager.js'
@@ -1125,9 +1125,9 @@ export default class wx {
 	static getSelectedTextRange() {
 		return console.log("暂不支持")
 	}
-	////////////// WorkerContext ///////////////
+	////////////// Worker ///////////////
 	static createWorker(path) {
-		return new WorkerContext(path);
+		return new Worker(path);
 	}
 	////////////// WXML ///////////////
 	static createSelectorQuery(object) {

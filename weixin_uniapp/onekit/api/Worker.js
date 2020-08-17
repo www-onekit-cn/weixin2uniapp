@@ -1,7 +1,7 @@
-export default class WorkerContext
+export default class Worker
 {
     constructor(js){
-       // this._WorkerContext = new WorkerContext(js);
+       // this._WorkerContext = new Worker(js);
     }
     postMessage( message){
       //  this._WorkerContext.postMessage(message);
