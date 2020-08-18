@@ -1,6 +1,6 @@
 <template>
 	<view
-	id="Id"
+	id="id"
 	:type="type"
 	:size="size"
 	:color="color"
@@ -11,7 +11,7 @@
 <script>
 	export default {
 		props: {
-			Id:{
+			id:{
 				type: String,
 				default: ''
 			},

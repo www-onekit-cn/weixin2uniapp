@@ -1,11 +1,11 @@
 <template>
-	<canvas :canvas-id="Id" :disable-scroll="disableScroll" :width="width" :height="height" @touchstart="touch_start"></canvas>
+	<canvas :canvas-id="id" :disable-scroll="disableScroll" :width="width" :height="height" @touchstart="touch_start"></canvas>
 </template>
 
 <script>
 	export default {
 		props: {
-			Id: {
+			id: {
 				type: String,
 				value: '',
 			},
