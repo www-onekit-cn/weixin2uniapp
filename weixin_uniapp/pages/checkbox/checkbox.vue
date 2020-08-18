@@ -1,27 +1,27 @@
 <template>
 	
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 	
-	  <onekit-view class_="page-body">
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">默认样式</onekit-view>
-	      <onekit-label class_="checkbox">
+	  <onekit-view onekitClass="page-body">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">默认样式</onekit-view>
+	      <onekit-label onekitClass="checkbox">
 	        <onekit-checkbox value="cb" checked/>选中
 	      </onekit-label>
-	      <onekit-label class_="checkbox">
+	      <onekit-label onekitClass="checkbox">
 	        <onekit-checkbox value="cb" />未选中
 	      </onekit-label>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section">
-	      <onekit-view class_="page-section-title">推荐展示样式</onekit-view>
-	      <onekit-view class_="weui-cells weui-cells_after-title">
+	    <onekit-view onekitClass="page-section">
+	      <onekit-view onekitClass="page-section-title">推荐展示样式</onekit-view>
+	      <onekit-view onekitClass="weui-cells weui-cells_after-title">
 	        <onekit-checkbox-group @change="checkboxChange">
-	          <onekit-label class_="weui-cell weui-check__label" v-for="item in items" :key="item.value">
-	            <onekit-view class_="weui-cell__hd">
+	          <onekit-label onekitClass="weui-cell weui-check__label" v-for="item in items" :key="item.value">
+	            <onekit-view onekitClass="weui-cell__hd">
 	              <onekit-checkbox :value="item.value" :checked="item.checked"/>
 	            </onekit-view>
-	            <onekit-view class_="weui-cell__bd">{{item.name}}</onekit-view>
+	            <onekit-view onekitClass="weui-cell__bd">{{item.name}}</onekit-view>
 	          </onekit-label>
 	        </onekit-checkbox-group>
 	      </onekit-view>

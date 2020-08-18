@@ -1,8 +1,8 @@
 <template>
 	<swiper>
 		<swiper-item
-		:class="['onekit-swiper-item',class_]"
-		:style="style_"
+		:class="['onekit-swiper-item',onekitClass]"
+		:style="onekitStyle"
 		item-id="itemId"
 		>
 		<slot></slot>
@@ -13,11 +13,11 @@
 <script>
 	export default{
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

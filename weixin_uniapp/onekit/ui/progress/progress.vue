@@ -1,7 +1,7 @@
 <template>
 	<progress
-	:class="['onekit-progress',class_]"
-	:style="style_"
+	:class="['onekit-progress',onekitClass]"
+	:style="onekitStyle"
 	:percent="percent"
 	:show-info="showInfo"
 	:border-radius="borderadius"
@@ -19,11 +19,11 @@
 <script>
 	export default{
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

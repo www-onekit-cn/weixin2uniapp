@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<video
-			:class="['onekit-video',class_]"
-			:style="style_"
+			:class="['onekit-video',onekitClass]"
+			:style="onekitStyle"
 			:id="id_"
 			:src="src"
 			:duration="duration" 
@@ -50,11 +50,11 @@
 	export default {
 		
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

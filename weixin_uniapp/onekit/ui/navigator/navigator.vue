@@ -1,5 +1,5 @@
 <template>
-	<navigator :class="['onekit-navigator',class_]" :style="style_" :id="id_" :url="url" :open-type="openType"
+	<navigator :class="['onekit-navigator',onekitClass]" :style="onekitStyle" :id="id_" :url="url" :open-type="openType"
 	 :hover-class="hoverClass" :hover-start-time="hoverStartTime" :hover-stay-time="hoverStayTime" :hover-stop-propagation="hoverStopPropagation">
 		<slot />
 	</navigator>
@@ -8,11 +8,11 @@
 <script>
 	export default {
 		props: {
-			class_: {
+			onekitClass: {
 				type: String,
 				default: ""
 			},
-			style_: {
+			onekitStyle: {
 				type: String,
 				default: ""
 			},

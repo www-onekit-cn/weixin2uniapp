@@ -1,7 +1,7 @@
 <template>
 	<form
-		:class="['onekit-form',class_]"
-		:style="style_"
+		:class="['onekit-form',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:report-submit="reportSubmit"
 		:report-submit-timeout="reportSubmitTimeout"
@@ -16,7 +16,7 @@
 	export default {
 		behaviors: ['uni://form-field'],
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
@@ -24,7 +24,7 @@
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

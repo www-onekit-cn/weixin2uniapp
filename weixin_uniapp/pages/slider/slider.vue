@@ -1,25 +1,25 @@
 <template>
 	
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 	
-	  <onekit-view class_="page-body">
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">设置step</onekit-view>
-	      <onekit-view class_="body-view">
+	  <onekit-view onekitClass="page-body">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">设置step</onekit-view>
+	      <onekit-view onekitClass="body-view">
 	        <onekit-slider :value="60" @change="slider2change" :step="5"/>
 	      </onekit-view>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">显示当前value</onekit-view>
-	      <onekit-view class_="body-view">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">显示当前value</onekit-view>
+	      <onekit-view onekitClass="body-view">
 	        <onekit-slider :value="50" @change="slider3change" show-value/>
 	      </onekit-view>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">设置最小/最大值</onekit-view>
-	      <onekit-view class_="body-view">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">设置最小/最大值</onekit-view>
+	      <onekit-view onekitClass="body-view">
 	        <onekit-slider :value="100" @change="slider4change" :min="50" :max="200" show-value/>
 	      </onekit-view>
 	    </onekit-view>

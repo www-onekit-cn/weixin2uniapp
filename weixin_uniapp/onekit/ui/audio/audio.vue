@@ -1,7 +1,7 @@
 <template>
 		<audio
-			:class="['onekit-audio',class_]"
-			:style="style_"
+			:class="['onekit-audio',onekitClass]"
+			:style="onekitStyle"
 			:src="src"
 			:id="id_"
 			:loop="loop"
@@ -21,11 +21,11 @@
 	export default {
 		
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

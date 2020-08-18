@@ -1,7 +1,7 @@
 <template>
 	<input
-		:class="['onekit-input',class_]"
-		:style="style_"
+		:class="['onekit-input',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:value="value"	
 		:type="type"
@@ -36,11 +36,11 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

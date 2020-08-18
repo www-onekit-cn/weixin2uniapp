@@ -1,84 +1,84 @@
 <template>
-  <onekit-view class_="container">
+  <onekit-view onekitClass="container">
   
-    <onekit-view class_="page-body">
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">可以自动聚焦的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" focus placeholder="将会获取焦点"/>
+    <onekit-view onekitClass="page-body">
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">可以自动聚焦的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" focus placeholder="将会获取焦点"/>
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">控制最大输入长度的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" :maxlength="10" placeholder="最大输入长度为10" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">控制最大输入长度的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" :maxlength="10" placeholder="最大输入长度为10" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">实时获取输入值：{{inputValue}}</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input"  :maxlength="10" @input="KeyInput" placeholder="输入同步到view中"/>
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">实时获取输入值：{{inputValue}}</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input"  :maxlength="10" @input="KeyInput" placeholder="输入同步到view中"/>
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">控制输入的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input"  @input="ReplaceInput" placeholder="连续的两个1会变成2" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">控制输入的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input"  @input="ReplaceInput" placeholder="连续的两个1会变成2" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">控制键盘的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input"  @input="HideKeyboard" placeholder="输入123自动收起键盘" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">控制键盘的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input"  @input="HideKeyboard" placeholder="输入123自动收起键盘" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">数字输入的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" type="number" placeholder="这是一个数字输入框" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">数字输入的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" type="number" placeholder="这是一个数字输入框" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">密码输入的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" password type="text" placeholder="这是一个密码输入框" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">密码输入的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" password type="text" placeholder="这是一个密码输入框" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">带小数点的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" type="digit" placeholder="带小数点的数字键盘"/>
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">带小数点的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" type="digit" placeholder="带小数点的数字键盘"/>
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">身份证输入的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" type="idcard" placeholder="身份证输入键盘" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">身份证输入的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" type="idcard" placeholder="身份证输入键盘" />
           </onekit-view>
         </onekit-view>
       </onekit-view>
-      <onekit-view class_="page-section">
-        <onekit-view class_="weui-cells__title">控制占位符颜色的input</onekit-view>
-        <onekit-view class_="weui-cells weui-cells_after-title">
-          <onekit-view class_="weui-cell weui-cell_input">
-            <onekit-input class_="weui-input" placeholder-style="color:#F76260" placeholder="占位符字体是红色的" />
+      <onekit-view onekitClass="page-section">
+        <onekit-view onekitClass="weui-cells__title">控制占位符颜色的input</onekit-view>
+        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+          <onekit-view onekitClass="weui-cell weui-cell_input">
+            <onekit-input onekitClass="weui-input" placeholder-style="color:#F76260" placeholder="占位符字体是红色的" />
           </onekit-view>
         </onekit-view>
       </onekit-view>

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<text :class="['onekit-text',class_]" :style="style_" :id="id_" :selectable="selectable" :space="space" :decode="decode">
+		<text :class="['onekit-text',onekitClass]" :style="onekitStyle" :id="id_" :selectable="selectable" :space="space" :decode="decode">
 			<slot />
 		</text>
 	</view>
@@ -9,11 +9,11 @@
 <script>
 	export default {
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

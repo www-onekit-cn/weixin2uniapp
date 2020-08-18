@@ -1,7 +1,7 @@
 <template>
 		<view
-		:class="['onekit-view',class_]"
-		:style="style_"
+		:class="['onekit-view',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:hover-class="hoverClass"
 		:hover-stop-propagation="hoverStopPropagation"
@@ -16,11 +16,11 @@
 <script>
 export default{
 	props:{
-		class_:{
+		onekitClass:{
 			type:String,
 			default:''
 		},
-		style_:{
+		onekitStyle:{
 			type:String,
 			defaul:''
 		},

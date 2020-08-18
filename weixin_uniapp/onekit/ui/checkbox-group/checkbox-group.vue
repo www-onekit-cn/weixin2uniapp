@@ -1,7 +1,7 @@
 <template>
 	<checkbox-group
-		:class="['onekit-checkbox-group',class_]"
-		:style="style_"
+		:class="['onekit-checkbox-group',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		@change="checkbox_change"
 	
@@ -14,11 +14,11 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

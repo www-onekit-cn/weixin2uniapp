@@ -1,7 +1,7 @@
 <template>
 	<picker
-		:class="['onekit-picker',class_]"
-		:style="style_"
+		:class="['onekit-picker',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:disabled="disabled"
 		:mode="mode"
@@ -27,11 +27,11 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

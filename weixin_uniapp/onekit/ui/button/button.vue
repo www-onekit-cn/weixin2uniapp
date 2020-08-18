@@ -1,7 +1,7 @@
 <template>
 	<button
-		:class="['onekit-button',class_]"
-		:style="style_"
+		:class="['onekit-button',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:size="size"
 		:type="type"
@@ -38,11 +38,11 @@
 	export default {
 		
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

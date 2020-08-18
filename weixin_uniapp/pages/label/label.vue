@@ -1,12 +1,12 @@
 <template>
 	
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 	
-	  <onekit-view class_="page-body">
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">表单组件在label内</onekit-view>
+	  <onekit-view onekitClass="page-body">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">表单组件在label内</onekit-view>
 	      <checkbox-group class="group" @change="checkboxChange">
-	        <onekit-view class_="label-1" v-for="item in checkboxItems" :key="item.name">
+	        <onekit-view onekitClass="label-1" v-for="item in checkboxItems" :key="item.name">
 	          <onekit-label>
 	            <checkbox :value="item.name" :checked="item.checked"></checkbox>
 	            <text class="label-1-text">{{item.value}}</text>
@@ -15,22 +15,22 @@
 	      </checkbox-group>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">label用for标识表单组件</onekit-view>
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">label用for标识表单组件</onekit-view>
 	      <radio-group class="group" @change="radioChange">
-	        <onekit-view class_="label-2" v-for="item in radioItems" :key="item.name">
+	        <onekit-view onekitClass="label-2" v-for="item in radioItems" :key="item.name">
 	          <radio :id="item.name" :value="item.name" :checked="item.checked"></radio>
-	          <onekit-label class_="label-2-text" :for="item.name"><text>{{item.name}}</text></onekit-label>
+	          <onekit-label onekitClass="label-2-text" :for="item.name"><text>{{item.name}}</text></onekit-label>
 	        </onekit-view>
 	      </radio-group>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">label内有多个时选中第一个</onekit-view>
-	      <onekit-label class_="label-3">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">label内有多个时选中第一个</onekit-view>
+	      <onekit-label onekitClass="label-3">
 	        <checkbox class="checkbox-3">选项一</checkbox>
 	        <checkbox class="checkbox-3">选项二</checkbox>
-	        <onekit-view class_="label-3-text">点击该label下的文字默认选中第一个checkbox</onekit-view>
+	        <onekit-view onekitClass="label-3-text">点击该label下的文字默认选中第一个checkbox</onekit-view>
 	      </onekit-label>
 	    </onekit-view>
 	  </onekit-view>

@@ -1,7 +1,7 @@
 <template>
 	<cover-image
-	:class="['onekit-cover-image',class_]"
-	:style="style_"
+	:class="['onekit-cover-image',onekitClass]"
+	:style="onekitStyle"
 	:src="src" @load="coverImage_load" @error="coverImage_error">
 		<slot></slot>
 	</cover-image>
@@ -10,11 +10,11 @@
 <script>
 	export default {
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

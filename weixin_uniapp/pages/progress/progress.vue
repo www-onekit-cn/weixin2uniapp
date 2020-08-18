@@ -1,24 +1,24 @@
 <template>
 
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 
-		<onekit-view class_="page-body">
-			<onekit-view class_="page-section page-section-gap">
+		<onekit-view onekitClass="page-body">
+			<onekit-view onekitClass="page-section page-section-gap">
 
-				<onekit-view class_="progress-box">
+				<onekit-view onekitClass="progress-box">
 					<onekit-progress percent="20" show-info stroke-width="3" />
 				</onekit-view>
 
-				<onekit-view class_="progress-box">
+				<onekit-view onekitClass="progress-box">
 					<onekit-progress percent="40" active stroke-width="3" />
-					<icon class_="progress-cancel" type="cancel"></icon>
+					<icon onekitClass="progress-cancel" type="cancel"></icon>
 				</onekit-view>
 
-				<onekit-view class_="progress-box">
+				<onekit-view onekitClass="progress-box">
 					<onekit-progress percent="60" active stroke-width="3" />
 				</onekit-view>
 
-				<onekit-view class_="progress-box">
+				<onekit-view onekitClass="progress-box">
 					<onekit-progress percent="80" color="#10AEFF" active stroke-width="3" />
 				</onekit-view>
 			</onekit-view>

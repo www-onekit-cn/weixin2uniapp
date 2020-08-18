@@ -1,7 +1,7 @@
 <template>
 	<cover-view
-	:class="['onekit-cover-view',class_]"
-	:style="style_"
+	:class="['onekit-cover-view',onekitClass]"
+	:style="onekitStyle"
 	:scroll-top="scrollTop">
 		<slot></slot>
 	</cover-view>
@@ -10,11 +10,11 @@
 <script>
 	export default {
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

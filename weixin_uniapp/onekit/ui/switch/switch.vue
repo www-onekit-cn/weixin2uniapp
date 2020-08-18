@@ -1,8 +1,8 @@
 <template>
 	
 		<switch
-			:class="['onekit-switch',class_]"
-			:style="style_"
+			:class="['onekit-switch',onekitClass]"
+			:style="onekitStyle"
 			:id="id_"
 			:checked="checked"
 			:disabled="disabled"
@@ -19,11 +19,11 @@
 	export default {
 		behaviors: ['uni://form-field'],
 			props:{
-				class_:{
+				onekitClass:{
 					type:String,
 					default:''
 				},
-				style_:{
+				onekitStyle:{
 					type:String,
 					defaul:''
 				},

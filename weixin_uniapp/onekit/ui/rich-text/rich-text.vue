@@ -1,7 +1,7 @@
 <template>
 	<rich-text
-	:class="['onekit-view',class_]"
-	:style="style_"
+	:class="['onekit-view',onekitClass]"
+	:style="onekitStyle"
 	:nodes="nodes"
 	:space="space">
 		<slot></slot>
@@ -11,11 +11,11 @@
 <script>
 	export default {
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

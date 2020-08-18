@@ -1,27 +1,27 @@
 <template>
 	
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 	
-	  <onekit-view class_="page-body">
-	    <onekit-view class_="page-section page-section-gap">
-	      <onekit-view class_="page-section-title">默认样式</onekit-view>
+	  <onekit-view onekitClass="page-body">
+	    <onekit-view onekitClass="page-section page-section-gap">
+	      <onekit-view onekitClass="page-section-title">默认样式</onekit-view>
 	      <onekit-label class="radio">
 	        <onekit-radio value="r1" checked/>选中
 	      </onekit-label>
-	      <onekit-label class_="radio">
+	      <onekit-label onekitClass="radio">
 	        <onekit-radio value="r2" />未选中
 	      </onekit-label>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section">
-	      <onekit-view class_="page-section-title">推荐展示样式</onekit-view>
-	      <onekit-view class_="weui-cells weui-cells_after-title">
+	    <onekit-view onekitClass="page-section">
+	      <onekit-view onekitClass="page-section-title">推荐展示样式</onekit-view>
+	      <onekit-view onekitClass="weui-cells weui-cells_after-title">
 	        <onekit-radio-group @change="radioChange">
-	          <onekit-label class_="weui-cell weui-check__label" v-for="item in items" :key="item.value">
-	            <onekit-view class_="weui-cell__hd">
+	          <onekit-label onekitClass="weui-cell weui-check__label" v-for="item in items" :key="item.value">
+	            <onekit-view onekitClass="weui-cell__hd">
 	              <onekit-radio :value="item.value" checked/>
 	            </onekit-view>
-	            <onekit-view class_="weui-cell__bd">{{item.name}}</onekit-view>
+	            <onekit-view onekitClass="weui-cell__bd">{{item.name}}</onekit-view>
 	          </onekit-label>
 	        </onekit-radio-group>
 	      </onekit-view>

@@ -1,5 +1,5 @@
 <template>
-	<scroll-view :class="['onekit-scroll-view',class_]" :style="style_" :scroll-x="scrollX" :scroll-y="scrollY"
+	<scroll-view :class="['onekit-scroll-view',onekitClass]" :style="onekitStyle" :scroll-x="scrollX" :scroll-y="scrollY"
 	 :upper-threshold="upperThreshold" :lower-threshold="lowerThreshold" :scroll-top="scrollTop" :scroll-left="scrollLeft"
 	 :scroll-into-view="scrollIntoView" :scroll-with-animation="scrollWithAnimation" :enable-back-to-top="enableBackToTop"
 	 :enable-flex="enableFlex" :scroll-anchoring="scrollAnchoring" :refresher-enabled="refresherEnabled"
@@ -14,11 +14,11 @@
 <script>
 	export default {
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

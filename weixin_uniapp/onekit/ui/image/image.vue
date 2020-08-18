@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<image 
-			:class="['onekit-image',class_]"
-			:style="style_"
+			:class="['onekit-image',onekitClass]"
+			:style="onekitStyle"
 			:id="id_"
 			:src="src"
 			:mode="mode"
@@ -21,11 +21,11 @@
 <script>
 	export default{
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

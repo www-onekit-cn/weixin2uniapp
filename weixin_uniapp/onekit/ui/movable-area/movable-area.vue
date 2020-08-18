@@ -1,7 +1,7 @@
 <template>
 	<movable-area
-	:class="['onekit-movable-area',class_]"
-	:style="style_"
+	:class="['onekit-movable-area',onekitClass]"
+	:style="onekitStyle"
 	:scale-area="scaleArea">
 		<slot></slot>
 	</movable-area>
@@ -10,11 +10,11 @@
 <script>
 	export default {
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

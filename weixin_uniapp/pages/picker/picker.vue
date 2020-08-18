@@ -1,42 +1,42 @@
 <template>
     <onekit-view>
-        <onekit-view class_="uni-title uni-common-pl">地区选择器</onekit-view>
-        <onekit-view class_="uni-list">
-            <onekit-view class_="uni-list-cell">
-                <onekit-view class_="uni-list-cell-left">
+        <onekit-view onekitClass="uni-title uni-common-pl">地区选择器</onekit-view>
+        <onekit-view onekitClass="uni-list">
+            <onekit-view onekitClass="uni-list-cell">
+                <onekit-view onekitClass="uni-list-cell-left">
                     当前选择
                 </onekit-view>
-                <onekit-view class_="uni-list-cell-db">
+                <onekit-view onekitClass="uni-list-cell-db">
                     <onekit-picker @change="bindPickerChange" :value="index" :range="array">
-                        <onekit-view class_="uni-input">{{array[index]}}</onekit-view>
+                        <onekit-view onekitClass="uni-input">{{array[index]}}</onekit-view>
                     </onekit-picker>
                 </onekit-view>
             </onekit-view>
         </onekit-view>
 
-        <onekit-view class_="uni-title uni-common-pl">时间选择器</onekit-view>
-        <onekit-view class_="uni-list">
-            <onekit-view class_="uni-list-cell">
-                <onekit-view class_="uni-list-cell-left">
+        <onekit-view onekitClass="uni-title uni-common-pl">时间选择器</onekit-view>
+        <onekit-view onekitClass="uni-list">
+            <onekit-view onekitClass="uni-list-cell">
+                <onekit-view onekitClass="uni-list-cell-left">
                     当前选择
                 </onekit-view>
-                <onekit-view class_="uni-list-cell-db">
+                <onekit-view onekitClass="uni-list-cell-db">
                     <onekit-picker mode="time" :value="time" start="09:01" end="21:01" @change="bindTimeChange">
-                        <onekit-view class_="uni-input">{{time}}</onekit-view>
+                        <onekit-view onekitClass="uni-input">{{time}}</onekit-view>
                     </onekit-picker>
                 </onekit-view>
             </onekit-view>
         </onekit-view>
 
-        <onekit-view class_="uni-title uni-common-pl">日期选择器</onekit-view>
-        <onekit-view class_="uni-list">
-            <onekit-view class_="uni-list-cell">
-                <onekit-view class_="uni-list-cell-left">
+        <onekit-view onekitClass="uni-title uni-common-pl">日期选择器</onekit-view>
+        <onekit-view onekitClass="uni-list">
+            <onekit-view onekitClass="uni-list-cell">
+                <onekit-view onekitClass="uni-list-cell-left">
                     当前选择
                 </onekit-view>
-                <onekit-view class_="uni-list-cell-db">
+                <onekit-view onekitClass="uni-list-cell-db">
                     <onekit-picker mode="date" :value="date" :start="startDate" :end="endDate" @change="bindDateChange">
-                        <onekit-view class_="uni-input">{{date}}</onekit-view>
+                        <onekit-view onekitClass="uni-input">{{date}}</onekit-view>
                     </onekit-picker>
                 </onekit-view>
             </onekit-view>

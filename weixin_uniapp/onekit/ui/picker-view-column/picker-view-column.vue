@@ -1,7 +1,7 @@
 <template>
 	<picker-view-column
-		:class="['onekit-picker-view-column',class_]"
-		:style="style_"
+		:class="['onekit-picker-view-column',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 	>
 		<slot/>
@@ -12,7 +12,7 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},

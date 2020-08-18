@@ -1,9 +1,9 @@
 <template>
   
-  <onekit-view class_="container">
+  <onekit-view onekitClass="container">
  
-    <onekit-view class_="page-body">
-      <onekit-view class_="btn-area" id_="buttonContainer">
+    <onekit-view onekitClass="page-body">
+      <onekit-view onekitClass="btn-area" id_="buttonContainer">
         <onekit-button type="primary">页面主操作 Normal</onekit-button>
         <onekit-button type="primary" loading>页面主操作 Loading</onekit-button>
         <onekit-button type="primary" disabled>页面主操作 Disabled</onekit-button>
@@ -14,16 +14,16 @@
         <onekit-button type="warn">警告类操作 Normal</onekit-button>
         <onekit-button type="warn" disabled>警告类操作 Disabled</onekit-button>
   
-        <onekit-view class_="button-sp-area">
+        <onekit-view onekitClass="button-sp-area">
           <onekit-button type="primary" plain>按钮</onekit-button>
           <onekit-button type="primary" disabled plain>不可点击的按钮</onekit-button>
   
           <onekit-button type="default" plain>按钮</onekit-button>
           <onekit-button type="default" disabled plain>按钮</onekit-button>
   
-          <onekit-button class_="mini-btn" type="primary" size="mini">按钮</onekit-button>
-          <onekit-button class_="mini-btn" type="default" size="mini">按钮</onekit-button>
-          <onekit-button class_="mini-btn" type="warn" size="mini">按钮</onekit-button>
+          <onekit-button onekitClass="mini-btn" type="primary" size="mini">按钮</onekit-button>
+          <onekit-button onekitClass="mini-btn" type="default" size="mini">按钮</onekit-button>
+          <onekit-button onekitClass="mini-btn" type="warn" size="mini">按钮</onekit-button>
         </onekit-view>
         <onekit-button type="primary" open-type="contact" @contact="handleContact" show-message-card send-message-title="临时会话">打开客服会话</onekit-button>
         <onekit-button type="primary" open-type="share">触发用户转发</onekit-button>

@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<camera
-			:class="['onekit-camera',class_]"
-			:style="style_"
+			:class="['onekit-camera',onekitClass]"
+			:style="onekitStyle"
 			:id="id_"
 			:mode="mode"
 			:resolution="resolution"
@@ -22,11 +22,11 @@
 <script>
 	export default{
 		props: {
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

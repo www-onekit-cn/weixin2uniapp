@@ -1,15 +1,15 @@
 <template>
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 
-		<onekit-view class_="page-body">
-			<onekit-view class_="page-section page-section-gap">
+		<onekit-view onekitClass="page-body">
+			<onekit-view onekitClass="page-section page-section-gap">
 				<map style="width: 100%; height: 300px;" latitude="latitude" longitude="longitude">
-					<onekit-cover-view class_="cover-view">
-						<onekit-cover-view class_="container">
-							<onekit-cover-view class_="flex-wrp" style_="flex-direction:row;">
-								<onekit-cover-view class_="flex-item demo-text-1"></onekit-cover-view>
-								<onekit-cover-view class_="flex-item demo-text-2"></onekit-cover-view>
-								<onekit-cover-view class_="flex-item demo-text-3"></onekit-cover-view>
+					<onekit-cover-view onekitClass="cover-view">
+						<onekit-cover-view onekitClass="container">
+							<onekit-cover-view onekitClass="flex-wrp" onekitStyle="flex-direction:row;">
+								<onekit-cover-view onekitClass="flex-item demo-text-1"></onekit-cover-view>
+								<onekit-cover-view onekitClass="flex-item demo-text-2"></onekit-cover-view>
+								<onekit-cover-view onekitClass="flex-item demo-text-3"></onekit-cover-view>
 							</onekit-cover-view>
 						</onekit-cover-view>
 					</onekit-cover-view>

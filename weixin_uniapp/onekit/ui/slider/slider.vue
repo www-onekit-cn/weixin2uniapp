@@ -1,7 +1,7 @@
 <template>
 	<slider
-		:class="['onekit-slider',class_]"
-		:style="style_"
+		:class="['onekit-slider',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:min="min"
 		:max="max"
@@ -24,11 +24,11 @@
 	export default{
 		behaviors: ['uni://form-field'],
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

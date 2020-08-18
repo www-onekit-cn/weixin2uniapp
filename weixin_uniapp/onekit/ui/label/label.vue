@@ -1,7 +1,7 @@
 <template>
 	<label
-		:class="['onekit-label',class_]"
-		:style="style_"
+		:class="['onekit-label',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:for="onekitFor"
 	>
@@ -12,11 +12,11 @@
 <script>
 	export default{
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

@@ -1,7 +1,7 @@
 <template>
 	<textarea
-		:class="['onekit-textarea',class_]"
-		:style="style_"
+		:class="['onekit-textarea',onekitClass]"
+		:style="onekitStyle"
 		:id="id_"
 		:value="value"
 		:placeholder="placeholder"
@@ -30,11 +30,11 @@
 <script>
 	export default{
 		props:{
-			class_:{
+			onekitClass:{
 				type:String,
 				default:''
 			},
-			style_:{
+			onekitStyle:{
 				type:String,
 				defaul:''
 			},

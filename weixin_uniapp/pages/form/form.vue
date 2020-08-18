@@ -1,46 +1,46 @@
 <template>
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 	
-	  <onekit-view class_="page-body">
+	  <onekit-view onekitClass="page-body">
 	    <onekit-form @submit="formSubmit" @reset="formReset">
-	      <onekit-view class_="page-section page-section-gap">
-	        <onekit-view class_="page-section-title">switch</onekit-view>
+	      <onekit-view onekitClass="page-section page-section-gap">
+	        <onekit-view onekitClass="page-section-title">switch</onekit-view>
 	        <switch name="switch"/>
 	      </onekit-view>
 	
-	      <onekit-view class_="page-section page-section-gap">
-	        <onekit-view class_="page-section-title">radio</onekit-view>
+	      <onekit-view onekitClass="page-section page-section-gap">
+	        <onekit-view onekitClass="page-section-title">radio</onekit-view>
 	        <radio-group name="radio">
 	          <label><radio value="radio1"/>选项一</label>
 	          <label><radio value="radio2"/>选项二</label>
 	        </radio-group>
 	      </onekit-view>
 	
-	      <onekit-view class_="page-section page-section-gap">
-	        <onekit-view class_="page-section-title">checkbox</onekit-view>
+	      <onekit-view onekitClass="page-section page-section-gap">
+	        <onekit-view onekitClass="page-section-title">checkbox</onekit-view>
 	        <checkbox-group name="checkbox">
 	          <label><checkbox value="checkbox1"/>选项一</label>
 	          <label><checkbox value="checkbox2"/>选项二</label>
 	        </checkbox-group>
 	      </onekit-view>
 	
-	      <onekit-view class_="page-section page-section-gap">
-	        <onekit-view class_="page-section-title">slider</onekit-view>
+	      <onekit-view onekitClass="page-section page-section-gap">
+	        <onekit-view onekitClass="page-section-title">slider</onekit-view>
 	        <slider value="50" name="slider" show-value ></slider>
 	      </onekit-view>
 	
-	      <onekit-view class_="page-section">
-	        <onekit-view class_="page-section-title">input</onekit-view>
-	        <onekit-view class_="weui-cells weui-cells_after-title">
-	          <onekit-view class_="weui-cell weui-cell_input">
-	            <onekit-view class_="weui-cell__bd">
+	      <onekit-view onekitClass="page-section">
+	        <onekit-view onekitClass="page-section-title">input</onekit-view>
+	        <onekit-view onekitClass="weui-cells weui-cells_after-title">
+	          <onekit-view onekitClass="weui-cell weui-cell_input">
+	            <onekit-view onekitClass="weui-cell__bd">
 	              <input class="weui-input" name="input" placeholder="这是一个输入框" />
 	            </onekit-view>
 	          </onekit-view>
 	        </onekit-view>
 	      </onekit-view>
 	
-	      <onekit-view class_="btn-area">
+	      <onekit-view onekitClass="btn-area">
 	        <button type="primary" formType="submit">Submit</button>
 	        <button formType="reset">Reset</button>
 	      </onekit-view>

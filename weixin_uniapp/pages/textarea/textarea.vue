@@ -1,18 +1,18 @@
 <template>
 	
-	<onekit-view class_="container">
+	<onekit-view onekitClass="container">
 	
-	  <onekit-view class_="page-body">
-	    <onekit-view class_="page-section">
-	      <onekit-view class_="page-section-title">输入区域高度自适应，不会出现滚动条</onekit-view>
-	      <onekit-view class_="textarea-wrp">
+	  <onekit-view onekitClass="page-body">
+	    <onekit-view onekitClass="page-section">
+	      <onekit-view onekitClass="page-section-title">输入区域高度自适应，不会出现滚动条</onekit-view>
+	      <onekit-view onekitClass="textarea-wrp">
 	        <onekit-textarea @dblur="dTextAreaBlur" auto-height />
 	      </onekit-view>
 	    </onekit-view>
 	
-	    <onekit-view class_="page-section">
-	      <onekit-view class_="page-section-title">这是一个可以自动聚焦的textarea</onekit-view>
-	      <onekit-view class_="textarea-wrp">
+	    <onekit-view onekitClass="page-section">
+	      <onekit-view onekitClass="page-section-title">这是一个可以自动聚焦的textarea</onekit-view>
+	      <onekit-view onekitClass="textarea-wrp">
 	        <onekit-textarea auto-focus="true" style="height: 3em" />
 	      </onekit-view>
 	    </onekit-view>
