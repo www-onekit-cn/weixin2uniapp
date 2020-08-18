@@ -8,7 +8,7 @@
 	    <onekit-view onekit-class="section section_gap" v-for="(item,index) in array" :key="index">
 	      <onekit-view onekit-class="section__title">{{item.text}}</onekit-view>
 	      <onekit-view onekit-class="section__ctn">
-	        <onekit-image onekit-style="width: 200px; height: 200px; background-color: #eeeeee;" :mode="item.mode" :src="src"></onekit-image>
+	        <onekit-image id="xxx" onekit-style="width: 200px; height: 200px; background-color: #eeeeee;" :mode="item.mode" :src="src"></onekit-image>
 	      </onekit-view>
 	    </onekit-view>
 	  </onekit-view>
