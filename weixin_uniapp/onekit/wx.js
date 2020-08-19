@@ -251,10 +251,10 @@ export default class wx {
 		};
 	};
 	static getBackgroundFetchToken(uni_object) {
-		var quick_success = uni_object.success;
-		var quick_fail = uni_object.fail;
-		var quick_complete = uni_object.complete;
-		console.log(quick_success)
+		var uni_success = uni_object.success;
+		var uni_fail = uni_object.fail;
+		var uni_complete = uni_object.complete;
+		console.log(uni_success)
 		uni.getStorage({
 			key: 'wx_token',
 			success(res) {
@@ -268,10 +268,10 @@ export default class wx {
 			console.log("", wx_res)
 
 			if (wx_success) {
-				quick_success(wx_res);
+				uni_success(wx_res);
 			}
 			if (wx_success) {
-				quick_complete(wx_res);
+				uni_complete(wx_res);
 			}
 		};
 	};
@@ -313,9 +313,9 @@ export default class wx {
 	static onBeaconUpdate(object) {
 		return uni.onBeaconUpdate(object);
 	}
-	static offBeaconUpdate(){}
-	static offBeaconServiceChangegetBeacons(){
-		
+	static offBeaconUpdate() {}
+	static offBeaconServiceChangegetBeacons() {
+
 	}
 	static getBeacons(object) {
 		return uni.getBeacons(object);
@@ -341,10 +341,10 @@ export default class wx {
 	static onGetWifiList(object) {
 		return uni.onGetWifiList(object);
 	}
-	static offWifiConnected(callback){
+	static offWifiConnected(callback) {
 		return uni.offWifiConnected(callback)
 	}
-	static offGetWifiList(callback){
+	static offGetWifiList(callback) {
 		return uni.offGetWifiList(callback)
 	}
 	static getWifiList(object) {
@@ -357,14 +357,14 @@ export default class wx {
 		return uni.connectWifi(object);
 	}
 	////////////////////////////////////////////
-	static setBLEMTU(object){
+	static setBLEMTU(object) {
 		return uni.setBLEMTU(object);
 	}
 	////////////////////////
 	static onAccelerometerChange(callback) {
 		return uni.onAccelerometerChange(callback);
 	}
-	static offAccelerometerChange(){
+	static offAccelerometerChange() {
 		return console.log("暂不支持")
 	}
 	static stopAccelerometer(object) {
@@ -389,7 +389,9 @@ export default class wx {
 	static onCompassChange(callback) {
 		return uni.onCompassChange(callback);
 	}
-	static offCompassChange(){console.log("暂不支持")}
+	static offCompassChange() {
+		console.log("暂不支持")
+	}
 	static stopCompass(object) {
 		return uni.stopCompass(object);
 	}
@@ -402,7 +404,7 @@ export default class wx {
 	static onGyroscopeChange(callback) {
 		return uni.onGyroscopeChange(object);
 	}
-	static offGyroscopeChange(){
+	static offGyroscopeChange() {
 		return console.log("暂不支持")
 	}
 	static stopGyroscope(object) {
@@ -415,7 +417,7 @@ export default class wx {
 	static onDeviceMotionChange(object) {
 		return uni.onDeviceMotionChange(object);
 	}
-	static offDeviceMotionChange(){
+	static offDeviceMotionChange() {
 		return console.log("暂不支持")
 	}
 	static stopDeviceMotionListening(object) {
@@ -459,7 +461,7 @@ export default class wx {
 	static onMemoryWarning(callback) {
 		return uni.onMemoryWarning(callback);
 	}
-	static offMemoryWarning(callback){
+	static offMemoryWarning(callback) {
 		return uni.offMemoryWarning(callback)
 	}
 	//
@@ -475,16 +477,16 @@ export default class wx {
 	static onBLECharacteristicValueChange(object) {
 		return uni.onBLECharacteristicValueChange(object);
 	}
-	static offBLEConnectionStateChange(){
+	static offBLEConnectionStateChange() {
 		return console.log("暂不支持！")
 	}
-	static offBLECharacteristicValueChange(){
+	static offBLECharacteristicValueChange() {
 		return console.log("暂不支持！")
 	}
 	static notifyBLECharacteristicValueChange(object) {
 		return uni.notifyBLECharacteristicValueChange(object);
 	}
-	static makeBluetoothPair(){
+	static makeBluetoothPair() {
 		return console.log("暂不支持！")
 	}
 	static getBLEDeviceServices(object) {
@@ -527,7 +529,7 @@ export default class wx {
 		return uni.closeBluetoothAdapter(object);
 	}
 	///////////////////////////////////////////
-	static createOffscreenCanvas(){
+	static createOffscreenCanvas() {
 		return new RenderingContext(uni.createOffscreenCanvas());
 	}
 	static stopHCE(object) {
@@ -555,7 +557,7 @@ export default class wx {
 	static onUserCaptureScreen(callback) {
 		return uni.onUserCaptureScreen(callback);
 	}
-	static offUserCaptureScreen(callback){
+	static offUserCaptureScreen(callback) {
 		return uni.offUserCaptureScreen(callback);
 	}
 	static getScreenBrightness(object) {
@@ -572,7 +574,7 @@ export default class wx {
 	static getFileSystemManager(object) {
 		return uni.getFileSystemManager(object)
 	}
-	static saveFileToDisk(){
+	static saveFileToDisk() {
 		return console.log("暂不支持")
 	}
 	static getFileInfo(object) {
@@ -607,8 +609,8 @@ export default class wx {
 	static createMapContext(object) {
 		return uni.createMapContext(object)
 	}
-	static createMapContext(){
-		return new MapContext(uni.createMapContext(mapId,object))
+	static createMapContext() {
+		return new MapContext(uni.createMapContext(mapId, object))
 	}
 	static compressImage(object) {
 		return uni.compressImage(object)
@@ -627,7 +629,7 @@ export default class wx {
 	}
 	static previewMedia(object) {
 		return console.log("暂不支持！")
-	} 
+	}
 	static chooseMessageFile(object) {
 		uni.chooseMessageFile(object)
 	}
@@ -636,13 +638,13 @@ export default class wx {
 	static saveVideoToPhotosAlbum(object) {
 		return uni.saveVideoToPhotosAlbum(object)
 	}
-	static openVideoEditor(object){
+	static openVideoEditor(object) {
 		return uni.openVideoEditor(object)
 	}
-	static getVideoInfo(object){
+	static getVideoInfo(object) {
 		return uni.getVideoInfo(object)
 	}
-	static compressVideo(object){
+	static compressVideo(object) {
 		return uni.compressVideo(object)
 	}
 	static chooseVideo(object) {
@@ -738,17 +740,161 @@ export default class wx {
 		return uni.request(object);
 	}
 
-	static downloadFile(object) {
-		return uni.downloadFile(object)
+	/////////////////////////downloadFile////////////////
+	static downloadFile(wx_object) {
+		if (!wx_object) {
+			return;
+		}
+		let wx_url = wx_object.url;
+		let wx_filePath = wx_object.filePath;
+		let wx_header = wx_object.header;
+		let wx_timeout = wx_object.timeout;
+		let wx_success = wx_object.success;
+		let wx_fail = wx_object.fail;
+		let wx_complete = wx_object.complete;
+		wx_object = null;
+
+		var uni_object = {};
+		//////////////////////
+		if (wx_url) {
+			uni_object.url = wx_url;
+		}
+		if (wx_header) {
+			uni_object.header = wx_header;
+		}
+		if (wx_filePath) {
+			wx_res.filePath = wx_filePath;
+		}
+		uni_object.success = function(uni_res) {
+			var wx_res = {
+				profile: {
+					SSLconnectionEnd: 1589529382326,
+					SSLconnectionStart: 1589529382270,
+					connectEnd: 1589529382326,
+					connectStart: 1589529382261,
+					domainLookUpEnd: 1589529382261,
+					domainLookUpStart: 1589529382253,
+					downstreamThroughputKbpsEstimate: 1961,
+					estimate_nettype: 5,
+					fetchStart: 1589529382253,
+					httpRttEstimate: 58,
+					peerIP: "118.24.23.53",
+					port: 443,
+					receivedBytedCount: 350,
+					redirectEnd: 0,
+					redirectStart: 0,
+					requestEnd: 1589529382404,
+					requestStart: 1589529382253,
+					responseEnd: 1589529382404,
+					responseStart: 1589529382384,
+					rtt: 58,
+					sendBytesCount: 481,
+					socketReused: false,
+					throughputKbps: 0,
+					transportRttEstimate: 6
+				},
+			}
+			for (var uni_res_key in uni_res) {
+				var uni_res_value = uni_res[uni_res_key];
+				switch (uni_res_key) {
+					case "tempFilePath":
+					if(wx_res.filePath){
+						uni.saveFile({
+							tempFilePath: wx_res.uni_res_value,
+							success: function(res) {
+								wx_res.filePath = res.savedFilePath;
+							}
+						});
+					}else{
+						wx_res.tempFilePath = uni_res_value;
+					}
+						break;
+					case "statusCode":
+					wx_res.statusCode = uni_res_value;
+						break;
+					default:
+						break;
+				}
+
+			};
+			if (wx_success) {
+				wx_success(wx_res);
+			}
+			if (wx_complete) {
+				wx_complete(wx_res);
+			}
+		};
+		uni_object.fail = function(uni_res) {
+			if (wx_fail) {
+				wx_fail(uni_res);
+			}
+			if (wx_complete) {
+				wx_complete(uni_res);
+			}
+		};
+		return uni.download(uni_object); // 最后输出快应用的数据对象，但是输出wx的格式
 	}
-	static uploadFile(object) {
-		return uni.uploadFile(object)
+	// ////////////////////////////上传/////////////////////////////
+	// ///////////////////////////uploadFile///////////////////////
+	static uploadFile(wx_object) {
+		if (!wx_object) {
+			return;
+		}
+		let wx_url = wx_object.url;
+		let wx_filePath = wx_object.filePath;
+		let wx_name = wx_object.name;
+		let wx_header = wx_object.header;
+		let wx_timeout = wx_object.timeout;
+		let wx_formData = wx_object.formData;
+		let wx_success = wx_object.success;
+		let wx_fail = wx_object.fail;
+		let wx_complete = wx_object.complete;
+		var uni_object = {};
+		wx_object = null
+		//////////////////////
+		if (wx_timeout) {
+			setTimeout(function() {
+				alert("超时响应");
+			}, wx_timeout);
+		}
+		if (wx_url) {
+			uni_object.url = wx_url;
+		}
+		if (wx_filePath) {
+			uni_object.filePath = wx_filePath;
+		}
+		if (wx_header) {
+			uni_object.header = wx_header;
+		}
+		if (wx_name) {
+			uni_object.name = wx_name;
+		}
+		if (wx_formData) {
+			uni_object.formData = wx_formData
+		}
+		uni_object.success = function(uni_res) {
+			if (wx_success) {
+				wx_success(uni_res);
+			}
+			if (wx_complete) {
+				wx_complete(uni_res);
+			}
+		};
+		uni_object.fail = function(uni_res) {
+			if (wx_fail) {
+				wx_fail(uni_res);
+			}
+			if (wx_complete) {
+				wx_complete(uni_res);
+			}
+		};
+		return uni.upload(uni_object); // 最后输出快应用的数据对象，但是输出wx的格
 	}
 	//
 	static connectSocket(object) {
 		return uni.connectSocket(object)
 	}
-	static connectSocket(object){
+	static connectSocket(object) {
 		return new SocketTask(uni.connectSocket(object))
 	}
 	static onSocketError(callback) {
@@ -1183,16 +1329,16 @@ export default class wx {
 	static offBLEPeripheralConnectionStateChanged() {
 		return console.log("功能开发中！")
 	}
-	static createBLEPeripheralServer(){
+	static createBLEPeripheralServer() {
 		return console.log("功能开发中！")
 	}
-	static stopLocationUpdate(){
+	static stopLocationUpdate() {
 		return console.log("功能开发中！")
 	}
-	static startLocationUpdateBackground(){
+	static startLocationUpdateBackground() {
 		return console.log("功能开发中！")
 	}
-	static startLocationUpdate(){
+	static startLocationUpdate() {
 		return console.log("功能开发中！")
 	}
 	static createIntersectionObserver(object) {

@@ -25,9 +25,7 @@
 		@getphonenumber="button_getphonenumber"
 		@getuserinfo="button_getuserinfo"	
 		@opensetting="button_opensetting"	
-		@launchapp="button_launchapp"	
-		
-		
+		@launchapp="button_launchapp"
 		
 	>
 		<slot/>

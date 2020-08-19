@@ -9,7 +9,6 @@ export default class RequestTask {
 		return this.uniappRequestTask.offHeadersReceived(callback)
 	}
 	onHeadersReceived(callback) {
-
 		return this.uniappRequestTask.onHeadersReceived(callback)
 	}
 }
