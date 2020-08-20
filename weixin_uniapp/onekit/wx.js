@@ -1071,29 +1071,7 @@ export default class wx {
 		return uni.getWeRunData(object)
 	}
 	static reportMonitor(name, value) {
-		var js_code = getApp().onejit.jscode;
-		uni.httpRequest({
-			url: "http://192.168.0.106:8080/onekit-adapter/reportMonitor",
-			header: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			method: "POST",
-			data: {
-				js_code: js_code,
-				name: name,
-				number: value
-			},
-			success: (res) => {
-				console.log("success")
-				console.log(res.data);
-			},
-			fail: function(res) {
-				console.log(res);
-			},
-			complete: function(res) {
-				console.log(res)
-			}
-		});
+		return uni.reportMonitor(name,value)
 	};
 	////////// Router //////////////
 	static navigateBack(object) {
