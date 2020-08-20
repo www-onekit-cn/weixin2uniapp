@@ -2,6 +2,7 @@
 	<movable-area
 	:class="['onekit-movable-area',onekitClass]"
 	:style="onekitStyle"
+	:id="onekitId"
 	:scale-area="scaleArea">
 		<slot></slot>
 	</movable-area>
@@ -15,6 +16,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

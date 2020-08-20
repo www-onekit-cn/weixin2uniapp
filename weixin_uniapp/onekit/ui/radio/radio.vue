@@ -2,7 +2,7 @@
 	<radio
 		:class="['onekit-radio',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:value="value"
 		:checked="checked"
 		:disabled="disabled"
@@ -24,7 +24,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

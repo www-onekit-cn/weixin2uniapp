@@ -2,7 +2,7 @@
 	<radio-group
 		:class="['onekit-radio-group',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		@change="radio_group_change"
 	
 	>
@@ -22,7 +22,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

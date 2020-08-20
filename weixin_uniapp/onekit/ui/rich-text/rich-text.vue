@@ -2,6 +2,7 @@
 	<rich-text
 	:class="['onekit-view',onekitClass]"
 	:style="onekitStyle"
+	:id="onekitId"
 	:nodes="nodes"
 	:space="space">
 		<slot></slot>
@@ -16,6 +17,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

@@ -2,7 +2,7 @@
 	<label
 		:class="['onekit-label',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:for="onekitFor"
 	>
 	<slot/>
@@ -20,7 +20,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

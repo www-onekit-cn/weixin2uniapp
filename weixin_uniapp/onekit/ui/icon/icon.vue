@@ -1,6 +1,6 @@
 <template>
 	<view
-	id="id"
+	id="onekitId"
 	:type="type"
 	:size="size"
 	:color="color"
@@ -11,7 +11,7 @@
 <script>
 	export default {
 		props: {
-			id:{
+			onekitId:{
 				type: String,
 				default: ''
 			},

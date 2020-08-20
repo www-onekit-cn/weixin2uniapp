@@ -2,6 +2,7 @@
 	<cover-image
 	:class="['onekit-cover-image',onekitClass]"
 	:style="onekitStyle"
+	:id="onekitId"
 	:src="src" @load="coverImage_load" @error="coverImage_error">
 		<slot></slot>
 	</cover-image>
@@ -15,6 +16,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

@@ -3,7 +3,8 @@
 		<swiper-item
 		:class="['onekit-swiper-item',onekitClass]"
 		:style="onekitStyle"
-		item-id="itemId"
+		:id="onekitId"
+		:item-id="itemId"
 		>
 		<slot></slot>
 		</swiper-item>
@@ -22,6 +23,10 @@
 				defaul:''
 			},
 			itemId:{
+				type:String,
+				default:''
+			},
+			onekitId:{
 				type:String,
 				default:''
 			},

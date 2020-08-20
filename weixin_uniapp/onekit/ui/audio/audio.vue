@@ -3,7 +3,7 @@
 			:class="['onekit-audio',onekitClass]"
 			:style="onekitStyle"
 			:src="src"
-			:id="id_"
+			:id="onekitId"
 			:loop="loop"
 			:controls="controls"
 			:poster="poster"
@@ -33,7 +33,7 @@
 				type:String,
 				default: ""
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				default: ""
 			},

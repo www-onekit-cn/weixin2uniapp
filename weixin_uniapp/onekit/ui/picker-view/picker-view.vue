@@ -2,7 +2,7 @@
 	<picker-view 
 	:class="['onekit-picker-view',onekitClass]" 
 	:style="onekitStyle" 
-	:id="id_" 
+	:id="onekitId" 
 	:value="value" 
 	:indicator-style="indicatorStyle"
 	 :indicator-class="indicatorClass" 
@@ -27,9 +27,9 @@
 				type: String,
 				defaul: ''
 			},
-			id_: {
-				type: String,
-				defaul: ''
+			onekitId:{
+				type:String,
+				defaul:''
 			},
 			value: {
 				type: Array,

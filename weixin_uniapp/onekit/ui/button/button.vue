@@ -2,7 +2,7 @@
 	<button
 		:class="['onekit-button',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:size="size"
 		:type="type"
 		:plain="plain"
@@ -44,7 +44,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

@@ -2,6 +2,7 @@
 	<progress
 	:class="['onekit-progress',onekitClass]"
 	:style="onekitStyle"
+	:id="onekitId"
 	:percent="percent"
 	:show-info="showInfo"
 	:border-radius="borderadius"
@@ -24,6 +25,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

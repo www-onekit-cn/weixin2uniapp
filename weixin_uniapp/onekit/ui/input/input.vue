@@ -2,7 +2,7 @@
 	<input
 		:class="['onekit-input',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:value="value"	
 		:type="type"
 		:password="password"
@@ -44,7 +44,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				default:''
 			},

@@ -3,7 +3,7 @@
 		<switch
 			:class="['onekit-switch',onekitClass]"
 			:style="onekitStyle"
-			:id="id_"
+			:id="onekitId"
 			:checked="checked"
 			:disabled="disabled"
 			:type="type"
@@ -27,7 +27,7 @@
 					type:String,
 					defaul:''
 				},
-				id_:{
+				onekitId:{
 					type:String,
 					defaul:''
 				},

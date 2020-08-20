@@ -2,7 +2,7 @@
 	<picker
 		:class="['onekit-picker',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:disabled="disabled"
 		:mode="mode"
 		:range="range"
@@ -35,7 +35,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

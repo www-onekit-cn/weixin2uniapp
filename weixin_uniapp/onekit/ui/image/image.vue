@@ -3,7 +3,7 @@
 		<image 
 			:class="['onekit-image',onekitClass]"
 			:style="onekitStyle"
-			:id="id_"
+			:id="onekitId"
 			:src="src"
 			:mode="mode"
 			:lazy-load="lazyLoad"
@@ -29,7 +29,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

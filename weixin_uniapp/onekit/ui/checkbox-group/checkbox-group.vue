@@ -2,7 +2,7 @@
 	<checkbox-group
 		:class="['onekit-checkbox-group',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		@change="checkbox_change"
 	
 	>
@@ -22,7 +22,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

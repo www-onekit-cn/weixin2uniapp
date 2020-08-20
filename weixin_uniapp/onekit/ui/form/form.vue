@@ -2,7 +2,7 @@
 	<form
 		:class="['onekit-form',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:report-submit="reportSubmit"
 		:report-submit-timeout="reportSubmitTimeout"
 		@submit="form_submit"
@@ -20,7 +20,7 @@
 				type:String,
 				default:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				default:''
 			},

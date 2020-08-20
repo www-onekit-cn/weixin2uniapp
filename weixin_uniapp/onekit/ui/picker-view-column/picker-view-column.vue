@@ -2,7 +2,7 @@
 	<picker-view-column
 		:class="['onekit-picker-view-column',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 	>
 		<slot/>
 	</picker-view-column>
@@ -16,7 +16,7 @@
 				type:String,
 				default:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

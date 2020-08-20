@@ -1,6 +1,8 @@
 <template>
 	<swiper
-	:class="['onekit-swiper',onekitClass]" :style="onekitStyle"
+	:class="['onekit-swiper',onekitClass]"
+	:style="onekitStyle"
+	:id="onekitId"
 	:indicator-dots="indicatorDots"
 	:indicator-color="indicatorColor"
 	:indicator-active-color="indicatorActiveColor"
@@ -31,6 +33,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

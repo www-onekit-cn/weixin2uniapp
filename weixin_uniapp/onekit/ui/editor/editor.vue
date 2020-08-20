@@ -2,6 +2,7 @@
 	<editor
 		:class="['onekit-editor',onekitClass]"
 		:style="onekitStyle"
+		:id="onekitId"
 		:read-only="readOnly"
 		:placeholder="placeholder"
 		:show-img-size="showImgSize"
@@ -25,6 +26,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

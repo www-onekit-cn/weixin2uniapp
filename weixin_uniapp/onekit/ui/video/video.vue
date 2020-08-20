@@ -3,7 +3,7 @@
 		<video
 			:class="['onekit-video',onekitClass]"
 			:style="onekitStyle"
-			:id="id_"
+			:id="onekitId"
 			:src="src"
 			:duration="duration" 
 			:controls="controls" 
@@ -58,7 +58,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

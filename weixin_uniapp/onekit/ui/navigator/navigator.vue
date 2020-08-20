@@ -1,5 +1,5 @@
 <template>
-	<navigator :class="['onekit-navigator',onekitClass]" :style="onekitStyle" :id="id_" :url="url" :open-type="openType"
+	<navigator :class="['onekit-navigator',onekitClass]" :style="onekitStyle" :id="onekitId" :url="url" :open-type="openType"
 	 :hover-class="hoverClass" :hover-start-time="hoverStartTime" :hover-stay-time="hoverStayTime" :hover-stop-propagation="hoverStopPropagation">
 		<slot />
 	</navigator>
@@ -16,9 +16,9 @@
 				type: String,
 				default: ""
 			},
-			id_: {
-				type: String,
-				default: ""
+			onekitId:{
+				type:String,
+				defaul:''
 			},
 			// 在哪个目标上发生跳转，默认当前小程序
 			target: {

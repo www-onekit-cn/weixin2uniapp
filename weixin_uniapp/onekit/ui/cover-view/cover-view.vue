@@ -2,6 +2,7 @@
 	<cover-view
 	:class="['onekit-cover-view',onekitClass]"
 	:style="onekitStyle"
+	:id="onekitId"
 	:scroll-top="scrollTop">
 		<slot></slot>
 	</cover-view>
@@ -15,6 +16,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

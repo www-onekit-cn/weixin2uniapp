@@ -3,7 +3,7 @@
 		<camera
 			:class="['onekit-camera',onekitClass]"
 			:style="onekitStyle"
-			:id="id_"
+			:id="onekitId"
 			:mode="mode"
 			:resolution="resolution"
 			:device-position="devicePosition"
@@ -30,7 +30,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

@@ -1,5 +1,5 @@
 <template>
-	<scroll-view :class="['onekit-scroll-view',onekitClass]" :style="onekitStyle" :scroll-x="scrollX" :scroll-y="scrollY"
+	<scroll-view :id="onekitId" :class="['onekit-scroll-view',onekitClass]" :style="onekitStyle" :scroll-x="scrollX" :scroll-y="scrollY"
 	 :upper-threshold="upperThreshold" :lower-threshold="lowerThreshold" :scroll-top="scrollTop" :scroll-left="scrollLeft"
 	 :scroll-into-view="scrollIntoView" :scroll-with-animation="scrollWithAnimation" :enable-back-to-top="enableBackToTop"
 	 :enable-flex="enableFlex" :scroll-anchoring="scrollAnchoring" :refresher-enabled="refresherEnabled"
@@ -19,6 +19,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

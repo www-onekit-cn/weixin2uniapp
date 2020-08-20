@@ -2,7 +2,7 @@
 	<slider
 		:class="['onekit-slider',onekitClass]"
 		:style="onekitStyle"
-		:id="id_"
+		:id="onekitId"
 		:min="min"
 		:max="max"
 		:step="step"
@@ -32,7 +32,7 @@
 				type:String,
 				defaul:''
 			},
-			id_:{
+			onekitId:{
 				type:String,
 				defaul:''
 			},

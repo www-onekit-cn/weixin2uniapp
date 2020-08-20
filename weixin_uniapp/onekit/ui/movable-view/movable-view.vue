@@ -1,5 +1,5 @@
 <template>
-	<movable-view :class="['onekit-view',onekitClass]" :style="onekitStyle" direction="direction" :inertia="inertia" :out-of-bounds="outOfBounds" :x="x" :y="y" :damping="damping"
+	<movable-view :class="['onekit-view',onekitClass]" :style="onekitStyle" :id="onekitId" direction="direction" :inertia="inertia" :out-of-bounds="outOfBounds" :x="x" :y="y" :damping="damping"
 	 :friction="friction" :disabled="disabled" :scale="scale" :scale-min="scaleMin" :scale-max="scaleMax" :scale-value="scaleValue"
 	 :animation="animation" @change="movable_change" @scale="movable_scale">
 		<slot></slot>
@@ -14,6 +14,10 @@
 				default:''
 			},
 			onekitStyle:{
+				type:String,
+				defaul:''
+			},
+			onekitId:{
 				type:String,
 				defaul:''
 			},

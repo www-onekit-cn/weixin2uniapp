@@ -1,5 +1,6 @@
 <template>
 	<page-meta
+	:id="onekitId"
 		:background-text-style="backgroundTextStyle"
 		:background-color="backgroundColor"
 		:background-color-top="backgroundColorTop"
@@ -19,6 +20,10 @@
 <script>
 	export default {
 		props:{
+			onekitId:{
+				type:String,
+				defaul:''
+			},
 			backgroundTextStyle:{
 				type:String,
 				default:""

@@ -1,5 +1,8 @@
 <template>
 	<navigation-bar
+	:class="['onekit-navigation-bar',onekitClass]"
+	:style="onekitStyle"
+	:id="onekitId"
 		:title="title"
 		:loading="loading"
 		:front-color="frontColor"
@@ -12,6 +15,10 @@
 <script>
 	export default {
 		props:{
+			onekitId:{
+				type:String,
+				defaul:''
+			},
 			title:{
 				type:String,
 				default:""
