@@ -24,14 +24,22 @@ export default function (wx_object) {
 				wx_object.onShow.call(this, uni_showOpions)
 			}
 		},
-		// onUnhandledRejection(uni_rejectionFn) {
-		// 	/**     未生效       */
-		// 	let wx_rejectionFn = uni_rejectionFn()
-		// 	this.onekit_rejectionFn = wx_rejectionFn()
-		// 	if (wx_object.onUnhandledRejection) {
-		// 		wx_object.onUnhandledRejection(wx_rejectionFn())
-		// 	}
-		// }
+		onUnhandledRejection(uni_rejectionFn) {
+			/**     未生效       */
+			let wx_rejectionFn = uni_rejectionFn()
+			this.onekit_rejectionFn = wx_rejectionFn()
+			if (wx_object.onUnhandledRejection) {
+				wx_object.onUnhandledRejection(wx_rejectionFn())
+			}
+		},
+		onThemeChange(uni_themeChangeFn) {
+			/**     未测试    */
+			let wx_themeChangeFn = uni_themeChangeFn()
+			this.onekit_themeChangeFn = wx_themeChangeFn()
+			if (wx_object.onThemeChange) {
+				wx_object.onThemeChange(wx_themeChangeFn())
+			}
+		}
 	}
 	return uniapp_object
 }

@@ -89,12 +89,20 @@ export default class wxx {
 	//////////////////////  应用级事件  /////////////////////
 
 	static onUnhandledRejection(callback) {
+		const obj = {
+			errMsg: '当前平台暂不支持 onUnhandledRejection api'
+		}
+		callback(obj)
+		/**  uniapp原生事件未生效   */
 		// return getApp().onekit_onUnhandledRejectionCallback()
 		// callback = getApp().onekit_rejectionFn
 		// return callback()
 		// console.log(getApp().onekit_rejectionFn)
 	}
 
+	static onThemeChange(callback) {
+		getApp().onekit_themeChangeFn = callback()
+	}
 
 	/////////////////// animation //////////////////////////
 	static createAnimation(object) {
@@ -106,11 +114,6 @@ export default class wxx {
 	///////////////// basic ////////////////////////////////
 
 
-
-	///////////////////////////应用级事件/////////////////////////////
-	static onThemeChange(callback) {
-		return
-	}
 	static onAudioInterruptionEnd(callback) {
 		return console.log("暂不支持")
 	}
