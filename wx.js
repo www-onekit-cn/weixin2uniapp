@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import RenderingContext from "./api/RenderingContext"
 import VideoContext from "./api/VideoContext"
 import CameraContext from "./api/CameraContext"
@@ -6,12 +7,95 @@ import LivePlayerContext from "./api/LivePlayerContext"
 import Worker from './api/Worker.js'
 import wx_cloud from "./wx.cloud.js"
 import onekit from "./onekit.js"
-import UpdateManager from './api/UpdateManager.js'
 import BackgroundAudioManager from './api/BackgroundAudioManager.js'
 import Animation from './api/Animation.js'
 import SocketTask from './api/SocketTask.js'
 import MapContext from './api/MapContext.js'
-export default class wx {
+export default class wxx {
+	//////////////////////  基础  ///////////////////////////
+
+	static canIUse(schema) {
+		return uni.canIUse(schema);
+	}
+
+	static base64ToArrayBuffer(base64) {
+		return uni.base64ToArrayBuffer(base64);
+	}
+
+	static arrayBufferToBase64(arrayBuffer) {
+		return uni.arrayBufferToBase64(arrayBuffer);
+	}
+
+	//////////////////////  系统  ///////////////////////////
+
+	static getSystemInfoSync() {
+		return uni.getSystemInfoSync()
+	}
+
+	static getSystemInfoAsync(object) {
+		const uni_success = object.success
+		const uni_complete = object.complete
+		const uni_fail = object.fail
+		uni.getSystemInfo({
+			success: res => {
+				if (uni_success) {
+					uni_success(res)
+				}
+			},
+			fail: err => {
+				if (uni_fail) {
+					uni_fail(err)
+				}
+			},
+			complete: data => {
+				if (uni_complete) {
+					uni_complete(data)
+				}
+			}
+		})
+	}
+
+	static getSystemInfo() {
+		return uni.getSystemInfo()
+	}
+
+	//////////////////////  更新  ///////////////////////////
+
+	static updateWeChatApp() {
+		return console.error("uni-app is not support updateWeChatApp！")
+	}
+
+	static getUpdateManager() {
+		return uni.getUpdateManager()
+	}
+
+	//////////////////////  生命周期  ///////////////////////
+
+	static getLaunchOptionsSync() {
+		const obj = {
+			path: getApp().onekit_launchOpions.path,
+			query: getApp().onekit_launchOpions.query,
+			scene: getApp().onekit_launchOpions.scene,
+			shareTicket: getApp().onekit_showOptions.shareTicket,
+			referrerInfo: getApp().onekit_showOptions.referrerInfo
+		}
+		return obj
+	}
+
+	static getEnterOptionsSync() {
+		return getApp().onekit_showOptions
+	}
+
+	//////////////////////  应用级事件  /////////////////////
+
+	static onUnhandledRejection(callback) {
+		// return getApp().onekit_onUnhandledRejectionCallback()
+		// callback = getApp().onekit_rejectionFn
+		// return callback()
+		// console.log(getApp().onekit_rejectionFn)
+	}
+
+
 	/////////////////// animation //////////////////////////
 	static createAnimation(object) {
 		return uni.createAnimation(object);
@@ -20,37 +104,10 @@ export default class wx {
 		return new Animation(uni.createAnimation(object))
 	}
 	///////////////// basic ////////////////////////////////
-	static canIUse(schema) {
-		return uni.canIUse(schema);
-	}
-	static getSystemInfo(object) {
-		return uni.getSystemInfo(object);
-	}
-	static getSystemInfoSync() {
-		return uni.getSystemInfoSync();
-	}
-	static base64ToArrayBuffer(base64) {
-		return uni.base64ToArrayBuffer(base64);
-	}
-	static arrayBufferToBase64(arrayBuffer) {
-		return uni.arrayBufferToBase64(arrayBuffer);
-	}
-	static updateWeChatApp() {
-		return console.log("暂不支持！")
-	}
-	static getUpdateManager() {
-		return new UpdateManager(uni.getUpdateManager())
-	}
-	static getLaunchOptionsSync(object) {
-		return uni.getLaunchOptionsSync(object);
-	}
-	static getEnterOptionsSync(object) {
-		return console.log("暂不支持")
-	}
+
+
+
 	///////////////////////////应用级事件/////////////////////////////
-	static onUnhandledRejection(callback) {
-		return
-	}
 	static onThemeChange(callback) {
 		return
 	}
@@ -798,19 +855,19 @@ export default class wx {
 				var uni_res_value = uni_res[uni_res_key];
 				switch (uni_res_key) {
 					case "tempFilePath":
-					if(wx_res.filePath){
-						uni.saveFile({
-							tempFilePath: wx_res.uni_res_value,
-							success: function(res) {
-								wx_res.filePath = res.savedFilePath;
-							}
-						});
-					}else{
-						wx_res.tempFilePath = uni_res_value;
-					}
+						if (wx_res.filePath) {
+							uni.saveFile({
+								tempFilePath: wx_res.uni_res_value,
+								success: function(res) {
+									wx_res.filePath = res.savedFilePath;
+								}
+							});
+						} else {
+							wx_res.tempFilePath = uni_res_value;
+						}
 						break;
 					case "statusCode":
-					wx_res.statusCode = uni_res_value;
+						wx_res.statusCode = uni_res_value;
 						break;
 					default:
 						break;
@@ -1071,7 +1128,7 @@ export default class wx {
 		return uni.getWeRunData(object)
 	}
 	static reportMonitor(name, value) {
-		return uni.reportMonitor(name,value)
+		return uni.reportMonitor(name, value)
 	};
 	////////// Router //////////////
 	static navigateBack(object) {
