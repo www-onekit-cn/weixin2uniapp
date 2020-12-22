@@ -1,54 +1,27 @@
 <template>
-	<radio
+		<div
 		:class="['onekit-radio',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
-		:value="value"
-		:checked="checked"
-		:disabled="disabled"
-		:color="color"
-	>
-		<slot/>
-	</radio>
+		>
+		<slot></slot>
+		</div>
 </template>
 
 <script>
-	export default{
-		behaviors: ['uni://form-field'],
-		props:{
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			value:{
-				type:String,
-				default:"",
-			},
-			checked:{
-				type:Boolean,
-				default:null,
-			},
-			disabled:{
-				type:Boolean,
-				default:false,
-			},
-			color:{
-				type:String,
-				default:"#09BB07",
-			},
-		},
-		methods:{
-			
-		}
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-radio",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>

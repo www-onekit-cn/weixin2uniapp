@@ -1,82 +1,53 @@
 <template>
 		<audio
-			:class="['onekit-audio',onekitClass]"
-			:style="onekitStyle"
-			:src="src"
-			:id="onekitId"
-			:loop="loop"
-			:controls="controls"
-			:poster="poster"
-			:name="name"
-			:author="author"
-			@play="audio_play"
-			@error="audio_error"
-			@pause="audio_pause"
-			@timeupdate="audio_timeupdate"
-			@ended="audio_ended"
-		/>
+		:class="['onekit-audio',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
+		:src="src"
+        :loop="loop"
+        :controls="controls"
+        :poster="poster"
+		>
+		<slot></slot>
+		</audio>
 </template>
 
 <script>
-	export default {
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-audio",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
 		
-		props: {
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			src:{
-				type:String,
-				default: ""
-			},
-			onekitId:{
-				type:String,
-				default: ""
-			},
-			loop:{
-				type: Boolean,
-				default: false
-			},
-			controls:{
-				type: Boolean,
-				default: false
-			},
-			poster:{
-				type:String,
-				default: ""
-			},
-			name:{
-				type:String,
-				default: "未知音频"
-			},
-			author:{
-				type:String,
-				default: "未知作者"
-			},
-		  },
-		  methods:{
-		  	audio_play(e){
-		  	        this.$emit('play',e)
-		  	       }, 
-			audio_error(e){
-			        this.$emit('error',e)
-			       }, 
-			audio_pause(e){
-			        this.$emit('pause',e)
-			       }, 
-			audio_timeupdate(e){
-			        this.$emit('timeupdate',e)
-			       }, 	 
-			audio_ended(e){
-			        this.$emit('ended',e)
-			       }, 	   
-		  },
-
+		"src":{
+			type:String,
+			defaul:''
+		},
+		"loop":{
+			type:Boolean,
+			defaul:false
+		},
+		"controls":{
+			type:Boolean,
+			defaul:false
+		},
+		"poster":{
+			type:String,
+			defaul:''
+		},
+		
+	},
+	methods:{
+		// view_click:function(e){
+		// 	this.$emit('click',e.details)
+		// },
+		// view_click:function(e){
+		// 	//console.log("image load success",e)
+		// 	this.$emit('tap',e.details)
+		// },
 	}
+}
 </script>
 
 <style>

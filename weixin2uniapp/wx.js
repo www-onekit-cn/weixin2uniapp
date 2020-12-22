@@ -1,12 +1,12 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import RenderingContext from "./api/RenderingContext"
 import VideoContext from "./api/VideoContext"
 import CameraContext from "./api/CameraContext"
 import InnerAudioContext from "./api/InnerAudioContext"
 import LivePlayerContext from "./api/LivePlayerContext"
 import Worker from './api/Worker.js'
-import wx_cloud from "./wx.cloud.js"
-import onekit from "./onekit.js"
+// import wx_cloud from "./wx.cloud.js"
+import COLOR from "../node_modules/oneutil/COLOR"
 import BackgroundAudioManager from './api/BackgroundAudioManager.js'
 import Animation from './api/Animation.js'
 import SocketTask from './api/SocketTask.js'
@@ -177,10 +177,10 @@ export default class wxx {
 					canvasContext.restore();
 					break;
 				case "setFillStyle":
-					canvasContext.setFillStyle(onekit.color.array2str(data[1]));
+					canvasContext.setFillStyle(COLOR.array2str(data[1]));
 					break;
 				case "setStrokeStyle":
-					canvasContext.setStrokeStyle(onekit.color.array2str(data[1]));
+					canvasContext.setStrokeStyle(COLOR.array2str(data[1]));
 					break;
 				case "setFontSize":
 					canvasContext.setFontSize(data[0]);
@@ -1384,7 +1384,7 @@ export default class wxx {
 		return uni.hideKeyboard(object)
 	}
 	///////////// cloud ////////////////
-	static get cloud() {
-		return new wx_cloud();
-	}
+	// static get cloud() {
+	// 	return new wx_cloud();
+	// }
 }

@@ -1,70 +1,27 @@
 <template>
-	<picker-view 
-	:class="['onekit-picker-view',onekitClass]" 
-	:style="onekitStyle" 
-	:id="onekitId" 
-	:value="value" 
-	:indicator-style="indicatorStyle"
-	 :indicator-class="indicatorClass" 
-	 :mask-style="maskStyle" 
-	 :mask-class="maskClass" 
-	 @change="picker_view_change"
-	 @pickstart="picker_view_pickstart" 
-	 @pickend="picker_view_pickend">
-		<slot />
-	</picker-view>
+		<div
+		:class="['onekit-picker-view',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
+		>
+		<slot></slot>
+		</div>
 </template>
 
 <script>
-	export default {
-		behaviors: ['uni://form-field'],
-		props: {
-			onekitClass: {
-				type: String,
-				default: ''
-			},
-			onekitStyle: {
-				type: String,
-				defaul: ''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			value: {
-				type: Array,
-				default: "",
-			},
-			indicatorStyle: {
-				type: String,
-				default: "",
-			},
-			indicatorClass: {
-				type: String,
-				default: "",
-			},
-			maskStyle: {
-				type: String,
-				default: "",
-			},
-			maskClass: {
-				type: String,
-				default: "",
-			},
-		},
-		methods: {
-			picker_view_change(e) {
-				this.$emit('change', e)
-			},
-			picker_view_pickstart(e) {
-				this.$emit('pickstart', e)
-			},
-			picker_view_pickend(e) {
-				this.$emit('pickend', e)
-			},
-
-		}
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-picker-view",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>
