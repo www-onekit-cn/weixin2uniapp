@@ -125,8 +125,8 @@ export default class wxx {
 		return uni.onAppShow(callback)
 	}
 
-	static onAppHide() {
-		return uni.onAppHide()
+	static onAppHide(callback) {
+		return uni.onAppHide(callback)
 	}
 
 	static offUnhandledRejection(callback) {
@@ -143,12 +143,12 @@ export default class wxx {
 		callback()
 	}
 
-	static offPageNotFound() {
-		return uni.offPageNotFound()
+	static offPageNotFound(callback) {
+		return uni.offPageNotFound(callback)
 	}
 
-	static offError() {
-		return uni.offError()
+	static offError(callback) {
+		return uni.offError(callback)
 	}
 
 	static offAudioInterruptionEnd() {
@@ -159,15 +159,37 @@ export default class wxx {
 		return console.error("uni-app is not support offAudioInterruptionBegin")
 	}
 
-	static offAppShow() {
-		return uni.offAppShow()
+	static offAppShow(callback) {
+		return uni.offAppShow(callback)
 	}
 
-	static offAppHide() {
-		return uni.offAppHide()
+	static offAppHide(callback) {
+		return uni.offAppHide(callback)
 	}
 
 	//////////////////////  路由  /////////////////////
+
+	static switchTab(object) { return uni.switchTab(object)}
+
+	static reLaunch(object) { return uni.reLaunch(object)}
+
+	static redirectTo(object) { return uni.redirectTo(object)}
+
+	static navigateTo(object) { 
+		const url = object.url
+		const success = object.success
+		const fail = object.fail
+		const complete = object.complete
+
+		object = null
+
+		return uni.navigateTo({
+			url,
+			success,
+			fail,
+			complete
+		})
+	}
 
 
 	/////////////////// animation //////////////////////////
@@ -181,8 +203,6 @@ export default class wxx {
 	}
 
 	///////////////// basic ////////////////////////////////
-
-
 
 
 
@@ -1349,7 +1369,11 @@ export default class wxx {
 	// }
 
 	////////////// 网络 code by zk ////////////
-	static request(object)  { return uni.request(object) }
+	static request(object) {
+		return uni.request(object)
+	}
 
-	static downloadFile(object)  { return uni.downloadFile(object) }
+	static downloadFile(object) {
+		return uni.downloadFile(object)
+	}
 }
