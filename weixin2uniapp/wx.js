@@ -848,99 +848,7 @@ export default class wxx {
 
 
 	/////////////////////////downloadFile////////////////
-	static downloadFile(wx_object) {
-		if (!wx_object) {
-			return;
-		}
-		let wx_url = wx_object.url;
-		let wx_filePath = wx_object.filePath;
-		let wx_header = wx_object.header;
-		let wx_timeout = wx_object.timeout;
-		let wx_success = wx_object.success;
-		let wx_fail = wx_object.fail;
-		let wx_complete = wx_object.complete;
-		wx_object = null;
-
-		var uni_object = {};
-		//////////////////////
-		if (wx_url) {
-			uni_object.url = wx_url;
-		}
-		if (wx_header) {
-			uni_object.header = wx_header;
-		}
-		if (wx_filePath) {
-			wx_res.filePath = wx_filePath;
-		}
-		uni_object.success = function (uni_res) {
-			var wx_res = {
-				profile: {
-					SSLconnectionEnd: 1589529382326,
-					SSLconnectionStart: 1589529382270,
-					connectEnd: 1589529382326,
-					connectStart: 1589529382261,
-					domainLookUpEnd: 1589529382261,
-					domainLookUpStart: 1589529382253,
-					downstreamThroughputKbpsEstimate: 1961,
-					estimate_nettype: 5,
-					fetchStart: 1589529382253,
-					httpRttEstimate: 58,
-					peerIP: "118.24.23.53",
-					port: 443,
-					receivedBytedCount: 350,
-					redirectEnd: 0,
-					redirectStart: 0,
-					requestEnd: 1589529382404,
-					requestStart: 1589529382253,
-					responseEnd: 1589529382404,
-					responseStart: 1589529382384,
-					rtt: 58,
-					sendBytesCount: 481,
-					socketReused: false,
-					throughputKbps: 0,
-					transportRttEstimate: 6
-				},
-			}
-			for (var uni_res_key in uni_res) {
-				var uni_res_value = uni_res[uni_res_key];
-				switch (uni_res_key) {
-					case "tempFilePath":
-						if (wx_res.filePath) {
-							uni.saveFile({
-								tempFilePath: wx_res.uni_res_value,
-								success: function (res) {
-									wx_res.filePath = res.savedFilePath;
-								}
-							});
-						} else {
-							wx_res.tempFilePath = uni_res_value;
-						}
-						break;
-					case "statusCode":
-						wx_res.statusCode = uni_res_value;
-						break;
-					default:
-						break;
-				}
-
-			};
-			if (wx_success) {
-				wx_success(wx_res);
-			}
-			if (wx_complete) {
-				wx_complete(wx_res);
-			}
-		};
-		uni_object.fail = function (uni_res) {
-			if (wx_fail) {
-				wx_fail(uni_res);
-			}
-			if (wx_complete) {
-				wx_complete(uni_res);
-			}
-		};
-		return uni.download(uni_object); // 最后输出快应用的数据对象，但是输出wx的格式
-	}
+	
 	// ////////////////////////////上传/////////////////////////////
 	// ///////////////////////////uploadFile///////////////////////
 	static uploadFile(wx_object) {
@@ -1439,26 +1347,7 @@ export default class wxx {
 	// }
 
 	////////////// 网络 code by zk ////////////
-	static request(wx_object) {
+	static request(wx_object) { return uni.request(wx_object) }
 
-		const uni_object = {
-			url: wx_object.url,
-			data: wx_object.data || "",
-			header: wx_object.header || "",
-			method: wx_object.method || "GET",
-			timeout: wx_object.timeout || "60000",
-			dataType: wx_object.dataType || "json",
-			responseType: wx_object.responseType ||"text",
-			sslVerify: wx_object.sslVerify || true,
-			withCredentials: wx_object.withCredentials || false,
-			firstIpv4: wx_object.firstIpv4 || false,
-			success: wx_object.success,
-			fail: wx_object.fail,
-			complete: wx_object.complete
-		}
-
-		wx_object = null
-
-		return uni.request(uni_object)
-	}
+	static downloadFile(object) {	return uni.downloadFile(object)	}
 }
