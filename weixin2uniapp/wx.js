@@ -845,9 +845,7 @@ export default class wxx {
 		return uni.getRecorderManager(object)
 	}
 	//////////////// Network ///////////////
-	static request(object) {
-		return uni.request(object);
-	}
+
 
 	/////////////////////////downloadFile////////////////
 	static downloadFile(wx_object) {
@@ -1439,4 +1437,28 @@ export default class wxx {
 	// static get cloud() {
 	// 	return new wx_cloud();
 	// }
+
+	////////////// 网络 code by zk ////////////
+	static request(wx_object) {
+
+		const uni_object = {
+			url: wx_object.url,
+			data: wx_object.data || "",
+			header: wx_object.header || "",
+			method: wx_object.method || "GET",
+			timeout: wx_object.timeout || "60000",
+			dataType: wx_object.dataType || "json",
+			responseType: wx_object.responseType ||"text",
+			sslVerify: wx_object.sslVerify || true,
+			withCredentials: wx_object.withCredentials || false,
+			firstIpv4: wx_object.firstIpv4 || false,
+			success: wx_object.success,
+			fail: wx_object.fail,
+			complete: wx_object.complete
+		}
+
+		wx_object = null
+
+		return uni.request(uni_object)
+	}
 }
