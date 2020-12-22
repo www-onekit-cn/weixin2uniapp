@@ -5,13 +5,13 @@ import CameraContext from "./api/CameraContext"
 import InnerAudioContext from "./api/InnerAudioContext"
 import LivePlayerContext from "./api/LivePlayerContext"
 import Worker from './api/Worker.js'
-// import wx_cloud from "./wx.cloud.js"
-// import COLOR from "../node_modules/oneutil/COLOR"
 import BackgroundAudioManager from './api/BackgroundAudioManager.js'
 import Animation from './api/Animation.js'
 import SocketTask from './api/SocketTask.js'
 import MapContext from './api/MapContext.js'
+
 export default class wxx {
+	
 	//////////////////////  基础  ///////////////////////////
 
 	static canIUse(schema) {
@@ -59,6 +59,10 @@ export default class wxx {
 		return uni.getSystemInfo()
 	}
 
+	static onAudioInterruptionEnd() {
+		return console.error("uni-app is not support onAudioInterruptionEnd")
+	}
+
 	//////////////////////  更新  ///////////////////////////
 
 	static updateWeChatApp() {
@@ -101,37 +105,84 @@ export default class wxx {
 	}
 
 	static onThemeChange(callback) {
+		/**  未测试  */
 		getApp().onekit_themeChangeFn = callback()
 	}
 
+	static onPageNotFound() {
+		return uni.onPageNotFound()
+	}
+
+	static onError() {
+		return uni.onError();
+	}
+
+	static onAudioInterruptionBegin() {
+		return console.error("uni-app is not supporrt onAudioInterruptionBegin")
+	}
+
+	static onAppShow() {
+		return uni.onAppShow()
+	}
+
+	static onAppHide() {
+		return uni.onAppHide()
+	}
+
+	static offUnhandledRejection(callback) {
+		const obj = {
+			errMsg: '当前平台暂不支持 onUnhandledRejection api'
+		}
+
+		callback(obj)
+	}
+
+	static offThemeChange(callback) {
+		/**   未测试   */
+		getApp().onekit_themeChangeFn = null
+		callback()
+	}
+
+	static offPageNotFound() {
+		return uni.offPageNotFound()
+	}
+
+	static offError() {
+		return uni.offError()
+	}
+
+	static offAudioInterruptionEnd() {
+		console.error('uni-app is not support offAudioInterruptionEnd')
+	}
+
+	static offAudioInterruptionBegin() {
+		return console.error("uni-app is not support offAudioInterruptionBegin")
+	}
+
+	static offAppShow() {
+		return uni.offAppShow()
+	}
+
+	static offAppHide() {
+		return uni.offAppHide()
+	}
+
 	/////////////////// animation //////////////////////////
+
 	static createAnimation(object) {
 		return uni.createAnimation(object);
 	}
+
 	static createAnimation(object) {
 		return new Animation(uni.createAnimation(object))
 	}
+
 	///////////////// basic ////////////////////////////////
 
 
-	static onAudioInterruptionEnd(callback) {
-		return console.log("暂不支持")
-	}
-	static onAudioInterruptionBegin(callback) {
-		return console.log("暂不支持")
-	}
-	static offUnhandledRejection(callback) {
-		return console.log("暂不支持")
-	}
-	static offThemeChange(callback) {
-		return console.log("暂不支持")
-	}
-	static offAudioInterruptionEnd(callback) {
-		return console.log("暂不支持")
-	}
-	static offAudioInterruptionBegin(callback) {
-		return console.log("暂不支持")
-	}
+
+
+
 	static offPageNotFound(callback) {
 		return uni.offPageNotFound(callback);
 	}
@@ -141,21 +192,15 @@ export default class wxx {
 	static offError(callback) {
 		return uni.offError(callback);
 	}
-	static onError(callback) {
-		return uni.onError(callback);
-	}
+
 	static offAppShow(callback) {
 		return uni.offAppShow(callback);
 	}
-	static onAppShow(callback) {
-		return uni.onAppShow(callback);
-	}
+
 	static offAppHide(callback) {
 		return uni.offAppHide(callback);
 	}
-	static onAppHide(callback) {
-		return uni.onAppHide(callback);
-	}
+
 	static setEnableDebug(object) {
 		return uni.setEnableDebug(object);
 	}
@@ -298,7 +343,7 @@ export default class wxx {
 				wx_token: wx_token,
 			},
 		})
-		uni_object.success = function(wx_res) {
+		uni_object.success = function (wx_res) {
 			var wx_res = {
 				errMsg: "setBackgroundFetchToken:ok"
 			};
@@ -321,7 +366,7 @@ export default class wxx {
 				console.log(res.data)
 			}
 		})
-		uni_object.success = function(wx_res) {
+		uni_object.success = function (wx_res) {
 			var wx_res = {
 				errMsg: "getBackgroundFetchToken:ok"
 			};
@@ -490,10 +535,10 @@ export default class wxx {
 		return uni.startDeviceMotionListening(object);
 	}
 	//
-	static getNetworkType = function(object) {
+	static getNetworkType = function (object) {
 		return uni.getNetworkType(object);
 	}
-	static _network = function(res) {
+	static _network = function (res) {
 		return uni._network(object);
 	}
 	static onNetworkStatusChange(object) {
@@ -503,7 +548,7 @@ export default class wxx {
 		return console.log("");
 	}
 	//
-	static makePhoneCall = function(object) {
+	static makePhoneCall = function (object) {
 		return uni.makePhoneCall(object);
 	}
 
@@ -565,11 +610,15 @@ export default class wxx {
 		return uni.closeBLEConnection(object);
 	}
 	//
-	static stopBluetoothDevicesDiscovery(object) { /* return uni.stopBluetoothDevicesDiscovery(object);*/ }
+	static stopBluetoothDevicesDiscovery(object) {
+		/* return uni.stopBluetoothDevicesDiscovery(object);*/
+	}
 	static startBluetoothDevicesDiscovery(object) {
 		return uni.startBluetoothDevicesDiscovery(object);
 	}
-	static openBluetoothAdapter(object) { /* return uni.openBluetoothAdapter(object); */ }
+	static openBluetoothAdapter(object) {
+		/* return uni.openBluetoothAdapter(object); */
+	}
 	static onBluetoothDeviceFound(object) {
 		return uni.onBluetoothDeviceFound(object);
 	}
@@ -825,7 +874,7 @@ export default class wxx {
 		if (wx_filePath) {
 			wx_res.filePath = wx_filePath;
 		}
-		uni_object.success = function(uni_res) {
+		uni_object.success = function (uni_res) {
 			var wx_res = {
 				profile: {
 					SSLconnectionEnd: 1589529382326,
@@ -861,7 +910,7 @@ export default class wxx {
 						if (wx_res.filePath) {
 							uni.saveFile({
 								tempFilePath: wx_res.uni_res_value,
-								success: function(res) {
+								success: function (res) {
 									wx_res.filePath = res.savedFilePath;
 								}
 							});
@@ -884,7 +933,7 @@ export default class wxx {
 				wx_complete(wx_res);
 			}
 		};
-		uni_object.fail = function(uni_res) {
+		uni_object.fail = function (uni_res) {
 			if (wx_fail) {
 				wx_fail(uni_res);
 			}
@@ -913,7 +962,7 @@ export default class wxx {
 		wx_object = null
 		//////////////////////
 		if (wx_timeout) {
-			setTimeout(function() {
+			setTimeout(function () {
 				alert("超时响应");
 			}, wx_timeout);
 		}
@@ -932,7 +981,7 @@ export default class wxx {
 		if (wx_formData) {
 			uni_object.formData = wx_formData
 		}
-		uni_object.success = function(uni_res) {
+		uni_object.success = function (uni_res) {
 			if (wx_success) {
 				wx_success(uni_res);
 			}
@@ -940,7 +989,7 @@ export default class wxx {
 				wx_complete(uni_res);
 			}
 		};
-		uni_object.fail = function(uni_res) {
+		uni_object.fail = function (uni_res) {
 			if (wx_fail) {
 				wx_fail(uni_res);
 			}
@@ -1013,7 +1062,7 @@ export default class wxx {
 		return uni.checkSession(object);
 	}
 
-	static login = function(object) {
+	static login = function (object) {
 		var that = this;
 		if (!object) {
 			return uni.login(object);
@@ -1021,7 +1070,7 @@ export default class wxx {
 		var object2 = {
 			//   scopes: "auth_user"
 		};
-		object2.success = function(res) {
+		object2.success = function (res) {
 			uni._sessoion = new Date().getTime();
 			getApp().onejit.jscode = res.authCode;
 			var result = {
@@ -1034,7 +1083,7 @@ export default class wxx {
 				object.complete(complete);
 			}
 		}
-		object2.fail = function(res) {
+		object2.fail = function (res) {
 			if (object.fail) {
 				object.fail(res);
 			}
@@ -1069,10 +1118,10 @@ export default class wxx {
 
 		});
 	}
-	static getOpenData = function(object) {
+	static getOpenData = function (object) {
 		return uni.getOpenData(object);
 	}
-	static getPhoneNumber = function(object) {
+	static getPhoneNumber = function (object) {
 		return uni.getPhoneNumber(object);
 	}
 	static navigateToMiniProgram(object) {
@@ -1109,7 +1158,7 @@ export default class wxx {
 	static openCard(object) {
 		return uni.openCard(object);
 	}
-	static addCard = function(object) {
+	static addCard = function (object) {
 		return uni.addCard(object);
 	}
 	static chooseInvoiceTitle(object) {
