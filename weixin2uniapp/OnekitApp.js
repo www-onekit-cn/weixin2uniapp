@@ -1,5 +1,5 @@
 // import Vue from 'vue'
-export default function(wx_object) {
+export default function (wx_object) {
 	const uniapp_object = {
 		onLaunch(uni_launchOpions) {
 			let wx_launchOpions = {}
@@ -13,6 +13,7 @@ export default function(wx_object) {
 			this.onekit_launchOpions = wx_launchOpions
 			if (wx_object.onLaunch) {
 				wx_object.onLaunch.call(this, wx_launchOpions)
+				// wx_object.onLaunch(wx_launchOpions)
 			}
 		},
 		onShow(uni_showOpions) {
@@ -21,6 +22,13 @@ export default function(wx_object) {
 			this.onekit_showOptions = wx_showOpions
 			if (wx_object.onShow) {
 				wx_object.onShow.call(this, uni_showOpions)
+			}
+		},
+		onUnhandledRejection(uni_rejectionFn) {
+			let wx_rejectionFn = uni_rejectionFn()
+			this.onekit_rejectionFn = wx_rejectionFn()
+			if (wx_object.onUnhandledRejection) {
+				wx_object.onUnhandledRejection(wx_rejectionFn())
 			}
 		}
 	}
