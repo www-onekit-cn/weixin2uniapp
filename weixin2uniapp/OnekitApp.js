@@ -24,13 +24,14 @@ export default function (wx_object) {
 				wx_object.onShow.call(this, uni_showOpions)
 			}
 		},
-		onUnhandledRejection(uni_rejectionFn) {
-			let wx_rejectionFn = uni_rejectionFn()
-			this.onekit_rejectionFn = wx_rejectionFn()
-			if (wx_object.onUnhandledRejection) {
-				wx_object.onUnhandledRejection(wx_rejectionFn())
-			}
-		}
+		// onUnhandledRejection(uni_rejectionFn) {
+		// 	/**     未生效       */
+		// 	let wx_rejectionFn = uni_rejectionFn()
+		// 	this.onekit_rejectionFn = wx_rejectionFn()
+		// 	if (wx_object.onUnhandledRejection) {
+		// 		wx_object.onUnhandledRejection(wx_rejectionFn())
+		// 	}
+		// }
 	}
 	return uniapp_object
 }
