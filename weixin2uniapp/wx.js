@@ -1369,11 +1369,9 @@ export default class wxx {
 	// }
 
 	////////////// 网络 code by zk ////////////
-	static request(object) {
-		return uni.request(object)
-	}
+	static request(object) { return uni.request(object) }
 
-	static downloadFile(object) {
-		return uni.downloadFile(object)
-	}
+	static downloadFile(object) { return uni.downloadFile(object) }
+
+	static uploadFile(object)  { return uni.uploadFile(object) }
 }
