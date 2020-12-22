@@ -11,7 +11,7 @@ import SocketTask from './api/SocketTask.js'
 import MapContext from './api/MapContext.js'
 
 export default class wxx {
-	
+
 	//////////////////////  基础  ///////////////////////////
 
 	static canIUse(schema) {
@@ -114,15 +114,15 @@ export default class wxx {
 	}
 
 	static onError() {
-		return uni.onError();
+		return uni.onError()
 	}
 
 	static onAudioInterruptionBegin() {
 		return console.error("uni-app is not supporrt onAudioInterruptionBegin")
 	}
 
-	static onAppShow() {
-		return uni.onAppShow()
+	static onAppShow(callback) {
+		return uni.onAppShow(callback)
 	}
 
 	static onAppHide() {
@@ -166,6 +166,9 @@ export default class wxx {
 	static offAppHide() {
 		return uni.offAppHide()
 	}
+
+	//////////////////////  路由  /////////////////////
+
 
 	/////////////////// animation //////////////////////////
 
@@ -1440,7 +1443,6 @@ export default class wxx {
 
 	////////////// 网络 code by zk ////////////
 	static request(wx_object) {
-
 		const uni_object = {
 			url: wx_object.url,
 			data: wx_object.data || "",
@@ -1448,7 +1450,7 @@ export default class wxx {
 			method: wx_object.method || "GET",
 			timeout: wx_object.timeout || "60000",
 			dataType: wx_object.dataType || "json",
-			responseType: wx_object.responseType ||"text",
+			responseType: wx_object.responseType || "text",
 			sslVerify: wx_object.sslVerify || true,
 			withCredentials: wx_object.withCredentials || false,
 			firstIpv4: wx_object.firstIpv4 || false,
@@ -1456,9 +1458,7 @@ export default class wxx {
 			fail: wx_object.fail,
 			complete: wx_object.complete
 		}
-
 		wx_object = null
-
 		return uni.request(uni_object)
 	}
 }
