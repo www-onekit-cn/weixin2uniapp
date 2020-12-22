@@ -1,34 +1,39 @@
 <template>
-	<canvas :canvas-id="canvasId" :disable-scroll="disableScroll" :width="width" :height="height" @touchstart="touch_start"></canvas>
+		<div
+		:class="['onekit-canvas',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
+		>
+		<slot></slot>
+		</div>
 </template>
 
 <script>
-	export default {
-		props: {
-			canvasId: {
-				type: String,
-				value: '',
-			},
-			width: {
-				type: String,
-				value: '',
-			},
-			height: {
-				type: String,
-				value: '',
-			},
-			disableScroll: {
-				type: Boolean,
-				value: false
-			},
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-canvas",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+		"type":{
+			type:String,
+			defaul:""
 		},
-		methods:{
-			touch_start(e) {
-				console.log("bind start",e)
-				this.$emit("touchstart",e.details)
-			}
-		}
+		"canvas-id":{
+			type:String,
+			defaul:""
+		},
+		"disable-scroll	":{
+			type:Boolean,
+			defaul:false
+		},
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>

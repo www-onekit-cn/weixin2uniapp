@@ -1,42 +1,27 @@
 <template>
-	<cover-image
-	:class="['onekit-cover-image',onekitClass]"
-	:style="onekitStyle"
-	:id="onekitId"
-	:src="src" @load="coverImage_load" @error="coverImage_error">
+		<div
+		:class="['onekit-cover-image',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
+		>
 		<slot></slot>
-	</cover-image>
+		</div>
 </template>
 
 <script>
-	export default {
-		props: {
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			src: {
-				type: String,
-				default: ''
-			}
-		},
-		methods: {
-			coverImage_load: function(e) {
-				this.$emit('load', {})
-			},
-			coverImage_error: function(e) {
-				this.$emit('error', {})
-			}
-		}
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-cover-image",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>

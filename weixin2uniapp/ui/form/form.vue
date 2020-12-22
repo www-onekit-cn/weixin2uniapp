@@ -1,53 +1,28 @@
 <template>
-	<form
+		<div
 		:class="['onekit-form',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
-		:report-submit="reportSubmit"
-		:report-submit-timeout="reportSubmitTimeout"
-		@submit="form_submit"
-		@reset="form_reset"
-	>
-	<slot />
-	</form>
+		>
+		<slot></slot>
+		</div>
 </template>
 
 <script>
-	export default {
-		behaviors: ['uni://form-field'],
-		props:{
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitId:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			reportSubmit:{
-				type:Boolean,
-				default: false
-			},
-			reportSubmitTimeout:{
-				type:Number,
-				default: 0
-			}
-		},
-		methods:{
-			form_submit(e){
-				this.$emit('submit',e)
-			},
-			form_reset(e){
-				this.$emit('reset',e)
-			}
-		}
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-form",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>
-
 </style>

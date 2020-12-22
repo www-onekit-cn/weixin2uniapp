@@ -1,40 +1,50 @@
 <template>
-	<rich-text
-	:class="['onekit-view',onekitClass]"
-	:style="onekitStyle"
-	:id="onekitId"
-	:nodes="nodes"
-	:space="space">
-		<slot></slot>
-	</rich-text>
+  <div
+       :class="['onekit-rich-text',onekitClass]"
+       :style="onekitStyle"
+       :id="onekitId"
+       v-html="html">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-	export default {
-		props: {
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			nodes: {
-				type:String||Array,
-				default: []
-			},
-			space: {
-				type: String,
-				default: ''
-			}
-		},
-		methods: {}
-	}
+  import HTML from '../../../node_modules/oneutil/HTML'
+  import STRING from '../../../node_modules/oneutil/STRING'
+  import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+  export default {
+    name: "onekit-rich-text",
+    mixins: [weixin_behavior, onekit_behavior],
+    computed: {
+      html() {
+        const html = STRING.replace(typeof (this.nodes) == "string" ? this.nodes : HTML.nodes2html(this.nodes),
+          ' ', `&${this.space};`)
+        return html
+      }
+    },
+    props: {
+      'nodes': {
+        type: [String, Array],
+        default: () => {
+          return []
+        },
+        required: false
+      },
+      'space': {
+        type: String,
+        default: '',
+        required: false,
+        validator(value) {
+          return value == '' || value == 'ensp' || value == 'emsp' || value == 'nbsp'
+        }
+      }
+
+    },
+    methods: {
+
+    }
+  }
 </script>
 
 <style>

@@ -1,35 +1,27 @@
 <template>
-	<movable-area
-	:class="['onekit-movable-area',onekitClass]"
-	:style="onekitStyle"
-	:id="onekitId"
-	:scale-area="scaleArea">
+		<div
+		:class="['onekit-movable-area',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
+		>
 		<slot></slot>
-	</movable-area>
+		</div>
 </template>
 
 <script>
-	export default {
-		props: {
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			scaleArea: {
-				type: Boolean,
-				default: false
-			}
-		},
-		methods:{}
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-movable-area",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>

@@ -1,39 +1,55 @@
 <template>
-	<swiper>
-		<swiper-item
-		:class="['onekit-swiper-item',onekitClass]"
-		:style="onekitStyle"
-		:id="onekitId"
-		:item-id="itemId"
-		>
-		<slot></slot>
-		</swiper-item>
-	</swiper>
+  <div
+       :class="['onekit-swiper-item',onekitClass]"
+       :style="[onekitStyle,itemStyle,{width: `${$parent.width}px`}]"
+       :id="onekitId">
+    <slot></slot>
+  </div>
 </template>
 
+
 <script>
-	export default{
-		props:{
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			itemId:{
-				type:String,
-				default:''
-			},
-			onekitId:{
-				type:String,
-				default:''
-			},
-		},
-		methods:{}
-	}
+  import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+  export default {
+    name: "onekit-swiper-item",
+    mixins: [weixin_behavior, onekit_behavior],
+    data() {
+      return {
+        itemStyle: ''
+      }
+    },
+    props: {
+      'item-id': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'skip-hidden-item-layout': {
+        type: Boolean,
+        default: false,
+        required: false
+      },
+      'color': {
+        type: String,
+        default: 'pink',
+        required: false
+      }
+    },
+    async mounted() {
+
+    },
+    methods: {
+
+    }
+  }
 </script>
 
-<style>
+<style scoped>
+  .onekit-swiper-item {
+    height: 100px;
+    /* float: left; */
+    display: inline-block;
+    background: pink;
+  }
 </style>

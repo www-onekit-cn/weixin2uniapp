@@ -1,38 +1,27 @@
 <template>
-	<radio-group
+		<div
 		:class="['onekit-radio-group',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
-		@change="radio_group_change"
-	
-	>
-		<slot/>
-	</radio-group>
+		>
+		<slot></slot>
+		</div>
 </template>
 
 <script>
-	export default{
-		behaviors: ['uni://form-field'],
-		props:{
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-		},
-		methods:{
-			radio_group_change(e){
-			        this.$emit('change',e)
-			       }, 
-		},
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-radio-group",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>

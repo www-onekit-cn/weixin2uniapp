@@ -1,150 +1,60 @@
 <template>
-	<button
-		:class="['onekit-button',onekitClass]"
-		:style="onekitStyle"
-		:id="onekitId"
-		:size="size"
-		:type="type"
-		:plain="plain"
-		:disabled="disabled"
-		:loading="loading"
-		:form-type="formType"
-		:open-type="openType"
-		:hover-class="hoverClass"
-		:hover-stop-propagation="hoverStopPropagation"	
-		:hover-start-time="hoverStartTime"	
-		:hover-stay-time="hoverStayTime"	
-		:lang="lang"
-		:session-from="sessionFrom"
-		:send-message-title="sendMessageTitle"
-		:send-message-path="sendMessagePath"
-		:send-message-img="sendMessageImg"
-		:app-parameter="appParameter"
-		:show-message-card="showMessageCard"
-		
-		@getphonenumber="button_getphonenumber"
-		@getuserinfo="button_getuserinfo"	
-		@opensetting="button_opensetting"	
-		@launchapp="button_launchapp"
-		
-	>
-		<slot/>
-	</button>
+  <button
+          class="onekit-button"
+          :class="[typeClass, disabled ? 'weui_btn_disabled' : '', mini ? 'weui_btn_mini' : '']"
+          @click="button_click($event)">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
-	export default {
-		
-		props: {
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			size:{
-				type:String,
-				default: "default"
-			},
-			type:{
-				type:String,
-				default: "default"
-			},
-			plain:{
-				type: Boolean,
-				default: false
-			},
-			disabled:{
-				type:Boolean,
-				default:false
-			},
-			loading:{
-				type: Boolean,
-				default: false
-			},
-			formType:{
-				type:String,
-				default: ""
-			},
-			openType:{
-				type:String,
-				default: ""
-			},
-			hoverClass:{
-				type:String,
-				default: "button-hover"
-			},
-			hoverStopPropagation:{
-				type: Boolean,
-				default: false
-			},
-			hoverStartTime:{
-				type:Number,
-				default: 20
-			},
-			hoverStayTime:{
-				type:Number,
-				default: 70
-			},
-			lang:{
-				type:String,
-				default: "en"
-			},
-			sessionFrom:{
-				type:String,
-				default: ""
-			},
-			sendMessageTitle:{
-				type:String,
-				default: "当前标题"
-			},
-			sendMessagePath:{
-				type:String,
-				default: "当前分享路径"
-			},
-			sendMessageImg:{
-				type:String,
-				default: "截图"
-			},
-			appParameter:{
-				type:String,
-				default: ""
-			},
-			showMessageCard:{
-				type:Boolean,
-				default: false
-			},
-		  },
-		  methods:{
-		  	button_getphonenumber(e){
-		  	        console.log("button_getphonenumber",e)
-		  	        this.$emit('getphonenumber',e)
-		  	       }, 
-			button_getuserinfo(e){
-			        console.log("button_getuserinfo",e)
-			        this.$emit('getuserinfo',e)
-			       }, 
-			button_opensetting(e){
-			        console.log("button_opensetting",e)
-			        this.$emit('opensetting',e)
-			       }, 
-			button_launchapp(e){
-			        console.log("button_launchapp",e)
-			        this.$emit('launchapp',e)
-			       }, 	 
-			   
-		  },
-	
-	}
-	
-	
+  import weixin_behavior from '../../behaviors/weixin_behavior'
+  import onekit_behavior from '../../behaviors/onekit_behavior'
+  export default {
+    mixins: [weixin_behavior, onekit_behavior],
+    name: 'onekit-button',
+    props: {
+      type: {
+        type: String,
+        default: 'primary',
+        required: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+        required: false
+      },
+      mini: {
+        type: Boolean,
+        default: false,
+        required: false
+      },
+      plain: {
+        type: Boolean,
+        default: false,
+        required: false
+      }
+    },
+    methods: {
+      clickHandler($event) {
+        if (!this.disabled) {
+          this.$emit('click', $event)
+        }
+      }
+    },
+    computed: {
+      typeClass() {
+        return `weui_btn${this.plain ? '_plain' : ''}_${this.type}`;
+      },
+      disabledClass() {
+        if (this.plain && this.disabled) {
+          return 'weui-btn_plain-disabled'
+        } else if (this.disabled) {
+          return 'weui-btn_disabled'
+        } else {
+          return ''
+        }
+      }
+    }
+  }
 </script>
-
-<style>
-</style>

@@ -1,77 +1,46 @@
 <template>
-	<view>
-		<camera
-			:class="['onekit-camera',onekitClass]"
-			:style="onekitStyle"
-			:id="onekitId"
-			:mode="mode"
-			:resolution="resolution"
-			:device-position="devicePosition"
-			:flash="flash"
-			:frame-size="frameSize"
-			@stop="camera_stop"
-			@error="camera_error"
-			@initdone="camera_initdone"
-			@scancode="camera_scancode"
+		<div
+		:class="['onekit-camera',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
 		>
-		<slot/>
-		</camera>
-	</view>
+		<slot></slot>
+		</div>
 </template>
-	
+
 <script>
-	export default{
-		props: {
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitStyle:{
-				type:String,
-				defaul:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-			mode:{
-				type:String,
-				default: ""
-			},
-			resolution:{
-				type:String,
-				default: "scaleToFill"
-			},
-			devicePosition:{
-				type:Boolean,
-				default: false
-			},
-			flash:{
-				type:Boolean,
-				default: false
-			},
-			frameSize:{
-				type:Boolean,
-				default: false
-			},
-			
-		  },
-		  methods:{
-		  	camera_stop(e){
-		  	        this.$emit('stop',e)
-		  	       }, 
-			camera_error(e){
-				    this.$emit('error',e)
-			}, 
-						  
-			camera_initdone(e){
-					this.$emit('camera_initdone',e)
-			}, 
-			camera_scancode(e){
-					this.$emit('scancode',e)
-			},
-		  },
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-camera",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+		"mode":{
+			type:String,
+			defaul:"normal"
+		},
+		"resolution	":{
+			type:String,
+			defaul:"medium"
+		},
+		"device-position":{
+			type:String,
+			defaul:"back"
+		},
+		"flash":{
+			type:String,
+			defaul:"auto"
+		},
+		"frame-size":{
+			type:String,
+			defaul:"medium"
+		},
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>

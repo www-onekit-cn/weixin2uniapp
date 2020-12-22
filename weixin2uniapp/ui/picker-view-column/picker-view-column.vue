@@ -1,28 +1,27 @@
 <template>
-	<picker-view-column
+		<div
 		:class="['onekit-picker-view-column',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
-	>
-		<slot/>
-	</picker-view-column>
+		>
+		<slot></slot>
+		</div>
 </template>
 
 <script>
-	export default{
-		behaviors: ['uni://form-field'],
-		props:{
-			onekitClass:{
-				type:String,
-				default:''
-			},
-			onekitId:{
-				type:String,
-				defaul:''
-			},
-		},
-		methods:{},
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default{
+    name: "onekit-picker-view-column",
+    mixins:[weixin_behavior, onekit_behavior],
+	props:{
+	
+		
+	},
+	methods:{
+		
 	}
+}
 </script>
 
 <style>
