@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 export default function(wx_object) {
 	const uniapp_object = {
 		onLaunch(uni_launchOpions) {
