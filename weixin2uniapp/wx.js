@@ -398,16 +398,16 @@ export default class wxx {
 
 	/////////////////// 数据缓存 //////////////////////////
 
-	static setStorageSync(key,data) {
-		return uni.setStorageSync(key,data)
+	static setStorageSync(string, any) {
+		return uni.setStorageSync(string, any)
 	}
 
 	static setStorage(object) {
 		return uni.setStorage(object)
 	}
 
-	static removeStorageSync(key) {
-		return uni.setStorage(key)
+	static removeStorageSync(string) {
+		return uni.setStorage(string)
 	}
 
 	static removeStorage(object) {
@@ -458,8 +458,8 @@ export default class wxx {
 	/////////////////// 媒体 //////////////////////////
 
 	/////// 地图 /////
-	static createMapContext(sting,obejct) {
-		return uni.createMapContext(sting,obejct)
+	static createMapContext(sting, obejct) {
+		return uni.createMapContext(sting, obejct)
 	}
 
 	/////// 图片 /////
@@ -467,11 +467,11 @@ export default class wxx {
 		return uni.saveImageToPhotosAlbum(object)
 	}
 
-	static previewMedia(object,showmenu) {
+	static previewMedia(object, showmenu) {
 		return console.warn("暂不支持")
 	}
 
-	static previewImage(object,showmenu) {
+	static previewImage(object, showmenu) {
 		return uni.previewImage(object)
 	}
 
@@ -504,8 +504,8 @@ export default class wxx {
 		return uni.getVideoInfo(object)
 	}
 
-	static createVideoContext(id,THIS) {
-		return uni.createVideoContext(id,THIS)
+	static createVideoContext(id, THIS) {
+		return uni.createVideoContext(id, THIS)
 	}
 
 	static compressVideo(object) {
@@ -553,7 +553,7 @@ export default class wxx {
 		return uni.createInnerAudioContext()
 	}
 
-	static createMediaAudioPlayer(id,THIS) {
+	static createMediaAudioPlayer(id, THIS) {
 		return console.warn("暂不支持")
 	}
 
@@ -599,8 +599,8 @@ export default class wxx {
 		return uni.createLivePusherContext()
 	}
 
-	static createLivePlayerContext(id,THIS) {
-		return uni.createLivePlayerContext(id,THIS)
+	static createLivePlayerContext(id, THIS) {
+		return uni.createLivePlayerContext(id, THIS)
 	}
 
 	/////// 录音 /////
@@ -674,7 +674,7 @@ export default class wxx {
 	}
 
 	/////// 画面录制器 /////
-	static createMediaRecorder(canvas,options) {
+	static createMediaRecorder(canvas, options) {
 		return console.warn("暂不支持")
 	}
 
