@@ -92,7 +92,7 @@ export default function(PAGE_JSON, object) {
     },
     components: {}
 
-  };
+  }
   if (object) {
     if (object.data) {
       result.data = () => {
@@ -100,7 +100,7 @@ export default function(PAGE_JSON, object) {
       };
     }
     for (let key of Object.keys(object)) {
-      let obj = object[key];
+      let obj = object[key]
       switch (key) {
         case "data":
           break;
