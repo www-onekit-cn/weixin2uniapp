@@ -12,6 +12,8 @@
 				
 			}
 		},
+		onload: res => {
+		},
 		methods: {
 			
 		}

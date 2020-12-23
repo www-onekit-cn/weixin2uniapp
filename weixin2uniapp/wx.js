@@ -9,6 +9,7 @@ import BackgroundAudioManager from './api/BackgroundAudioManager.js'
 import Animation from './api/Animation.js'
 import SocketTask from './api/SocketTask.js'
 import MapContext from './api/MapContext.js'
+import wx_cloud from './serverless/wx_cloud' 
 
 export default class wx {
 
@@ -1855,5 +1856,7 @@ export default class wx {
 	// static get cloud() {
 	// 	return new wx_cloud();
 	// }
-
+ static get cloud(){
+	 return wx_cloud
+ }
 }
