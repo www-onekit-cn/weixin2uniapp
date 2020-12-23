@@ -458,8 +458,8 @@ export default class wxx {
 	/////////////////// 媒体 //////////////////////////
 
 	/////// 地图 /////
-	static createMapContext(mapId,this) {
-		return uni.createMapContext(mapId,this)
+	static createMapContext(sting,obejct) {
+		return uni.createMapContext(sting,obejct)
 	}
 
 	/////// 图片 /////
@@ -504,8 +504,8 @@ export default class wxx {
 		return uni.getVideoInfo(object)
 	}
 
-	static createVideoContext(id,this) {
-		return uni.createVideoContext(id,this)
+	static createVideoContext(id,THIS) {
+		return uni.createVideoContext(id,THIS)
 	}
 
 	static compressVideo(object) {
@@ -553,7 +553,7 @@ export default class wxx {
 		return uni.createInnerAudioContext()
 	}
 
-	static createMediaAudioPlayer(id,this) {
+	static createMediaAudioPlayer(id,THIS) {
 		return console.warn("暂不支持")
 	}
 
@@ -566,7 +566,139 @@ export default class wxx {
 		return console.warn("暂不支持")
 	}
 
+	static playBackgroundAudio(object) {
+		return console.warn("暂不支持")
+	}
 
+	static pauseBackgroundAudio(object) {
+		return console.warn("暂不支持")
+	}
+
+	static onBackgroundAudioStop(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static onBackgroundAudioPlay(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static onBackgroundAudioPause(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static getBackgroundAudioPlayerState(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static getBackgroundAudioManager() {
+		return uni.getBackgroundAudioManager()
+	}
+
+	/////// 实时音视频 /////
+	static createLivePusherContext() {
+		return uni.createLivePusherContext()
+	}
+
+	static createLivePlayerContext(id,THIS) {
+		return uni.createLivePlayerContext(id,THIS)
+	}
+
+	/////// 录音 /////
+	static stopRecord(object) {
+		return console.warn("暂不支持")
+	}
+
+	static startRecord(object) {
+		return console.warn("暂不支持")
+	}
+
+	static getRecorderManager() {
+		return uni.getRecorderManager()
+	}
+
+	/////// 相机 /////
+	static createCameraContext() {
+		return uni.createCameraContext()
+	}
+
+	/////// 富文本 /////
+
+	/////// 音视频合成 /////
+	static createMediaContainer() {
+		return uni.createMediaContainer()
+	}
+
+	/////// 实时语音 /////
+	static updateVoIPChatMuteConfig(object) {
+		return console.warn("暂不支持")
+	}
+
+	static subscribeVoIPVideoMembers(object) {
+		return console.warn("暂不支持")
+	}
+
+	static onVoIPVideoMembersChanged(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static onVoIPChatSpeakersChanged(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static onVoIPChatMembersChanged(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static onVoIPChatInterrupted(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static offVoIPVideoMembersChanged(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static offVoIPChatMembersChanged(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static offVoIPChatInterrupted(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static joinVoIPChat(object) {
+		return console.warn("暂不支持")
+	}
+
+	static exitVoIPChat(object) {
+		return console.warn("暂不支持")
+	}
+
+	/////// 画面录制器 /////
+	static createMediaRecorder(canvas,options) {
+		return console.warn("暂不支持")
+	}
+
+	/////// 视频解码器 /////
+	static createVideoDecoder() {
+		return console.warn("暂不支持")
+	}
+
+	/////////////////// 位置 //////////////////////////
+	static stopLocationUpdate(object) {
+		return console.warn("暂不支持")
+	}
+
+	static startLocationUpdateBackground(object) {
+		return console.warn("暂不支持")
+	}
+
+	static startLocationUpdate(object) {
+		return console.warn("暂不支持")
+	}
+
+	static openLocation(object) {
+		return uni.openLocation(object)
+	}
 
 	/////////////////// animation //////////////////////////
 

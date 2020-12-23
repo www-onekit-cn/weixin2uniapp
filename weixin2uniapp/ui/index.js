@@ -25,7 +25,7 @@ import navigation_bar from './navigation-bar'
 import navigator from './navigator'
 import official_account from './official-account'
 import open_data from './open-data'
-import page from './page'
+// import page from './page'
 import page_meta from './page-meta'
 import picker from './picker'
 import picker_view from './picker-view'
@@ -85,7 +85,7 @@ export default {
         Vue.use(rich_text)
         Vue.use(scroll_view)
         Vue.use(slider)
-        Vue.use(page)
+        //Vue.use(page)
         Vue.use(page_meta)
         Vue.use(picker)
         Vue.use(picker_view)
