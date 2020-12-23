@@ -1,10 +1,10 @@
 <template>
-  <div
+  <navigation-bar
        :class="['onekit-navigation-bar',onekitClass]"
        :style="onekitStyle"
        :id="onekitId">
     <slot></slot>
-  </div>
+  </navigation-bar>
 </template>
 
 <script>

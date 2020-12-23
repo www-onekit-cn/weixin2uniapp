@@ -1,10 +1,10 @@
 <template>
-  <div
+  <checkbox-group
        :class="['onekit-checkbox-group',onekitClass]"
        :style="onekitStyle"
        :id="onekitId">
     <slot></slot>
-  </div>
+  </checkbox-group>
 </template>
 
 <script>

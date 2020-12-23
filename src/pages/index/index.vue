@@ -1,11 +1,12 @@
 <template>
 	<view class="content">
-		<onekit-image onekit-class="logo" src="/static/logo.png"></onekit-image>
+		<onekit-view @tap="view_tap">hhh</onekit-view>
 	</view>
 </template>
 
 <script>
-	export default {
+	import OnekitPage from '../weixin2uniapp/OnekitPage'
+	export default OnekitPage({
 		data() {
 			return {
 			}
@@ -14,9 +15,11 @@
 
 		},
 		methods: {
-
+			view_tap(){
+				console.log('xxxx')
+			}
 		}
-	}
+	})
 </script>
 
 <style>

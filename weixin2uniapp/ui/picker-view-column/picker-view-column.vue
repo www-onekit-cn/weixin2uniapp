@@ -1,17 +1,17 @@
 <template>
-		<div
+		<picker-view-column
 		:class="['onekit-picker-view-column',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</picker-view-column>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-picker-view-column",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

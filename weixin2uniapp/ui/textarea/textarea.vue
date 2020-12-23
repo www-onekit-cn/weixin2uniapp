@@ -1,17 +1,17 @@
 <template>
-		<div
+		<textarea
 		:class="['onekit-textarea',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</textarea>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-textarea",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

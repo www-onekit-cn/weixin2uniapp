@@ -1,17 +1,17 @@
 <template>
-		<div
+		<editor
 		:class="['onekit-editor',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</editor>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-editor",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

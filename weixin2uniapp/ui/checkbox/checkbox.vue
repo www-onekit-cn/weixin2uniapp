@@ -1,5 +1,5 @@
 <template>
-  <label
+  <checkbox
          :class="['onekit-checkbox',onekitClass,]"
          :style="{onekitStyle,color:'red'}"
          :id="onekitId"
@@ -15,7 +15,7 @@
            v-bind="$attrs">
 
     <slot></slot>
-  </label>
+  </checkbox>
 </template>
 
 <script>

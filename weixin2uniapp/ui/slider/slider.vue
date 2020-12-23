@@ -1,10 +1,10 @@
 <template>
-  <div
+  <slider
        :class="['onekit-slider',onekitClass]"
        :style="onekitStyle"
        :id="onekitId">
     <slot></slot>
-  </div>
+  </slider>
 </template>
 
 <script>

@@ -15,4 +15,5 @@
 
 <style>
 	/*每个页面公共css */
+	@import '../weixin2uniapp/onekit.css';
 </style>
