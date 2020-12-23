@@ -418,6 +418,156 @@ export default class wxx {
 		return uni.getStorageSync(key)
 	}
 
+	static getStorageInfoSync() {
+		return uni.getStorageInfoSync()
+	}
+
+	static getStorageInfo(object) {
+		return uni.getStorageInfo(object)
+	}
+
+	static getStorage(object) {
+		return uni.getStorage(object)
+	}
+
+	static clearStorageSync() {
+		return uni.clearStorageSync()
+	}
+
+	static clearStorage(object) {
+		return uni.clearStorage(object)
+	}
+
+	/////// 周期性更新 /////
+	static setBackgroundFetchToken(object) {
+		return console.warn("暂不支持")
+	}
+
+	static onBackgroundFetchData(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static getBackgroundFetchToken(object) {
+		return console.warn("暂不支持")
+	}
+
+	static getBackgroundFetchData(object) {
+		return console.warn("暂不支持")
+	}
+
+	/////////////////// 媒体 //////////////////////////
+
+	/////// 地图 /////
+	static createMapContext(mapId,this) {
+		return uni.createMapContext(mapId,this)
+	}
+
+	/////// 图片 /////
+	static saveImageToPhotosAlbum(object) {
+		return uni.saveImageToPhotosAlbum(object)
+	}
+
+	static previewMedia(object,showmenu) {
+		return console.warn("暂不支持")
+	}
+
+	static previewImage(object,showmenu) {
+		return uni.previewImage(object)
+	}
+
+	static getImageInfo(object) {
+		return uni.getImageInfo(object)
+	}
+
+	static compressImage(object) {
+		return uni.compressImage(object)
+	}
+
+	static chooseMessageFile(object) {
+		return console.warn("暂不支持")
+	}
+
+	static chooseImage(object) {
+		return uni.chooseImage(object)
+	}
+
+	/////// 视频 /////
+	static saveVideoToPhotosAlbum(object) {
+		return uni.saveVideoToPhotosAlbum(object)
+	}
+
+	static openVideoEditor(object) {
+		return uni.saveVideoToPhotosAlbum(object)
+	}
+
+	static getVideoInfo(object) {
+		return uni.getVideoInfo(object)
+	}
+
+	static createVideoContext(id,this) {
+		return uni.createVideoContext(id,this)
+	}
+
+	static compressVideo(object) {
+		return uni.compressVideo(object)
+	}
+
+	static chooseVideo(object) {
+		return uni.chooseVideo(object)
+	}
+
+	static chooseMedia(object) {
+		return uni.chooseMedia(object)
+	}
+
+	/////// 音频 /////
+	static stopVoice(object) {
+		return console.warn("暂不支持")
+	}
+
+	static setInnerAudioOption(object) {
+		return console.warn("暂不支持")
+	}
+
+	static playVoice(object) {
+		return console.warn("暂不支持")
+	}
+
+	static pauseVoice(object) {
+		return console.warn("暂不支持")
+	}
+
+	static getAvailableAudioSources(object) {
+		return console.warn("暂不支持")
+	}
+
+	static createMediaAudioPlayer(object) {
+		return console.warn("暂不支持")
+	}
+
+	static createMediaAudioPlayer() {
+		return console.warn("暂不支持")
+	}
+
+	static createInnerAudioContext() {
+		return uni.createInnerAudioContext()
+	}
+
+	static createMediaAudioPlayer(id,this) {
+		return console.warn("暂不支持")
+	}
+
+	/////// 背景音频 /////
+	static stopBackgroundAudio(object) {
+		return console.warn("暂不支持")
+	}
+
+	static seekBackgroundAudio(object) {
+		return console.warn("暂不支持")
+	}
+
+
+
 	/////////////////// animation //////////////////////////
 
 	static createAnimation(object) {
