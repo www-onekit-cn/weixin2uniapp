@@ -10,7 +10,7 @@ import Animation from './api/Animation.js'
 import SocketTask from './api/SocketTask.js'
 import MapContext from './api/MapContext.js'
 
-export default class wxx {
+export default class wx {
 
 	//////////////////////  基础  ///////////////////////////
 
