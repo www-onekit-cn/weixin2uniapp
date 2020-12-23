@@ -1,19 +1,19 @@
 <template>
-		<div
+		<camera
 		:class="['onekit-camera',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</camera>
 </template>
 
 <script>
-import weixin_behavior from "../../behaviors/weixin_behavior"
-import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+  import weixin_behavior from "../../behaviors/weixin_behavior"
+  import onekit_behavior from "../../behaviors/onekit_behavior"
+  export default {
     name: "onekit-camera",
-    mixins:[weixin_behavior, onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
 	props:{
 		"mode":{
 			type:String,

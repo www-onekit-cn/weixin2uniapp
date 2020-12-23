@@ -106,7 +106,7 @@ export default class wxx {
 
 	static onThemeChange(callback) {
 		/**  未测试  */
-		getApp().onekit_themeChangeFn = callback()
+		getApp().onekit_themeChangeFn = callback
 	}
 
 	static onPageNotFound() {
@@ -137,10 +137,9 @@ export default class wxx {
 		callback(obj)
 	}
 
-	static offThemeChange(callback) {
+	static offThemeChange() {
 		/**   未测试   */
 		getApp().onekit_themeChangeFn = null
-		callback()
 	}
 
 	static offPageNotFound(callback) {

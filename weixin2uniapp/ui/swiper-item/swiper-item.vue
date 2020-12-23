@@ -1,10 +1,10 @@
 <template>
-  <div
+  <swiper-item
        :class="['onekit-swiper-item',onekitClass]"
        :style="[onekitStyle,itemStyle,{width: `${$parent.width}px`}]"
        :id="onekitId">
     <slot></slot>
-  </div>
+  </swiper-item>
 </template>
 
 

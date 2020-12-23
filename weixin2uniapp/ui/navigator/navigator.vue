@@ -1,11 +1,11 @@
 <template>
-  <div
+  <navigator
        :class="['onekit-navigator',onekitClass]"
        :style="onekitStyle"
        :id="onekitId"
        @click="div_click">
     <slot></slot>
-  </div>
+  </navigator>
 </template>
 
 <script>

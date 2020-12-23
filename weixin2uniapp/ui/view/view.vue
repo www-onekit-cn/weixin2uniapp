@@ -1,10 +1,10 @@
 <template>
-  <div :class="['onekit-view',onekitClass]" :style="onekitStyle" :id="onekitId" :hover-class="hoverClass"
+  <view :class="['onekit-view',onekitClass]" :style="onekitStyle" :id="onekitId" :hover-class="hoverClass"
        :hover-stop-propagation="hoverStopPropagation" :hover-start-time="hoverStartTime" :hover-stay-time="hoverStayTime"
        @mousedown="ui_mousedown"
        @click="ui_click">
     <slot></slot>
-  </div>
+  </view>
 </template>
 
 <script>

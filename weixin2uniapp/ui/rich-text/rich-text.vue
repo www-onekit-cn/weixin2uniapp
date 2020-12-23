@@ -1,11 +1,11 @@
 <template>
-  <div
+  <rich-text
        :class="['onekit-rich-text',onekitClass]"
        :style="onekitStyle"
        :id="onekitId"
        v-html="html">
     <slot></slot>
-  </div>
+  </rich-text>
 </template>
 
 <script>

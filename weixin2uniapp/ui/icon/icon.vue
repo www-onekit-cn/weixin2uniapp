@@ -1,8 +1,9 @@
 <template>
-  <i
+  <icon
      :class="['onekit-icon',typeClass,'iconfont icon-search','iconfont icon-clear']"
      :style="onekitStyle"
-     :id="onekitId"></i>
+     :id="onekitId">
+     </icon>
 </template>
 
 <script>
