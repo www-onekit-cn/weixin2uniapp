@@ -72,7 +72,10 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-    "uniStatistics": {  
-        "enable": false
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "mp-qq" : {
+        "appid" : "wxecb5d25a4a5c222f"
     }
 }
