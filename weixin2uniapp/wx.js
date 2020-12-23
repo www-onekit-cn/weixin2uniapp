@@ -168,28 +168,255 @@ export default class wxx {
 
 	//////////////////////  路由  /////////////////////
 
-	static switchTab(object) { return uni.switchTab(object)}
-
-	static reLaunch(object) { return uni.reLaunch(object)}
-
-	static redirectTo(object) { return uni.redirectTo(object)}
-
-	static navigateTo(object) { 
-		const url = object.url
-		const success = object.success
-		const fail = object.fail
-		const complete = object.complete
-
-		object = null
-
-		return uni.navigateTo({
-			url,
-			success,
-			fail,
-			complete
-		})
+	static switchTab(object) {
+		return uni.switchTab(object)
 	}
 
+	static reLaunch(object) {
+		return uni.reLaunch(object)
+	}
+
+	static redirectTo(object) {
+		return uni.redirectTo(object)
+	}
+
+	static navigateTo(object) {
+		return uni.navigateTo(object)
+	}
+
+	static navigateBack(object) {
+		return uni.navigateBack(object)
+	}
+
+	///////////////// 界面 ////////////////////
+
+	static showToast(object) {
+		return uni.showToast(object)
+	}
+
+	static showModal(object) {
+		return uni.showModal(object)
+	}
+
+	static showLoading(object) {
+		return uni.showLoading(object)
+	}
+
+	static showActionSheet(object) {
+		return uni.showActionSheet(object)
+	}
+
+	static hideToast(object) {
+		return uni.hideToast(object)
+	}
+
+	static hideLoading(object) {
+		return uni.hideLoading(object)
+	}
+
+	static enableAlertBeforeUnload(object) {
+		return console.warn("暂不支持")
+	}
+
+	static disableAlertBeforeUnload(object) {
+		return console.warn("暂不支持")
+	}
+
+	static showNavigationBarLoading(object) {
+		return uni.showNavigationBarLoading(object)
+	}
+
+	static setNavigationBarTitle(object) {
+		return uni.setNavigationBarTitle(object)
+	}
+
+	static setNavigationBarColor(object) {
+		return uni.setNavigationBarColor(object)
+	}
+
+	static hideNavigationBarLoading(object) {
+		return uni.hideNavigationBarLoading(object)
+	}
+
+	static hideHomeButton(object) {
+		return uni.hideHomeButton(object)
+	}
+
+	static setBackgroundTextStyle(object) {
+		return uni.setBackgroundTextStyle(object)
+	}
+
+	static setBackgroundColor(object) {
+		return uni.setBackgroundColor(object)
+	}
+
+	static showTabBarRedDot(object) {
+		return uni.showTabBarRedDot(object)
+	}
+
+	static showTabBar(object) {
+		return uni.showTabBar(object)
+	}
+
+	static setTabBarStyle(object) {
+		return uni.setTabBarStyle(object)
+	}
+
+	static setTabBarItem(object) {
+		return uni.setTabBarItem(object)
+	}
+
+	static setTabBarBadge(object) {
+		return uni.setTabBarBadge(object)
+	}
+
+	static removeTabBarBadge(object) {
+		return uni.removeTabBarBadge(object)
+	}
+
+	static hideTabBarRedDot(object) {
+		return uni.hideTabBarRedDot(object)
+	}
+
+	static hideTabBar(object) {
+		return uni.hideTabBar(object)
+	}
+
+	static loadFontFace(object) {
+		return uni.loadFontFace(object)
+	}
+
+	static stopPullDownRefresh(object) {
+		return uni.stopPullDownRefresh(object)
+	}
+
+	static startPullDownRefresh(object) {
+		return uni.startPullDownRefresh(object)
+	}
+
+	static pageScrollTo(object) {
+		return uni.pageScrollTo(object)
+	}
+
+	static createAnimation(object) {
+		return uni.createAnimation(object)
+	}
+
+	static setTopBarText(object) {
+		return console.warn("暂不支持")
+	}
+
+	static nextTick(callback) {
+		return uni.nextTick(callback)
+	}
+
+	static getMenuButtonBoundingClientRect() {
+		return uni.getMenuButtonBoundingClientRect()
+	}
+
+	static setWindowSize(object) {
+		return console.warn("暂不支持")
+	}
+
+	static onWindowResize(callback) {
+		return uni.onWindowResize(callback)
+	}
+
+	static offWindowResize(callback) {
+		return uni.offWindowResize(callback)
+	}
+
+	static onKeyboardHeightChange(callback) {
+		return uni.onKeyboardHeightChange(callback)
+	}
+
+	static offKeyboardHeightChange(callback) {
+		return console.warn("暂不支持")
+	}
+
+	static hideKeyboard(object) {
+		return uni.hideKeyboard(object)
+	}
+
+	static getSelectedTextRange(object) {
+		return console.warn("暂不支持")
+	}
+
+	///////////////// 网络 ////////////////////
+
+	/////// 请求 /////
+	static request(object) {
+		return uni.request(object)
+	}
+
+	/////// 下载 /////
+	static downloadFile(object) {
+		return uni.downloadFile(object)
+	}
+
+	/////// 上传 /////
+	static uploadFile(object) {
+		return uni.uploadFile(object)
+	}
+
+	/////// websocket /////
+	static sendSocketMessage(object) {
+		return uni.sendSocketMessage(object)
+	}
+
+	static onSocketOpen(callback) {
+		return uni.onSocketOpen(callback)
+	}
+
+	static onSocketMessage(callback) {
+		return uni.onSocketMessage(callback)
+	}
+
+	static onSocketError(callback) {
+		return uni.onSocketError(callback)
+	}
+
+	static onSocketClose(callback) {
+		return uni.onSocketClose(callback)
+	}
+
+	static connectSocket(object) {
+		return uni.connectSocket(object)
+	}
+
+	static closeSocket(object) {
+		return uni.closeSocket(object)
+	}
+
+	static closeSocket(object) {
+		return uni.closeSocket(object)
+	}
+
+	static stopLocalServiceDiscovery(object) {
+		return uni.stopLocalServiceDiscovery(object)
+	}
+
+	/////////////////// 数据缓存 //////////////////////////
+
+	static setStorageSync(key,data) {
+		return uni.setStorageSync(key,data)
+	}
+
+	static setStorage(object) {
+		return uni.setStorage(object)
+	}
+
+	static removeStorageSync(key) {
+		return uni.setStorage(key)
+	}
+
+	static removeStorage(object) {
+		return uni.removeStorage(object)
+	}
+
+	static getStorageSync(key) {
+		return uni.getStorageSync(key)
+	}
 
 	/////////////////// animation //////////////////////////
 
@@ -927,9 +1154,7 @@ export default class wxx {
 		return uni.upload(uni_object); // 最后输出快应用的数据对象，但是输出wx的格
 	}
 	//
-	static connectSocket(object) {
-		return uni.connectSocket(object)
-	}
+
 	static connectSocket(object) {
 		return new SocketTask(uni.connectSocket(object))
 	}
@@ -942,12 +1167,8 @@ export default class wxx {
 	static onSocketClose(callback) {
 		return uni.onSocketClose(callback)
 	}
-	static onSocketOpen(callback) {
-		return uni.onSocketOpen(callback)
-	}
-	static sendSocketMessage(object) {
-		return uni.sendSocketMessage(object)
-	}
+
+
 	static closeSocket(callback) {
 		return uni.closeSocket(callback)
 	}
@@ -1110,21 +1331,7 @@ export default class wxx {
 		return uni.reportMonitor(name, value)
 	};
 	////////// Router //////////////
-	static navigateBack(object) {
-		return uni.navigateBack(object);
-	}
-	static switchTab(object) {
-		return uni.switchTab(object);
-	}
-	static navigateTo(object) {
-		return uni.navigateTo(object);
-	}
-	static reLaunch(object) {
-		return uni.reLaunch(object);
-	}
-	static redirectTo(object) {
-		return uni.redirectTo(object);
-	}
+
 	///////////// Share /////////////
 	static updateShareMenu(object) {
 		return uni.updateShareMenu(object)
@@ -1367,10 +1574,4 @@ export default class wxx {
 	// 	return new wx_cloud();
 	// }
 
-	////////////// 网络 code by zk ////////////
-	static request(object) { return uni.request(object) }
-
-	static downloadFile(object) { return uni.downloadFile(object) }
-
-	static uploadFile(object)  { return uni.uploadFile(object) }
 }

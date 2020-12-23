@@ -1,11 +1,11 @@
 <template>
-		<div
+		<scroll-view
 		:class="['onekit-scroll-view',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</scroll-view>
 </template>
 
 <script>

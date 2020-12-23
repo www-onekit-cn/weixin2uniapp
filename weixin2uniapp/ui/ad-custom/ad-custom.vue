@@ -1,10 +1,16 @@
 <template>
-  <div
-       :class="['onekit-ad-custom',onekitClass]"
-       :style="onekitStyle"
-       :id="onekitId">
+  <view
+  :class="['onekit-ad-custom',onekitClass]"
+  :style="onekitStyle"
+  :id="onekitId"
+
+  :adpid="unitId"
+
+  @load="adCustom_load"
+  @error="adCustom_error"
+  >
     <slot></slot>
-  </div>
+  </view>
 </template>
 
 <script>
@@ -18,14 +24,18 @@
         type: String,
         defaul: ""
       },
-      "ad-intervals": {
+      "ad-intervals": {//做不了
         type: Number,
-        defaul: ""
+        defaul: null
       },
-
     },
     methods: {
-
+      adCustom_load(e){
+		  	this.$emit('load',e)
+      }, 
+      adCustom_error(e){
+		  	this.$emit('error',e)
+      }, 
     }
   }
 </script>

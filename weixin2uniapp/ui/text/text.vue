@@ -1,11 +1,11 @@
 <template>
-  <div
+  <text
        :class="['onekit-text',onekitClass,
 						this.userSelect? 'iselect': '']"
        :style="onekitStyle"
        :id="onekitId" v-html="html">
     <slot v-if="false"></slot>
-  </div>
+  </text>
 </template>
 
 <script>

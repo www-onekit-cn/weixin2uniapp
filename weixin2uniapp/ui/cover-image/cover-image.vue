@@ -1,17 +1,17 @@
 <template>
-		<div
+		<cover-image
 		:class="['onekit-cover-image',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</cover-image>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-cover-image",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

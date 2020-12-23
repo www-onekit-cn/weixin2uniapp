@@ -1,17 +1,17 @@
 <template>
-		<div
+		<form
 		:class="['onekit-form',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</form>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-form",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

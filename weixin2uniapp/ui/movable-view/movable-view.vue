@@ -1,17 +1,17 @@
 <template>
-		<div
+		<movable-view
 		:class="['onekit-movable-view',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</movable-view>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-movable-view",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

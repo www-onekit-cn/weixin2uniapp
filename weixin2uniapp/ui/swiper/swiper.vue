@@ -1,27 +1,11 @@
 /** BUG待处理 2020 11 4*/
 <template>
-  <div class="onekit-swiper" ref="main" :active-index="currentIndex">
-    <div class="onekit-swiper-inner">
-      <div class="onekit-swiper-wrapper clearfix"
-           @touchstart="main_touchstart"
-           @touchmove="main_touchmove"
-           @touchend="main_touchend"
-           ref="slider-wrapper"
-           :style="{width: `${this.wrapperWidth}px`, transform: translateValue, 'transition-duration': (touching || !isTransition) ? '0ms' : '300ms'}">
-        <slot></slot>
-      </div>
-    </div>
-    <div v-if="indicatorDots" class="onekit-swiper-pagination clearfix">
-      <div class="onekit-swiper-page icon"
-           v-for="(item, index) in sliderLength"
-           :key="index"
-           :class="[((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1)) ? 'onekit-swiper-page-active' : '']"
-           :style="{'background':((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1) ? indicatorActiveColor : indicatorColor)}">
-
-      </div>
-    </div>
-
-  </div>
+  <swiper
+       :class="['onekit-swiper',onekitClass]"
+       :style="onekitStyle"
+       :id="onekitId">
+    <slot></slot>
+  </swiper>
 </template>
 <script>
   export default {

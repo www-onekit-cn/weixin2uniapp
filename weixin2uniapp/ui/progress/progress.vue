@@ -1,42 +1,16 @@
 <template>
-  <div class="weui_progress">
-    <div class="weui_progress_bar"
-         :style="{height: strokeWidth + 'px',
-                  background: backgroudColor}">
-      <div class="weui_progress_inner_bar"
-           :style="{width: width + '%',
-                    borderRadius: borderRadius + 'px',
-                    height: strokeWidth + 'px',
-                    background: bgcolor,
-                    transition:`width ${speed}s`}"
-           @click="ui_click(activeColor)">
-      </div>
-    </div>
-    <a class="onekit_progress-count"
-       v-if="showInfo"
-       href="javascript:;"
-       :style="{fontSize : fontSize + 'px'}"
-       >
-    {{ percent }}%
-    </a>
-    <a v-if="hasCancelButton" href="javascript:;" class="weui_progress_opr" @click="callEvent('weui-progress-cancel')">
-    <i class="weui_icon_cancel"></i>
-  </a>
-  </div>
+  <progress
+		:class="['onekit-progress',onekitClass]"
+		:style="onekitStyle"
+		:id="onekitId"
+		>
+		<slot></slot>
+		</progress>
 </template>
 
 <script>
   export default {
     name: "onekit-progress",
-    data() {
-      return {
-        bgcolor: JSON.parse(JSON.stringify(this.color)),
-        bgActiveColor: this.activeColor,
-        width: this.percent,
-        speed: this.duration / 10,
-        isAnimation: this.active
-      }
-    },
     props: {
       'percent': {
         type: [Number, String],

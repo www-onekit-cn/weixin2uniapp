@@ -1,17 +1,10 @@
 <template>
-  <div
+  <switch
        :class="['onekit-switch',onekitClass]"
        :style="onekitStyle"
-       :id="onekitId"
-       class="switch">
-    <div class="switch-wrapper"
-         :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}"
-         :class="{'close':!status,'disabled':this.disabled}"
-         @click.stop="handleSwitch">
-      <div class="slider" :style="{'width':(height-2)+'px','height':(height-2)+'px','left':left+'px'}"></div>
-    </div>
+       :id="onekitId">
     <slot></slot>
-  </div>
+  </switch>
 </template>
 
 <script>

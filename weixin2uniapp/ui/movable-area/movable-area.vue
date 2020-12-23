@@ -1,17 +1,17 @@
 <template>
-		<div
+		<movable-area
 		:class="['onekit-movable-area',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</movable-area>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-movable-area",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{

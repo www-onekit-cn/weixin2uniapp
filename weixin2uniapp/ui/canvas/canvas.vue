@@ -1,17 +1,17 @@
 <template>
-		<div
+		<canvas
 		:class="['onekit-canvas',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
 		>
 		<slot></slot>
-		</div>
+		</canvas>
 </template>
 
 <script>
 import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
+export default {
     name: "onekit-canvas",
     mixins:[weixin_behavior, onekit_behavior],
 	props:{
