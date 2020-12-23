@@ -1,13 +1,3 @@
-import RenderingContext from "./api/RenderingContext"
-import VideoContext from "./api/VideoContext"
-import CameraContext from "./api/CameraContext"
-import InnerAudioContext from "./api/InnerAudioContext"
-import LivePlayerContext from "./api/LivePlayerContext"
-import Worker from './api/Worker.js'
-import BackgroundAudioManager from './api/BackgroundAudioManager.js'
-import Animation from './api/Animation.js'
-import SocketTask from './api/SocketTask.js'
-import MapContext from './api/MapContext.js'
 import wx_cloud from './serverless/wx_cloud' 
 
 export default class wxx {
@@ -1330,7 +1320,7 @@ export default class wxx {
 	static createInterstitialAd(object) {
 		return uni.createInterstitialAd(object)
 	}
-	
+
 	/////////////////////////////////////
 	static hideKeyboard(object) {
 		return uni.hideKeyboard(object)
