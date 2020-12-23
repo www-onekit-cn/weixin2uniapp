@@ -5,12 +5,22 @@
 </template>
 
 <script>
+import wx from "../../../weixin2uniapp/wx"
 	export default {
 		data() {
 			return {
 			}
 		},
 		onLoad() {
+		wx.connectSocket({
+		  url: 'vast-plateau-30681.herokuapp.com/',
+		  success : (res) =>{
+			console.log(res)
+		  },
+		  fail: err => {
+			  console.log('fail', err)
+		  }
+		})
 
 		},
 		methods: {

@@ -169,27 +169,15 @@ export default class wxx {
 
 	//////////////////////  路由  /////////////////////
 
-	static switchTab(object) { return uni.switchTab(object)}
+	static switchTab(object) { return uni.switchTab(object) }
 
-	static reLaunch(object) { return uni.reLaunch(object)}
+	static reLaunch(object) { return uni.reLaunch(object) }
 
-	static redirectTo(object) { return uni.redirectTo(object)}
+	static redirectTo(object) { return uni.redirectTo(object) }
 
-	static navigateTo(object) { 
-		const url = object.url
-		const success = object.success
-		const fail = object.fail
-		const complete = object.complete
+	static navigateTo(object) { return navigateTo(object) }
 
-		object = null
-
-		return uni.navigateTo({
-			url,
-			success,
-			fail,
-			complete
-		})
-	}
+	static navigateBack(object) { return uni.navigateBack(object) }
 
 
 	/////////////////// animation //////////////////////////
@@ -441,7 +429,7 @@ export default class wxx {
 	static onBeaconUpdate(object) {
 		return uni.onBeaconUpdate(object);
 	}
-	static offBeaconUpdate() {}
+	static offBeaconUpdate() { }
 	static offBeaconServiceChangegetBeacons() {
 
 	}
@@ -928,9 +916,7 @@ export default class wxx {
 		return uni.upload(uni_object); // 最后输出快应用的数据对象，但是输出wx的格
 	}
 	//
-	static connectSocket(object) {
-		return uni.connectSocket(object)
-	}
+
 	static connectSocket(object) {
 		return new SocketTask(uni.connectSocket(object))
 	}
@@ -943,12 +929,8 @@ export default class wxx {
 	static onSocketClose(callback) {
 		return uni.onSocketClose(callback)
 	}
-	static onSocketOpen(callback) {
-		return uni.onSocketOpen(callback)
-	}
-	static sendSocketMessage(object) {
-		return uni.sendSocketMessage(object)
-	}
+
+
 	static closeSocket(callback) {
 		return uni.closeSocket(callback)
 	}
@@ -1111,21 +1093,7 @@ export default class wxx {
 		return uni.reportMonitor(name, value)
 	};
 	////////// Router //////////////
-	static navigateBack(object) {
-		return uni.navigateBack(object);
-	}
-	static switchTab(object) {
-		return uni.switchTab(object);
-	}
-	static navigateTo(object) {
-		return uni.navigateTo(object);
-	}
-	static reLaunch(object) {
-		return uni.reLaunch(object);
-	}
-	static redirectTo(object) {
-		return uni.redirectTo(object);
-	}
+
 	///////////// Share /////////////
 	static updateShareMenu(object) {
 		return uni.updateShareMenu(object)
@@ -1373,5 +1341,11 @@ export default class wxx {
 
 	static downloadFile(object) { return uni.downloadFile(object) }
 
-	static uploadFile(object)  { return uni.uploadFile(object) }
+	static uploadFile(object) { return uni.uploadFile(object) }
+
+	static sendSocketMessage(object) { return uni.sendSocketMessage(object) }
+
+	static onSocketOpen(callback) { return uni.onSocketOpen(callback) }
+
+	static connectSocket(object) { return uni.connectSocket(object) }
 }
