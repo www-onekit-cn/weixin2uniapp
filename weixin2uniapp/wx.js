@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 import wx_cloud from './serverless/wx.cloud'
 export default class wx {
 

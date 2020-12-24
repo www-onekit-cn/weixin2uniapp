@@ -1,14 +1,13 @@
-
 import Vue from "vue";
 let APP_JSON;
 
-export default function(UC_JSON, object){
+export default function (UC_JSON, object) {
   let result = {
     data() {
       return {};
     },
     created() {
-       APP_JSON = Vue.prototype.APP_JSON;
+      APP_JSON = Vue.prototype.APP_JSON;
       this.data = this.$data;
       if (this["onLoad"]) {
         this["onLoad"]();
@@ -22,20 +21,20 @@ export default function(UC_JSON, object){
     mounted() {
       //console.log( this.$route.fullPath);
       let WINDOW_JSON = {
-        navigationBarBackgroundColor:"#000000",
-        navigationBarTextStyle:"white",
-        navigationStyle:"default",
-        backgroundColor:"#000000",
-        backgroundTextStyle:"dark",
+        navigationBarBackgroundColor: "#000000",
+        navigationBarTextStyle: "white",
+        navigationStyle: "default",
+        backgroundColor: "#000000",
+        backgroundTextStyle: "dark",
       };
-      if(APP_JSON.window) {
+      if (APP_JSON.window) {
         for (let key of Object.keys(APP_JSON.window)) {
           WINDOW_JSON[key] = APP_JSON.window[key];
         }
       }
       //let path = this.$route.fullPath;
       for (let key of Object.keys(UC_JSON)) {
-       
+
         let item = UC_JSON[key];
         switch (key) {
           case "backgroundColorTop":
@@ -54,7 +53,9 @@ export default function(UC_JSON, object){
         }
       }
       //console.log(WINDOW_JSON)
-      this.$emit('update-window',{WINDOW_JSON});
+      this.$emit('update-window', {
+        WINDOW_JSON
+      });
       if (this["onReady"]) {
         this["onReady"]();
       }

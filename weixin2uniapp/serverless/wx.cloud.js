@@ -1,13 +1,3 @@
-/*
- * @Autor: YeWei Wang
- * @Date: 2020-12-23 15:04:16
- * @WeChat: wj826036
- * @Motto: 求知若渴，虚心若愚
- * @Description: 
- * @LastEditTime: 2020-12-24 14:14:46
- * @Version: 1.0
- * @FilePath: \weixin2uniapp\weixin2uniapp\serverless\wx.cloud.js
- */
 import Database from './Database'
 export default class wx_cloud {
   static init(wx_options){
