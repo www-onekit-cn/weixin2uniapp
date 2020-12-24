@@ -1,16 +1,5 @@
 // import Vue from 'vue'
-import RenderingContext from "./api/RenderingContext"
-import VideoContext from "./api/VideoContext"
-import CameraContext from "./api/CameraContext"
-import InnerAudioContext from "./api/InnerAudioContext"
-import LivePlayerContext from "./api/LivePlayerContext"
-import Worker from './api/Worker.js'
-import BackgroundAudioManager from './api/BackgroundAudioManager.js'
-import Animation from './api/Animation.js'
-import SocketTask from './api/SocketTask.js'
-import MapContext from './api/MapContext.js'
-import wx_cloud from './serverless/wx_cloud'
-
+import wx_cloud from './serverless/wx.cloud'
 export default class wx {
 
 	//////////////////////  基础  ///////////////////////////
@@ -1853,9 +1842,6 @@ export default class wx {
 		return uni.hideKeyboard(object)
 	}
 	///////////// cloud ////////////////
-	// static get cloud() {
-	// 	return new wx_cloud();
-	// }
 	static get cloud() {
 		return wx_cloud
 	}
