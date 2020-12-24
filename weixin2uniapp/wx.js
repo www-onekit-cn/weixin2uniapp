@@ -1,17 +1,6 @@
-// import Vue from 'vue'
-import RenderingContext from "./api/RenderingContext"
-import VideoContext from "./api/VideoContext"
-import CameraContext from "./api/CameraContext"
-import InnerAudioContext from "./api/InnerAudioContext"
-import LivePlayerContext from "./api/LivePlayerContext"
-import Worker from './api/Worker.js'
-import BackgroundAudioManager from './api/BackgroundAudioManager.js'
-import Animation from './api/Animation.js'
-import SocketTask from './api/SocketTask.js'
-import MapContext from './api/MapContext.js'
-import wx_cloud from './serverless/wx_cloud'
+import wx_cloud from './serverless/wx_cloud' 
 
-export default class wx {
+export default class wxx {
 
 	//////////////////////  基础  ///////////////////////////
 
@@ -27,99 +16,64 @@ export default class wx {
 		return uni.arrayBufferToBase64(arrayBuffer);
 	}
 
-	//////////////////////  系统  ///////////////////////////
+	//////// 系统 ///////   
 
 	static getSystemInfoSync() {
 		return uni.getSystemInfoSync()
 	}
 
 	static getSystemInfoAsync(object) {
-		const uni_success = object.success
-		const uni_complete = object.complete
-		const uni_fail = object.fail
-		uni.getSystemInfo({
-			success: res => {
-				if (uni_success) {
-					uni_success(res)
-				}
-			},
-			fail: err => {
-				if (uni_fail) {
-					uni_fail(err)
-				}
-			},
-			complete: data => {
-				if (uni_complete) {
-					uni_complete(data)
-				}
-			}
-		})
+		return console.error("getSystemInfoAsync暂不支持")
 	}
 
-	static getSystemInfo() {
+	static getSystemInfo(object) {
 		return uni.getSystemInfo()
 	}
 
-	static onAudioInterruptionEnd() {
-		return console.error("uni-app is not support onAudioInterruptionEnd")
-	}
+	//////// 更新 /////// 
 
-	//////////////////////  更新  ///////////////////////////
-
-	static updateWeChatApp() {
-		return console.error("uni-app is not support updateWeChatApp！")
+	static updateWeChatApp(object) {
+		return console.error("updateWeChatApp暂不支持")
 	}
 
 	static getUpdateManager() {
 		return uni.getUpdateManager()
 	}
 
-	//////////////////////  生命周期  ///////////////////////
+  //////// 生命周期 /////
 
 	static getLaunchOptionsSync() {
-		const obj = {
-			path: getApp().onekit_launchOpions.path,
-			query: getApp().onekit_launchOpions.query,
-			scene: getApp().onekit_launchOpions.scene,
-			shareTicket: getApp().onekit_showOptions.shareTicket,
-			referrerInfo: getApp().onekit_showOptions.referrerInfo
-		}
-		return obj
+		return console.error("getLaunchOptionsSync暂不支持")
 	}
 
 	static getEnterOptionsSync() {
-		return getApp().onekit_showOptions
+		return console.error("getEnterOptionsSync暂不支持")
 	}
 
-	//////////////////////  应用级事件  /////////////////////
+	//////// 应用级事件 /////
 
 	static onUnhandledRejection(callback) {
-		const obj = {
-			errMsg: '当前平台暂不支持 onUnhandledRejection api'
-		}
-		callback(obj)
-		/**  uniapp原生事件未生效   */
-		// return getApp().onekit_onUnhandledRejectionCallback()
-		// callback = getApp().onekit_rejectionFn
-		// return callback()
-		// console.log(getApp().onekit_rejectionFn)
+		return console.error("onUnhandledRejection暂不支持")
 	}
 
 	static onThemeChange(callback) {
-		/**  未测试  */
-		getApp().onekit_themeChangeFn = callback
+		return uni.onThemeChange(callback)
 	}
 
-	static onPageNotFound() {
-		return uni.onPageNotFound()
+	static onPageNotFound(callback) {
+		return uni.onPageNotFound(callback)
 	}
 
-	static onError() {
-		return uni.onError()
+	static onError(callback) {
+		return uni.onError(callback)
 	}
 
-	static onAudioInterruptionBegin() {
-		return console.error("uni-app is not supporrt onAudioInterruptionBegin")
+	static onAudioInterruptionBegin(callback) {
+		return console.error("onAudioInterruptionBegin暂不支持")
+	}
+
+	static onAudioInterruptionBegin(callback) {
+		return console.error("onAudioInterruptionBegin暂不支持")
 	}
 
 	static onAppShow(callback) {
@@ -131,16 +85,11 @@ export default class wx {
 	}
 
 	static offUnhandledRejection(callback) {
-		const obj = {
-			errMsg: '当前平台暂不支持 onUnhandledRejection api'
-		}
-
-		callback(obj)
+		return console.error("offUnhandledRejection暂不支持")
 	}
 
-	static offThemeChange() {
-		/**   未测试   */
-		getApp().onekit_themeChangeFn = null
+	static offThemeChange(callback) {
+		return console.error("offThemeChange暂不支持")
 	}
 
 	static offPageNotFound(callback) {
@@ -151,20 +100,33 @@ export default class wx {
 		return uni.offError(callback)
 	}
 
-	static offAudioInterruptionEnd() {
-		console.error('uni-app is not support offAudioInterruptionEnd')
+	static offAudioInterruptionEnd(callback) {
+		return console.error("offAudioInterruptionEnd暂不支持")
 	}
 
-	static offAudioInterruptionBegin() {
-		return console.error("uni-app is not support offAudioInterruptionBegin")
+	static offAudioInterruptionBegin(callback) {
+		return console.error("offAudioInterruptionBegin暂不支持")
 	}
 
 	static offAppShow(callback) {
-		return uni.offAppShow(callback)
+		return uni.offError(callback)
 	}
 
 	static offAppHide(callback) {
-		return uni.offAppHide(callback)
+		return uni.offError(callback)
+	}
+
+	/////// 调试 /////
+	static setEnableDebug(object) {
+		return uni.setEnableDebug(object)
+	}
+
+	static getRealtimeLogManager(object) {
+		return console.error("getRealtimeLogManager暂不支持")
+	}
+
+	static getLogManager(object) {
+		return console.error("getLogManager暂不支持")
 	}
 
 	//////////////////////  路由  /////////////////////
@@ -216,11 +178,11 @@ export default class wx {
 	}
 
 	static enableAlertBeforeUnload(object) {
-		return console.warn("暂不支持")
+		return console.error("enableAlertBeforeUnload暂不支持")
 	}
 
 	static disableAlertBeforeUnload(object) {
-		return console.warn("暂不支持")
+		return console.error("disableAlertBeforeUnload暂不支持")
 	}
 
 	static showNavigationBarLoading(object) {
@@ -304,7 +266,7 @@ export default class wx {
 	}
 
 	static setTopBarText(object) {
-		return console.warn("暂不支持")
+		return console.error("setTopBarText暂不支持")
 	}
 
 	static nextTick(callback) {
@@ -316,7 +278,7 @@ export default class wx {
 	}
 
 	static setWindowSize(object) {
-		return console.warn("暂不支持")
+		return console.error("setWindowSize暂不支持")
 	}
 
 	static onWindowResize(callback) {
@@ -332,7 +294,7 @@ export default class wx {
 	}
 
 	static offKeyboardHeightChange(callback) {
-		return console.warn("暂不支持")
+		return console.error("offKeyboardHeightChange暂不支持")
 	}
 
 	static hideKeyboard(object) {
@@ -340,7 +302,7 @@ export default class wx {
 	}
 
 	static getSelectedTextRange(object) {
-		return console.warn("暂不支持")
+		return console.error("getSelectedTextRange暂不支持")
 	}
 
 	///////////////// 网络 ////////////////////
@@ -393,8 +355,50 @@ export default class wx {
 		return uni.closeSocket(object)
 	}
 
+	/////// mDNS /////
 	static stopLocalServiceDiscovery(object) {
-		return uni.stopLocalServiceDiscovery(object)
+		return console.error("stopLocalServiceDiscovery暂不支持")
+	}
+
+	static startLocalServiceDiscovery(object) {
+		return console.error("startLocalServiceDiscovery暂不支持")
+	}
+
+	static onLocalServiceResolveFail(object) {
+		return console.error("onLocalServiceResolveFail暂不支持")
+	}
+
+	static onLocalServiceLost(callback) {
+		return console.error("onLocalServiceLost暂不支持")
+	}
+
+	static onLocalServiceFound(callback) {
+		return console.error("onLocalServiceFound暂不支持")
+	}
+
+	static onLocalServiceDiscoveryStop(callback) {
+		return console.error("onLocalServiceDiscoveryStop暂不支持")
+	}
+
+	static offLocalServiceResolveFail(callback) {
+		return console.error("offLocalServiceResolveFail暂不支持")
+	}
+
+	static offLocalServiceLost(callback) {
+		return console.error("offLocalServiceLost暂不支持")
+	}
+
+	static offLocalServiceFound(callback) {
+		return console.error("offLocalServiceFound暂不支持")
+	}
+
+	static offLocalServiceDiscoveryStop(callback) {
+		return console.error("offLocalServiceDiscoveryStop暂不支持")
+	}
+
+	/////// UDP /////
+	static createUDPSocket() {
+		return console.error("createUDPSocket暂不支持")
 	}
 
 	/////////////////// 数据缓存 //////////////////////////
@@ -441,19 +445,19 @@ export default class wx {
 
 	/////// 周期性更新 /////
 	static setBackgroundFetchToken(object) {
-		return console.warn("暂不支持")
+		return console.error("setBackgroundFetchToken暂不支持")
 	}
 
 	static onBackgroundFetchData(callback) {
-		return console.warn("暂不支持")
+		return console.error("onBackgroundFetchData暂不支持")
 	}
 
 	static getBackgroundFetchToken(object) {
-		return console.warn("暂不支持")
+		return console.error("getBackgroundFetchToken暂不支持")
 	}
 
 	static getBackgroundFetchData(object) {
-		return console.warn("暂不支持")
+		return console.error("getBackgroundFetchData暂不支持")
 	}
 
 	/////////////////// 媒体 //////////////////////////
@@ -469,7 +473,7 @@ export default class wx {
 	}
 
 	static previewMedia(object, showmenu) {
-		return console.warn("暂不支持")
+		return console.error("previewMedia暂不支持")
 	}
 
 	static previewImage(object, showmenu) {
@@ -485,7 +489,7 @@ export default class wx {
 	}
 
 	static chooseMessageFile(object) {
-		return console.warn("暂不支持")
+		return console.error("chooseMessageFile暂不支持")
 	}
 
 	static chooseImage(object) {
@@ -505,8 +509,8 @@ export default class wx {
 		return uni.getVideoInfo(object)
 	}
 
-	static createVideoContext(id, THIS) {
-		return uni.createVideoContext(id, THIS)
+	static createVideoContext(string, object) {
+		return uni.createVideoContext(string, object)
 	}
 
 	static compressVideo(object) {
@@ -523,72 +527,68 @@ export default class wx {
 
 	/////// 音频 /////
 	static stopVoice(object) {
-		return console.warn("暂不支持")
+		return console.error("stopVoice暂不支持")
 	}
 
 	static setInnerAudioOption(object) {
-		return console.warn("暂不支持")
+		return console.error("setInnerAudioOption暂不支持")
 	}
 
 	static playVoice(object) {
-		return console.warn("暂不支持")
+		return console.error("playVoice暂不支持")
 	}
 
 	static pauseVoice(object) {
-		return console.warn("暂不支持")
+		return console.error("pauseVoice暂不支持")
 	}
 
 	static getAvailableAudioSources(object) {
-		return console.warn("暂不支持")
-	}
-
-	static createMediaAudioPlayer(object) {
-		return console.warn("暂不支持")
+		return console.error("getAvailableAudioSources暂不支持")
 	}
 
 	static createMediaAudioPlayer() {
-		return console.warn("暂不支持")
+		return console.error("createMediaAudioPlayer暂不支持")
 	}
 
 	static createInnerAudioContext() {
 		return uni.createInnerAudioContext()
 	}
 
-	static createMediaAudioPlayer(id, THIS) {
-		return console.warn("暂不支持")
+	static createAudioContext(string, object) {
+		return console.error("createAudioContext暂不支持")
 	}
 
 	/////// 背景音频 /////
 	static stopBackgroundAudio(object) {
-		return console.warn("暂不支持")
+		return console.error("stopBackgroundAudio暂不支持")
 	}
 
 	static seekBackgroundAudio(object) {
-		return console.warn("暂不支持")
+		return console.error("seekBackgroundAudio暂不支持")
 	}
 
 	static playBackgroundAudio(object) {
-		return console.warn("暂不支持")
+		return console.error("playBackgroundAudio暂不支持")
 	}
 
 	static pauseBackgroundAudio(object) {
-		return console.warn("暂不支持")
+		return console.error("pauseBackgroundAudio暂不支持")
 	}
 
 	static onBackgroundAudioStop(callback) {
-		return console.warn("暂不支持")
+		return console.error("onBackgroundAudioStop暂不支持")
 	}
 
 	static onBackgroundAudioPlay(callback) {
-		return console.warn("暂不支持")
+		return console.error("onBackgroundAudioPlay暂不支持")
 	}
 
 	static onBackgroundAudioPause(callback) {
-		return console.warn("暂不支持")
+		return console.error("onBackgroundAudioPause暂不支持")
 	}
 
 	static getBackgroundAudioPlayerState(callback) {
-		return console.warn("暂不支持")
+		return console.error("getBackgroundAudioPlayerState暂不支持")
 	}
 
 	static getBackgroundAudioManager() {
@@ -600,17 +600,17 @@ export default class wx {
 		return uni.createLivePusherContext()
 	}
 
-	static createLivePlayerContext(id, THIS) {
-		return uni.createLivePlayerContext(id, THIS)
+	static createLivePlayerContext(string, object) {
+		return uni.createLivePlayerContext(string, object)
 	}
 
 	/////// 录音 /////
 	static stopRecord(object) {
-		return console.warn("暂不支持")
+		return console.error("stopRecord暂不支持")
 	}
 
 	static startRecord(object) {
-		return console.warn("暂不支持")
+		return console.error("startRecord暂不支持")
 	}
 
 	static getRecorderManager() {
@@ -631,1223 +631,696 @@ export default class wx {
 
 	/////// 实时语音 /////
 	static updateVoIPChatMuteConfig(object) {
-		return console.warn("暂不支持")
+		return console.error("updateVoIPChatMuteConfig暂不支持")
 	}
 
 	static subscribeVoIPVideoMembers(object) {
-		return console.warn("暂不支持")
+		return console.error("subscribeVoIPVideoMembers暂不支持")
 	}
 
 	static onVoIPVideoMembersChanged(callback) {
-		return console.warn("暂不支持")
+		return console.error("onVoIPVideoMembersChanged暂不支持")
 	}
 
 	static onVoIPChatSpeakersChanged(callback) {
-		return console.warn("暂不支持")
+		return console.error("onVoIPChatSpeakersChanged暂不支持")
 	}
 
 	static onVoIPChatMembersChanged(callback) {
-		return console.warn("暂不支持")
+		return console.error("onVoIPChatMembersChanged暂不支持")
 	}
 
 	static onVoIPChatInterrupted(callback) {
-		return console.warn("暂不支持")
+		return console.error("onVoIPChatInterrupted暂不支持")
 	}
 
 	static offVoIPVideoMembersChanged(callback) {
-		return console.warn("暂不支持")
+		return console.error("offVoIPVideoMembersChanged暂不支持")
 	}
 
 	static offVoIPChatMembersChanged(callback) {
-		return console.warn("暂不支持")
+		return console.error("offVoIPChatMembersChanged暂不支持")
 	}
 
 	static offVoIPChatInterrupted(callback) {
-		return console.warn("暂不支持")
+		return console.error("offVoIPChatInterrupted暂不支持")
 	}
 
 	static joinVoIPChat(object) {
-		return console.warn("暂不支持")
+		return console.error("joinVoIPChat暂不支持")
 	}
 
 	static exitVoIPChat(object) {
-		return console.warn("暂不支持")
+		return console.error("exitVoIPChat暂不支持")
 	}
 
 	/////// 画面录制器 /////
-	static createMediaRecorder(canvas, options) {
-		return console.warn("暂不支持")
+	static createMediaRecorder(object1, object2) {
+		return console.error("createMediaRecorder暂不支持")
 	}
 
 	/////// 视频解码器 /////
 	static createVideoDecoder() {
-		return console.warn("暂不支持")
+		return console.error("createVideoDecoder暂不支持")
 	}
 
 	/////////////////// 位置 //////////////////////////
 	static stopLocationUpdate(object) {
-		return console.warn("暂不支持")
+		return console.error("stopLocationUpdate暂不支持")
 	}
 
 	static startLocationUpdateBackground(object) {
-		return console.warn("暂不支持")
+		return console.error("startLocationUpdateBackground暂不支持")
 	}
 
 	static startLocationUpdate(object) {
-		return console.warn("暂不支持")
+		return console.error("startLocationUpdate暂不支持")
 	}
 
 	static openLocation(object) {
 		return uni.openLocation(object)
 	}
 
-	/////////////////// animation //////////////////////////
-
-	static createAnimation(object) {
-		return uni.createAnimation(object);
+	static onLocationChange(callback) {
+		return console.error("onLocationChange暂不支持")
 	}
 
-	static createAnimation(object) {
-		return new Animation(uni.createAnimation(object))
+	static offLocationChange(callback) {
+		return console.error("offLocationChange暂不支持")
 	}
 
-	///////////////// basic ////////////////////////////////
-
-
-
-	static offPageNotFound(callback) {
-		return uni.offPageNotFound(callback);
-	}
-	static onPageNotFound(callback) {
-		return uni.onPageNotFound(callback);
-	}
-	static offError(callback) {
-		return uni.offError(callback);
-	}
-
-	static offAppShow(callback) {
-		return uni.offAppShow(callback);
-	}
-
-	static offAppHide(callback) {
-		return uni.offAppHide(callback);
-	}
-
-	static setEnableDebug(object) {
-		return uni.setEnableDebug(object);
-	}
-	static getRealtimeLogManager() {
-		return console.log("暂不支持")
-	}
-	static getLogManager(object) {
-		return /*uni.getLogManager(object);*/ console.log("暂不支持")
-	}
-	/////////////////// Canvas ///////////////////
-	static drawCanvas(object) {
-		var canvasId = object.canvasId;
-		var actions = object.actions;
-		var canvasContext = uni.createCanvasContext(canvasId);
-		for (var action of actions) {
-			var data = action.data;
-			switch (action.method) {
-				case "save":
-					canvasContext.save();
-					break;
-				case "restore":
-					canvasContext.restore();
-					break;
-				case "setFillStyle":
-					canvasContext.setFillStyle(COLOR.array2str(data[1]));
-					break;
-				case "setStrokeStyle":
-					canvasContext.setStrokeStyle(COLOR.array2str(data[1]));
-					break;
-				case "setFontSize":
-					canvasContext.setFontSize(data[0]);
-					break;
-				case "setGlobalAlpha":
-					canvasContext.setGlobalAlpha(data[0]);
-					break;
-				case "setShadow":
-					var dat = data[3];
-					canvasContext.setShadow(data[0], data[1], data[2], onekit.color.array2str(data[3]));
-					break;
-				case "drawImage":
-					canvasContext.drawImage.apply(canvasContext, data)
-					break;
-				case "fillText":
-					canvasContext.fillText.apply(canvasContext, data)
-					break;
-				case "setLineCap":
-					canvasContext.setLineCap(data[0]);
-					break;
-				case "setLineJoin":
-					canvasContext.setLineJoin(data[0]);
-					break;
-				case "setLineWidth":
-					canvasContext.setLineWidth(data[0]);
-					break;
-				case "setMiterLimit":
-					canvasContext.setMiterLimit(data[0]);
-					break;
-				case "rotate":
-					canvasContext.rotate(data[0]);
-					break;
-				case "scale":
-					canvasContext.scale(data[0], data[1]);
-					break;
-				case "translate":
-					canvasContext.translate(data[0], data[1]);
-					break;
-				case "strokePath":
-					canvasContext.beginPath()
-					for (var dat of data) {
-						var dt = dat.data;
-						switch (dat.method) {
-							case "rect":
-								canvasContext.strokeRect(dt[0], dt[1], dt[2], dt[3]);
-								break;
-							case "moveTo":
-								canvasContext.moveTo(dt[0], dt[1]);
-								break;
-							case "lineTo":
-								canvasContext.lineTo(dt[0], dt[1]);
-								break;
-							case "closePath":
-								canvasContext.closePath();
-								break;
-							case "arc":
-								canvasContext.arc.apply(canvasContext, dt);
-								break;
-							case "quadraticCurveTo":
-								canvasContext.quadraticCurveTo.apply(canvasContext, dt);
-								break;
-							case "bezierCurveTo":
-								canvasContext.bezierCurveTo.apply(canvasContext, dt);
-								break;
-
-							default:
-								console.log("[drawCanvas-strokePath]", dat.method);
-								break;
-						}
-					}
-					canvasContext.stroke()
-					break
-				case "fillPath":
-					for (var dat of data) {
-						var dt = dat.data;
-						switch (dat.method) {
-							case "rect":
-								canvasContext.fillRect(dt[0], dt[1], dt[2], dt[3]);
-								break;
-							case "arc":
-								canvasContext.arc.apply(canvasContext, dt);
-								break;
-							default:
-								console.log("[drawCanvas-fillPath]", dat.method);
-								break;
-						}
-					}
-					canvasContext.fill()
-					break;
-				case "clearRect":
-					canvasContext.clearRect(data[0], data[1], data[2], data[3]);
-					break;
-				default:
-					console.log("[drawCanvas]", action.method);
-					break;
-			}
-		}
-		canvasContext.draw();
-
-
-	}
-	// ///////////////////////////////////////////
-	static setBackgroundFetchToken(uni_object) {
-		var wx_token = uni_object.token;
-		var wx_success = uni_object.success;
-		var wx_fail = uni_object.fail;
-		var wx_complete = uni_object.complete;
-		/////////////////
-		uni.setStorage({
-			key: "wx_token",
-			data: {
-				wx_token: wx_token,
-			},
-		})
-		uni_object.success = function (wx_res) {
-			var wx_res = {
-				errMsg: "setBackgroundFetchToken:ok"
-			};
-			if (wx_success) {
-				wx_success(wx_res);
-			}
-			if (wx_success) {
-				wx_complete(wx_res);
-			}
-		};
-	};
-	static getBackgroundFetchToken(uni_object) {
-		var uni_success = uni_object.success;
-		var uni_fail = uni_object.fail;
-		var uni_complete = uni_object.complete;
-		console.log(uni_success)
-		uni.getStorage({
-			key: 'wx_token',
-			success(res) {
-				console.log(res.data)
-			}
-		})
-		uni_object.success = function (wx_res) {
-			var wx_res = {
-				errMsg: "getBackgroundFetchToken:ok"
-			};
-			console.log("", wx_res)
-
-			if (wx_success) {
-				uni_success(wx_res);
-			}
-			if (wx_success) {
-				uni_complete(wx_res);
-			}
-		};
-	};
-	static onBackgroundFetchData(callback) {
-		console.log("暂不支持")
-	}
-	static getBackgroundFetchData(object) {
-		console.log("暂不支持")
-	}
-
-	static createCanvasContext(canvasId) {
-		return new RenderingContext(uni.createCanvasContext(canvasId));
-	}
-	static createVideoContext(videoId, ui) {
-		return new VideoContext(uni.createVideoContext(videoId));
-	}
-	static createInnerAudioContext(audioId, ui) {
-		return new InnerAudioContext(uni.createInnerAudioContext(audioId));
-	}
-	static createLivePlayerContext(livePlayerId, ui) {
-		return new LivePlayerContext(uni.createLivePlayerContext(livePlayerId));
-	}
-	static createCameraContext() {
-		return new CameraContext(uni.createCameraContext());
-	}
-	static canvasToTempFilePath(object) {
-		return uni.canvasToTempFilePath(object);
-	}
-	static canvasPutImageData(object) {
-		return uni.canvasPutImageData(object)
-	};
-	static canvasGetImageData(object) {
-		return uni.canvasGetImageData(object)
-	};
-	////////////// Device //////////////////
-	static onBeaconServiceChange(object) {
-		return uni.onBeaconServiceChange(object);
-	}
-	static onBeaconUpdate(object) {
-		return uni.onBeaconUpdate(object);
-	}
-	static offBeaconUpdate() {}
-	static offBeaconServiceChangegetBeacons() {
-
-	}
-	static getBeacons(object) {
-		return uni.getBeacons(object);
-	}
-	static stopBeaconDiscovery(object) {
-		return uni.stopBeaconDiscovery(object);
-	}
-	static startBeaconDiscovery(object) {
-		return uni.startBeaconDiscovery(object);
-	}
-	static stopWifi(object) {
-		return uni.stopWifi(object);
-	}
-	static startWifi(object) {
-		return uni.startWifi(object);
-	}
-	static setWifiList(object) {
-		return uni.setWifiList(object);
-	}
-	static onWifiConnected(object) {
-		return uni.onWifiConnected(object);
-	}
-	static onGetWifiList(object) {
-		return uni.onGetWifiList(object);
-	}
-	static offWifiConnected(callback) {
-		return uni.offWifiConnected(callback)
-	}
-	static offGetWifiList(callback) {
-		return uni.offGetWifiList(callback)
-	}
-	static getWifiList(object) {
-		return uni.getWifiList(object);
-	}
-	static getConnectedWifi(object) {
-		return uni.getConnectedWifi(object);
-	}
-	static connectWifi(object) {
-		return uni.connectWifi(object);
-	}
-	////////////////////////////////////////////
-	static setBLEMTU(object) {
-		return uni.setBLEMTU(object);
-	}
-	////////////////////////
-	static onAccelerometerChange(callback) {
-		return uni.onAccelerometerChange(callback);
-	}
-	static offAccelerometerChange() {
-		return console.log("暂不支持")
-	}
-	static stopAccelerometer(object) {
-		return uni.stopAccelerometer(object);
-	}
-	static startAccelerometer(object) {
-		return uni.startAccelerometer(object);
-	}
-	static getBatteryInfoSync(object) {
-		return uni.getBatteryInfoSync(object);
-	}
-	static getBatteryInfo(object) {
-		return uni.getBatteryInfo(object);
-	}
-	//
-	static getClipboardData(object) {
-		return uni.getClipboardData(object);
-	}
-	static setClipboardData(object) {
-		return uni.setClipboardData(object);
-	}
-	static onCompassChange(callback) {
-		return uni.onCompassChange(callback);
-	}
-	static offCompassChange() {
-		console.log("暂不支持")
-	}
-	static stopCompass(object) {
-		return uni.stopCompass(object);
-	}
-	static startCompass(object) {
-		return uni.startCompass(object);
-	}
-	static addPhoneContact(object) {
-		return uni.addPhoneContact(object);
-	}
-	static onGyroscopeChange(callback) {
-		return uni.onGyroscopeChange(object);
-	}
-	static offGyroscopeChange() {
-		return console.log("暂不支持")
-	}
-	static stopGyroscope(object) {
-		return uni.stopGyroscope(object);
-	}
-	static startGyroscope(object) {
-		return uni.startGyroscope(object);
-	}
-	//
-	static onDeviceMotionChange(object) {
-		return uni.onDeviceMotionChange(object);
-	}
-	static offDeviceMotionChange() {
-		return console.log("暂不支持")
-	}
-	static stopDeviceMotionListening(object) {
-		return uni.stopDeviceMotionListening(object);
-	}
-	static startDeviceMotionListening(object) {
-		return uni.startDeviceMotionListening(object);
-	}
-	static startDeviceMotionListening(object) {
-		return uni.startDeviceMotionListening(object);
-	}
-	//
-	static getNetworkType = function (object) {
-		return uni.getNetworkType(object);
-	}
-	static _network = function (res) {
-		return uni._network(object);
-	}
-	static onNetworkStatusChange(object) {
-		return uni.onNetworkStatusChange(object);
-	}
-	static offNetworkStatusChange(object) {
-		return console.log("");
-	}
-	//
-	static makePhoneCall = function (object) {
-		return uni.makePhoneCall(object);
-	}
-
-	static scanCode(object) {
-		return uni.scanCode(object);
-	}
-	//
-	static vibrateLong(object) {
-		return uni.vibrateLong(object);
-	}
-	static vibrateShort(object) {
-		return uni.vibrateShort(object);
-	}
-	//
-	static onMemoryWarning(callback) {
-		return uni.onMemoryWarning(callback);
-	}
-	static offMemoryWarning(callback) {
-		return uni.offMemoryWarning(callback)
-	}
-	//
-	static writeBLECharacteristicValue(object) {
-		return uni.writeBLECharacteristicValue(object);
-	}
-	static readBLECharacteristicValue(object) {
-		return uni.readBLECharacteristicValue(object);
-	}
-	static onBLEConnectionStateChange(object) {
-		return uni.onBLEConnectionStateChange(object);
-	}
-	static onBLECharacteristicValueChange(object) {
-		return uni.onBLECharacteristicValueChange(object);
-	}
-	static offBLEConnectionStateChange() {
-		return console.log("暂不支持！")
-	}
-	static offBLECharacteristicValueChange() {
-		return console.log("暂不支持！")
-	}
-	static notifyBLECharacteristicValueChange(object) {
-		return uni.notifyBLECharacteristicValueChange(object);
-	}
-	static makeBluetoothPair() {
-		return console.log("暂不支持！")
-	}
-	static getBLEDeviceServices(object) {
-		return uni.getBLEDeviceServices(object);
-	}
-	static getBLEDeviceRSSI(object) {
-		return uni.getBLEDeviceRSSI(object);
-	}
-	static getBLEDeviceCharacteristics(object) {
-		return uni.getBLEDeviceCharacteristics(object);
-	}
-	static createBLEConnection(object) {
-		return uni.createBLEConnection(object);
-	}
-	static closeBLEConnection(object) {
-		return uni.closeBLEConnection(object);
-	}
-	//
-	static stopBluetoothDevicesDiscovery(object) {
-		/* return uni.stopBluetoothDevicesDiscovery(object);*/
-	}
-	static startBluetoothDevicesDiscovery(object) {
-		return uni.startBluetoothDevicesDiscovery(object);
-	}
-	static openBluetoothAdapter(object) {
-		/* return uni.openBluetoothAdapter(object); */
-	}
-	static onBluetoothDeviceFound(object) {
-		return uni.onBluetoothDeviceFound(object);
-	}
-	static onBluetoothAdapterStateChange(object) {
-		return uni.onBluetoothAdapterStateChange(object);
-	}
-	static getConnectedBluetoothDevices(object) {
-		return uni.getConnectedBluetoothDevices(object);
-	}
-	static getBluetoothDevices(object) {
-		return uni.getBluetoothDevices(object);
-	}
-	static getBluetoothAdapterState(object) {
-		return uni.getBluetoothAdapterState(object);
-	}
-	static closeBluetoothAdapter(object) {
-		return uni.closeBluetoothAdapter(object);
-	}
-	///////////////////////////////////////////
-	static createOffscreenCanvas() {
-		return new RenderingContext(uni.createOffscreenCanvas());
-	}
-	static stopHCE(object) {
-		return uni.stopHCE(object);
-	}
-	static startHCE(object) {
-		return uni.startHCE(object);
-	}
-	static sendHCEMessage(object) {
-		return uni.sendHCEMessage(object);
-	}
-	static onHCEMessage(object) {
-		return uni.onHCEMessage(object);
-	}
-	static getHCEState(object) {
-		return uni.getHCEState(object);
-	}
-	//
-	static setScreenBrightness(object) {
-		return uni.setScreenBrightness(object);
-	}
-	static setKeepScreenOn(object) {
-		return uni.setKeepScreenOn(object);
-	}
-	static onUserCaptureScreen(callback) {
-		return uni.onUserCaptureScreen(callback);
-	}
-	static offUserCaptureScreen(callback) {
-		return uni.offUserCaptureScreen(callback);
-	}
-	static getScreenBrightness(object) {
-		return uni.getScreenBrightness(object);
-	}
-	/////////////////// Ext //////////////
-	static getExtConfigSync(object) {
-		return uni.getExtConfigSync(object)
-	}
-	static getExtConfig(object) {
-		return uni.getExtConfig(object)
-	}
-	//////////////////// File //////////
-	static getFileSystemManager(object) {
-		return uni.getFileSystemManager(object)
-	}
-	static saveFileToDisk() {
-		return console.log("暂不支持")
-	}
-	static getFileInfo(object) {
-		return uni.getFileInfo(object)
-	}
-	static removeSavedFile(object) {
-		return uni.removeSavedFile(object)
-	}
-	static getSavedFileInfo(object) {
-		return uni.getSavedFileInfo(object)
-	}
-	static getSavedFileList(object) {
-		return uni.getSavedFileList(object)
-	}
-	static openDocument(object) {
-		return uni.openDocument(object)
-	}
-	static saveFile(object) {
-		return uni.saveFile(object);
-	}
-	//////////// Location ///////////////
-	static openLocation(object) {
-		return uni.openLocation(object)
-	}
 	static getLocation(object) {
 		return uni.getLocation(object)
 	}
+
 	static chooseLocation(object) {
 		return uni.chooseLocation(object)
 	}
-	////////// Media ////////////////////
-	static createMapContext(object) {
-		return uni.createMapContext(object)
-	}
-	static createMapContext() {
-		return new MapContext(uni.createMapContext(mapId, object))
-	}
-	static compressImage(object) {
-		return uni.compressImage(object)
-	}
-	static saveImageToPhotosAlbum(object) {
-		return uni.saveImageToPhotosAlbum(object)
-	}
-	static getImageInfo(object) {
-		return uni.getImageInfo(object)
-	}
-	static previewImage(object) {
-		return uni.previewImage(object)
-	}
-	static chooseImage(object) {
-		return uni.chooseImage(object);
-	}
-	static previewMedia(object) {
-		return console.log("暂不支持！")
-	}
-	static chooseMessageFile(object) {
-		uni.chooseMessageFile(object)
-	}
-	////////////////////////////////////////////////////////////////
 
-	static saveVideoToPhotosAlbum(object) {
-		return uni.saveVideoToPhotosAlbum(object)
-	}
-	static openVideoEditor(object) {
-		return uni.openVideoEditor(object)
-	}
-	static getVideoInfo(object) {
-		return uni.getVideoInfo(object)
-	}
-	static compressVideo(object) {
-		return uni.compressVideo(object)
-	}
-	static chooseVideo(object) {
-		return uni.chooseVideo(object)
-	}
-	static chooseMedia(object) {
-		return uni.chooseMedia(object)
-	}
-	static stopVoice(object) {
-		return new InnerAudioContext(uni.createInnerAudioContext(audioId).play());
-	}
-	static pauseVoice(object) {
-		return uni.pauseVoice(object)
-	}
-	static playVoice(object) {
-		return uni.playVoice(object)
-	}
-	static setInnerAudioOption(object) {
-		var obeyMuteSwitch = true;
-		return uni.setInnerAudioOption(object)
-	}
-	static getAvailableAudioSources(object) {
-		return uni.getAvailableAudioSources(object)
-	}
-	static createInnerAudioContext(object) {
-		return uni.createInnerAudioContext(object)
-	}
-	static createAudioContext(object) {
-		return uni.createAudioContext(object)
-	}
-	static onBackgroundAudioStop(object) {
-		return uni.onBackgroundAudioStop(object)
-	}
-	static onBackgroundAudioPause(object) {
-		return uni.onBackgroundAudioPause(object)
-	}
-	static onBackgroundAudioPlay(object) {
-		return uni.onBackgroundAudioPlay(object)
-	}
-	static stopBackgroundAudio(object) {
-		return uni.stopBackgroundAudio(object)
-	}
-	static seekBackgroundAudio(object) {
-		return uni.seekBackgroundAudio(object)
-	}
-	static pauseBackgroundAudio(object) {
-		return uni.pauseBackgroundAudio(object)
-	}
-	static playBackgroundAudio(object) {
-		return uni.playBackgroundAudio(object)
-	}
-	static getBackgroundAudioPlayerState(object) {
-		return uni.getBackgroundAudioPlayerState(object)
-	}
-	static getBackgroundAudioManager() {
-		return new BackgroundAudioManager(uni.getBackgroundAudioManager());
-	}
-	static createLivePusherContext(object) {
-		return uni.createLivePusherContext(object)
-	}
-	static startRecord(object) {
-		var recorderManager = uni.getRecorderManager(object);
-		recorderManager.onStart(() => {
-			var res = "stopRecord才会返回tempFilePath!!";
-			if (object.success) {
-				object.success(res);
-			}
-			if (object.complete) {
-				object.complete(res);
-			}
-		});
-		var result = recorderManager.start();
-		return result;
-	}
-	static stopRecord(object) {
-		var recorderManager = uni.getRecorderManager(object);
-		recorderManager.onStop((res) => {
-			if (object.success) {
-				object.success(res);
-			}
-			if (object.complete) {
-				object.complete(res);
-			}
-		});
-		var result = recorderManager.stop();
-		return result;
-	}
-	static getRecorderManager(object) {
-		return uni.getRecorderManager(object)
-	}
-	//////////////// Network ///////////////
+	/////////////////// 转发 //////////////////////////
 
-
-	/////////////////////////downloadFile////////////////
-	// ////////////////////////////上传/////////////////////////////
-	// ///////////////////////////uploadFile///////////////////////
-	static uploadFile(wx_object) {
-		if (!wx_object) {
-			return;
-		}
-		let wx_url = wx_object.url;
-		let wx_filePath = wx_object.filePath;
-		let wx_name = wx_object.name;
-		let wx_header = wx_object.header;
-		let wx_timeout = wx_object.timeout;
-		let wx_formData = wx_object.formData;
-		let wx_success = wx_object.success;
-		let wx_fail = wx_object.fail;
-		let wx_complete = wx_object.complete;
-		var uni_object = {};
-		wx_object = null
-		//////////////////////
-		if (wx_timeout) {
-			setTimeout(function () {
-				alert("超时响应");
-			}, wx_timeout);
-		}
-		if (wx_url) {
-			uni_object.url = wx_url;
-		}
-		if (wx_filePath) {
-			uni_object.filePath = wx_filePath;
-		}
-		if (wx_header) {
-			uni_object.header = wx_header;
-		}
-		if (wx_name) {
-			uni_object.name = wx_name;
-		}
-		if (wx_formData) {
-			uni_object.formData = wx_formData
-		}
-		uni_object.success = function (uni_res) {
-			if (wx_success) {
-				wx_success(uni_res);
-			}
-			if (wx_complete) {
-				wx_complete(uni_res);
-			}
-		};
-		uni_object.fail = function (uni_res) {
-			if (wx_fail) {
-				wx_fail(uni_res);
-			}
-			if (wx_complete) {
-				wx_complete(uni_res);
-			}
-		};
-		return uni.upload(uni_object); // 最后输出快应用的数据对象，但是输出wx的格
-	}
-	//
-
-	static connectSocket(object) {
-		return new SocketTask(uni.connectSocket(object))
-	}
-	static onSocketError(callback) {
-		return uni.onSocketError(callback)
-	}
-	static onSocketMessage(callback) {
-		return uni.onSocketMessage(callback)
-	}
-	static onSocketClose(callback) {
-		return uni.onSocketClose(callback)
-	}
-
-
-	static closeSocket(callback) {
-		return uni.closeSocket(callback)
-	}
-	static offLocalServiceResolveFail(callback) {
-		return uni.offLocalServiceResolveFail(callback)
-	}
-	static onLocalServiceResolveFail(callback) {
-		return uni.onLocalServiceResolveFail(callback)
-	}
-	static onLocalServiceDiscoveryStop(callback) {
-		return uni.onLocalServiceDiscoveryStop(callback)
-	}
-	static offLocalServiceLost(callback) {
-		return uni.offLocalServiceLost(callback)
-	}
-	static onLocalServiceLost(callback) {
-		return uni.onLocalServiceLost(callback)
-	}
-	static onLocalServiceFound(callback) {
-		return uni.onLocalServiceFound(callback)
-	}
-	static stopLocalServiceDiscovery(object) {
-		return uni.stopLocalServiceDiscovery(object)
-	}
-	static startLocalServiceDiscovery(object) {
-		return uni.startLocalServiceDiscovery(object)
-	}
-	static offLocalServiceFound(callback) {
-		return uni.offLocalServiceFound(callback);
-	}
-	static offLocalServiceDiscoveryStop(callback) {
-		return uni.offLocalServiceDiscoveryStop(callback);
-	}
-	static createUDPSocket() {
-		return uni.createUDPSocket()
-	}
-	///////// Open Interface //////////
-	static checkSession(object) {
-		return uni.checkSession(object);
-	}
-
-	static login = function (object) {
-		var that = this;
-		if (!object) {
-			return uni.login(object);
-		}
-		var object2 = {
-			//   scopes: "auth_user"
-		};
-		object2.success = function (res) {
-			uni._sessoion = new Date().getTime();
-			getApp().onejit.jscode = res.authCode;
-			var result = {
-				code: res.authCode
-			};
-			if (object.success) {
-				object.success(result);
-			}
-			if (object.complete) {
-				object.complete(complete);
-			}
-		}
-		object2.fail = function (res) {
-			if (object.fail) {
-				object.fail(res);
-			}
-			if (object.complete) {
-				object.complete(res);
-			}
-		}
-		return uni.login(object2);
-	};
-
-	static getUserInfo() {
-		return uni.getUserInfo({
-			success(res) {
-				uni.request({
-					url: getApp().onejit.server + "userinfo", // 仅为示例，并非真实的接口地址
-					method: 'POST',
-					responseType: 'text',
-					data: {
-						jscode: getApp().onejit.jscode,
-						data: res.toString()
-					},
-					success: res => {
-						console.log(res.data);
-					},
-					fail: err => {
-						console.log('错误码：' + err.errCode);
-						console.log('错误信息：' + err.errMsg);
-					}
-				});
-
-			}
-
-		});
-	}
-	static getOpenData = function (object) {
-		return uni.getOpenData(object);
-	}
-	static getPhoneNumber = function (object) {
-		return uni.getPhoneNumber(object);
-	}
-	static navigateToMiniProgram(object) {
-		return uni.navigateToMiniProgram(object)
-	}
-	static navigateBackMiniProgram(object) {
-		return uni.navigateBackMiniProgram(object)
-	}
-	static getAccountInfoSync(object) {
-		return uni.getAccountInfoSync(object)
-	}
-
-	static reportMonitor(object) {
-		return uni.reportMonitor(object)
-	}
-	static reportAnalytics(object, eventName) {
-		return uni.reportAnalytics(object, eventName)
-	}
-	static requestPayment(object) {
-		return uni.requestPayment(object);
-	}
-	static authorize(object) {
-		return uni.authorize(object)
-	}
-	static openSetting(object) {
-		return uni.openSetting(object)
-	}
-	static getSetting(object) {
-		return uni.getSetting(object)
-	}
-	static chooseAddress(object) {
-		return uni.chooseAddress(object)
-	}
-	static openCard(object) {
-		return uni.openCard(object);
-	}
-	static addCard = function (object) {
-		return uni.addCard(object);
-	}
-	static chooseInvoiceTitle(object) {
-		return uni.chooseInvoiceTitle(object)
-	}
-	static chooseInvoice(object) {
-		return uni.chooseInvoice(object)
-	}
-	static startSoterAuthentication(object) {
-		return uni.startSoterAuthentication(object)
-	}
-	static checkIsSupportSoterAuthentication(object) {
-		return uni.checkIsSupportSoterAuthentication(object)
-	}
-	static checkIsSoterEnrolledInDevice(object) {
-		return uni.checkIsSoterEnrolledInDevice(object)
-	}
-	static getWeRunData(object) {
-		return uni.getWeRunData(object)
-	}
-	static reportMonitor(name, value) {
-		return uni.reportMonitor(name, value)
-	};
-	////////// Router //////////////
-
-	///////////// Share /////////////
 	static updateShareMenu(object) {
-		return uni.updateShareMenu(object)
+		return console.error("updateShareMenu暂不支持")
 	}
+
 	static showShareMenu(object) {
-		return uni.showShareMenu(object);
+		return uni.showShareMenu(object)
 	}
+
 	static hideShareMenu(object) {
 		return uni.hideShareMenu(object)
 	}
+
 	static getShareInfo(object) {
-		return uni.getShareInfo(object)
-	}
-	/////////////// Storage //////////////
-	static getStorageInfoSync(object) {
-		return uni.getStorageInfoSync(object)
-	}
-	static getStorageInfo(object) {
-		return uni.getStorageInfo(object)
-	}
-	static clearStorageSync(object) {
-		return uni.clearStorageSync(object)
-	}
-	static clearStorage(object) {
-		return uni.clearStorage(object)
-	}
-	static removeStorageSync(object) {
-		return uni.removeStorageSync(object)
-	}
-	static removeStorage(object) {
-		return uni.removeStorage(object)
-	}
-	static setStorageSync(key, value) {
-		return uni.setStorageSync(key, value)
-	}
-	static setStorage(object) {
-		return uni.setStorage(object)
-	}
-	static getStorageSync(key) {
-		return uni.getStorageSync(key);
-	}
-	static getStorage(object) {
-		return uni.getStorage(object)
-	}
-	////////////// UI ////////////////
-	static showActionSheet(object) {
-		return uni.showActionSheet(object);
-	}
-	static enableAlertBeforeUnload(object) {
-		return console.log('暂不支持')
-	}
-	static disableAlertBeforeUnload(object) {
-		return console.log('暂不支持')
-	}
-	static hideLoading(object) {
-		return uni.hideLoading(object)
-	}
-	static showLoading(object) {
-		return uni.showLoading(object);
-	}
-	static hideToast(object) {
-		return uni.hideToast(object);
-	}
-	static showToast(object) {
-		return uni.showToast(object);
-	}
-	static showModal(object) {
-		return uni.showModal(object);
-	}
-	static setNavigationBarColor(object) {
-		return uni.setNavigationBarColor(object)
-	}
-	static hideNavigationBarLoading(object) {
-		return uni.hideNavigationBarLoading(object)
-	}
-	static showNavigationBarLoading(object) {
-		return uni.showNavigationBarLoading(object)
-	}
-	static setNavigationBarTitle(object) {
-		return uni.setNavigationBarTitle(object);
-	};
-	static setBackgroundTextStyle(object) {
-		return uni.setBackgroundTextStyle(object)
-	}
-	static hideHomeButton(object) {
-		return uni.hideHomeButton(object)
+		return console.error("getShareInfo暂不支持")
 	}
 
-	static setBackgroundColor(object) {
-		return uni.setBackgroundColor(object)
-	}
-	static setTabBarItem(object) {
-		return uni.setTabBarItem(object)
-	}
-	static setTabBarStyle(object) {
-		return uni.setTabBarStyle(object)
-	}
-	static hideTabBar(object) {
-		return uni.hideTabBar(object)
-	}
-	static showTabBar(object) {
-		return uni.showTabBar(object)
-	}
-	static hideTabBarRedDot(object) {
-		return uni.hideTabBarRedDot(object)
-	}
-	static showTabBarRedDot(object) {
-		return uni.showTabBarRedDot(object)
-	}
-	static removeTabBarBadge(object) {
-		return uni.removeTabBarBadge(object)
-	}
-	static setTabBarBadge(object) {
-		return uni.setTabBarBadge(object)
+	static authPrivateMessage(object) {
+		return console.error("authPrivateMessage暂不支持")
 	}
 
-	static loadFontFace(object) {
-		return uni.loadFontFace(object)
+	/////////////////// 画布 //////////////////////////
+
+	static createOffscreenCanvas() {
+		return console.error("createOffscreenCanvas暂不支持")
 	}
 
-	static stopPullDownRefresh(object) {
-		return uni.stopPullDownRefresh(object);
+	static createCanvasContext(string,object) {
+		return console.error("createCanvasContext暂不支持")
 	}
-	static startPullDownRefresh(object) {
-		return uni.startPullDownRefresh(object);
+
+	static canvasToTempFilePath(object1,object2) {
+		return console.error("canvasToTempFilePath暂不支持")
 	}
-	static pageScrollTo(object) {
-		return uni.pageScrollTo(object)
+
+	static canvasPutImageData(object1,object2) {
+		return console.error("canvasPutImageData暂不支持")
 	}
-	static setTopBarText(object) {
-		return uni.setTopBarText(object)
+
+	static canvasGetImageData(object1,object2) {
+		return console.error("canvasGetImageData暂不支持")
 	}
-	static nextTick(callback) {
-		return uni.nextTick(callback)
+
+	/////////////////// 文件 //////////////////////////
+
+	static saveFileToDisk(object) {
+		return console.error("saveFileToDisk暂不支持")
 	}
-	static getMenuButtonBoundingClientRect(object) {
-		return uni.getMenuButtonBoundingClientRect(object)
+
+	static saveFile(object) {
+		return uni.saveFile(object)
 	}
-	static offWindowResize(callback) {
-		return uni.offWindowResize(callback)
+
+	static removeSavedFile(object) {
+		return uni.removeSavedFile(object)
 	}
-	static onWindowResize(callback) {
-		return uni.onWindowResize(callback)
+
+	static openDocument(object) {
+		return uni.openDocument(object)
 	}
-	static setWindowSize() {
-		return console.log("暂不支持")
+
+	static getSavedFileList(object) {
+		return uni.getSavedFileList(object)
 	}
-	////////////////键盘//////////////////////
-	static onKeyboardHeightChange(callback) {
-		return uni.onKeyboardHeightChange(callback)
+
+	static getSavedFileInfo(object) {
+		return uni.getSavedFileInfo(object)
 	}
-	static offKeyboardHeightChange() {
-		return console.log("暂不支持")
+
+	static getFileSystemManager() {
+		return uni.getFileSystemManager(object)
 	}
-	static hideKeyboard(object) {
-		return uni.hideKeyboard(object)
+
+	static getFileInfo(object) {
+		return uni.getFileInfo(object)
 	}
-	static getSelectedTextRange() {
-		return console.log("暂不支持")
+
+	/////////////////// 开放接口 //////////////////////////
+
+  /////// 登陆 /////
+	static login(object) {
+		return uni.login(object)
 	}
-	////////////// Worker ///////////////
-	static createWorker(path) {
-		return new Worker(path);
+
+	static checkSession(object) {
+		return uni.checkSession(object)
 	}
-	////////////// WXML ///////////////
-	static createSelectorQuery(object) {
-		return uni.createSelectorQuery(object)
+
+	/////// 小程序跳转 /////
+	static navigateToMiniProgram(object) {
+		return uni.navigateToMiniProgram(object)
 	}
-	static createMediaContainer() {
-		return uni.createMediaContainer()
+
+	static navigateBackMiniProgram(object) {
+		return uni.navigateBackMiniProgram(object)
 	}
-	////////////////////////////////////
-	static updateVoIPChatMuteConfig() {
-		return console.log("暂不支持！")
+
+	/////// 账号信息 /////
+	static getAccountInfoSync() {
+		return uni.getAccountInfoSync()
 	}
-	static subscribeVoIPVideoMembers() {
-		return console.log("暂不支持！")
+
+	/////// 用户信息 /////
+	static getUserInfo(object) {
+		return uni.getUserInfo(object)
 	}
-	static onVoIPVideoMembersChanged() {
-		return console.log("暂不支持！")
+
+	/////// 数据上报 /////
+	static reportMonitor(string,number) {
+		return console.error("reportMonitor暂不支持")
 	}
-	static onVoIPChatSpeakersChanged() {
-		return console.log("暂不支持！")
+
+	/////// 数据分析 /////
+	static reportAnalytics(string,object) {
+		return console.error("reportAnalytics暂不支持")
 	}
-	static onVoIPChatMembersChanged() {
-		return console.log("暂不支持！")
+
+	/////// 支付 /////
+	static requestPayment(object) {
+		return uni.requestPayment(object)
 	}
-	static onVoIPChatInterrupted() {
-		return console.log("暂不支持！")
+
+	/////// 授权 /////
+	static authorize(object) {
+		return uni.authorize(object)
 	}
-	static offVoIPVideoMembersChanged() {
-		return console.log("暂不支持！")
+
+	/////// 设置 /////
+	static openSetting(object) {
+		return uni.openSetting(object)
 	}
-	static offVoIPChatMembersChanged() {
-		return console.log("暂不支持！")
+
+	static getSetting(object) {
+		return uni.getSetting(object)
 	}
-	static offVoIPChatInterrupted() {
-		return console.log("暂不支持！")
+
+	/////// 收货地址 /////
+	static chooseAddress(object) {
+		return uni.chooseAddress(object)
 	}
-	static joinVoIPChat() {
-		return console.log("暂不支持！")
+
+	/////// 卡劵 /////
+	static openCard(object) {
+		return console.error("openCard暂不支持")
 	}
-	static exitVoIPChat() {
-		return console.log("暂不支持！")
+
+	static addCard(object) {
+		return console.error("addCard暂不支持")
 	}
-	static createMediaRecorder() {
-		return console.log("暂不支持！")
+
+	/////// 发票 /////
+	static chooseInvoiceTitle(object) {
+		return uni.chooseInvoiceTitle(object)
 	}
-	static createVideoDecoder() {
-		return console.log("暂不支持！")
+
+	static chooseInvoice(object) {
+		return console.error("chooseInvoice暂不支持")
 	}
-	/////////////////////////////////////
-	static onBLEPeripheralConnectionStateChanged() {
-		return console.log("功能开发中！")
+
+	/////// 生物认证 /////
+	static startSoterAuthentication(object) {
+		return uni.startSoterAuthentication(object)
 	}
-	static offBLEPeripheralConnectionStateChanged() {
-		return console.log("功能开发中！")
+
+	static checkIsSupportSoterAuthentication(object) {
+		return uni.checkIsSupportSoterAuthentication(object)
 	}
-	static createBLEPeripheralServer() {
-		return console.log("功能开发中！")
+
+	static checkIsSoterEnrolledInDevice(object) {
+		return uni.checkIsSoterEnrolledInDevice(object)
 	}
-	static stopLocationUpdate() {
-		return console.log("功能开发中！")
+
+	/////// 微信运动 /////
+	static getWeRunData(object) {
+		return console.error("getWeRunData暂不支持")
 	}
-	static startLocationUpdateBackground() {
-		return console.log("功能开发中！")
+
+	/////// 性能 /////
+	static reportPerformance(number1,number2,string) {
+		return console.error("reportPerformance暂不支持")
 	}
-	static startLocationUpdate() {
-		return console.log("功能开发中！")
+
+	static getWeRunData() {
+		return console.error("getWeRunData暂不支持")
 	}
-	static createIntersectionObserver(object) {
-		return uni.createIntersectionObserver(object)
+
+	/////// 订阅消息 /////
+	static requestSubscribeMessage(object) {
+		return uni.requestSubscribeMessage(object)
 	}
+
+	/////// 微信红包 /////
+	static showRedPackage(object) {
+		return console.error("showRedPackage暂不支持")
+	}
+
+	/////// 群工具 /////
+	static getGroupEnterInfo(object) {
+		return console.error("getGroupEnterInfo暂不支持")
+	}
+
+	/////////////////// 设备 //////////////////////////
+
+	/////// 外围设备 /////
+	static onBLEPeripheralConnectionStateChanged(callback) {
+		return console.error("onBLEPeripheralConnectionStateChanged暂不支持")
+	}
+
+	static offBLEPeripheralConnectionStateChanged(callback) {
+		return console.error("offBLEPeripheralConnectionStateChanged暂不支持")
+	}
+
+	static createBLEPeripheralServer(callback) {
+		return console.error("createBLEPeripheralServer暂不支持")
+	}
+
+	/////// iBeacon /////
+	static stopBeaconDiscovery(object) {
+		return uni.stopBeaconDiscovery(object);
+	}
+
+	static startBeaconDiscovery(object) {
+		return uni.startBeaconDiscovery(object);
+	}
+
+	static onBeaconUpdate(callback) {
+		return uni.onBeaconUpdate(callback);
+	}
+
+	static onBeaconServiceChange(callback) {
+		return uni.onBeaconServiceChange(callback);
+	}
+
+  static offBeaconUpdate(callback) {
+		return console.error("offBeaconUpdate暂不支持")
+	}
+
+	static offBeaconServiceChange(callback) {
+		return console.error("offBeaconServiceChange暂不支持")
+	}
+
+	static getBeacons(object) {
+		return uni.getBeacons(object);
+	}
+
+	/////// NFC /////
+	static stopHCE(object) {
+		return console.error("stopHCE暂不支持")
+	}
+
+	static startHCE(object) {
+		return console.error("startHCE暂不支持")
+	}
+
+	static sendHCEMessage(object) {
+		return console.error("sendHCEMessage暂不支持")
+	}
+
+	static onHCEMessage(callback) {
+		return console.error("onHCEMessage暂不支持")
+	}
+
+	static offHCEMessage(callback) {
+		return console.error("offHCEMessage暂不支持")
+	}
+
+	static getNFCAdapter() {
+		return console.error("getNFCAdapter暂不支持")
+	}
+
+	static getHCEState(object) {
+		return console.error("getHCEState暂不支持")
+	}
+
+	/////// WiFi //////
+	static stopWifi(object) {
+		return console.error("stopWifi暂不支持")
+	}
+
+	static startWifi(object) {
+		return console.error("startWifi暂不支持")
+	}
+
+	static setWifiList(object) {
+		return console.error("setWifiList暂不支持")
+	}
+
+	static onWifiConnected(callback) {
+		return console.error("onWifiConnected暂不支持")
+	}
+
+	static onGetWifiList(callback) {
+		return console.error("onGetWifiList暂不支持")
+	}
+
+	static offWifiConnected(callback) {
+		return console.error("offWifiConnected暂不支持")
+	}
+
+	static offGetWifiList(callback) {
+		return console.error("offGetWifiList暂不支持")
+	}
+
+	static getWifiList(object) {
+		return console.error("stopWifi暂不支持")
+	}
+
+	static getConnectedWifi(object) {
+		return console.error("startWifi暂不支持")
+	}
+
+	static getConnectedWifi(object) {
+		return console.error("setWifiList暂不支持")
+	}
+
+	/////// 联系人 //////
+	static addPhoneContact(object) {
+		return uni.addPhoneContact(object)
+	}
+
+	/////// 无障碍 //////
+	static checkIsOpenAccessibility(object) {
+		return console.error("checkIsOpenAccessibility暂不支持")
+	}
+
+	/////// 低功耗蓝牙 //////
+	static writeBLECharacteristicValue(object) {
+		return uni.writeBLECharacteristicValue(object)
+	}
+
+	static setBLEMTU(object) {
+		return uni.setBLEMTU(object)
+	}
+
+	static readBLECharacteristicValue(object) {
+		return uni.readBLECharacteristicValue(object)
+	}
+
+	static onBLECharacteristicValueChange(callback) {
+		return uni.onBLECharacteristicValueChange(callback)
+	}
+
+	static offBLEConnectionStateChange(callback) {
+		return console.error("offBLEConnectionStateChange暂不支持")
+	}
+
+	static offBLECharacteristicValueChange(callback) {
+		return console.error("offBLECharacteristicValueChange暂不支持")
+	}
+
+	static notifyBLECharacteristicValueChange(object) {
+		return uni.notifyBLECharacteristicValueChange(object)
+	}
+
+	static makeBluetoothPair(object) {
+		return console.error("makeBluetoothPair暂不支持")
+	}
+
+	static getBLEDeviceServices(object) {
+		return uni.getBLEDeviceServices(object)
+	}
+
+	static getBLEDeviceRSSI(object) {
+		return uni.getBLEDeviceRSSI(object)
+	}
+
+	static getBLEDeviceCharacteristics(object) {
+		return uni.getBLEDeviceCharacteristics(object)
+	}
+
+	static createBLEConnection(object) {
+		return uni.createBLEConnection(object)
+	}
+
+	static closeBLEConnection(object) {
+		return uni.closeBLEConnection(object)
+	}
+
+	/////// 蓝牙 ///////
+	static stopBluetoothDevicesDiscovery(object) {
+		return uni.stopBluetoothDevicesDiscovery(object)
+	}
+
+	static startBluetoothDevicesDiscovery(object) {
+		return uni.startBluetoothDevicesDiscovery(object)
+	}
+
+	static openBluetoothAdapter(object) {
+		return uni.openBluetoothAdapter(object)
+	}
+
+	static onBluetoothDeviceFound(callback) {
+		return uni.onBluetoothDeviceFound(callback)
+	}
+
+	static onBluetoothAdapterStateChange(callback) {
+		return uni.onBluetoothAdapterStateChange(callback)
+	}
+
+	static offBluetoothDeviceFound(callback) {
+		return console.error("offBluetoothDeviceFound暂不支持")
+	}
+
+	static offBluetoothAdapterStateChange(callback) {
+		return console.error("offBluetoothAdapterStateChange暂不支持")
+	}
+
+	static getConnectedBluetoothDevices(object) {
+		return uni.getConnectedBluetoothDevices(object)
+	}
+
+	static getBluetoothDevices(object) {
+		return uni.getBluetoothDevices(object)
+	}
+
+	static getBluetoothAdapterState(object) {
+		return uni.getBluetoothAdapterState(object)
+	}
+
+	static closeBluetoothAdapter(object) {
+		return uni.closeBluetoothAdapter(object)
+	}
+
+	/////// 电量 ///////
+	static getBatteryInfoSync() {
+		return console.error("getBatteryInfoSync暂不支持")
+	}
+
+	static getBatteryInfo(object) {
+		return console.error("getBatteryInfo暂不支持")
+	}
+
+	/////// 剪切板 ///////
+	static setClipboardData(object) {
+		return uni.setClipboardData(object)
+	}
+
+	static getClipboardData(object) {
+		return uni.getClipboardData(object)
+	}
+
+	/////// 网络 ///////
+	static onNetworkStatusChange(callback) {
+		return uni.onNetworkStatusChange(callback)
+	}
+
+	static offNetworkStatusChange(callback) {
+		return console.error("offNetworkStatusChange暂不支持")
+	}
+
+	static getNetworkType(object) {
+		return uni.getNetworkType(object)
+	}
+
+	/////// 屏幕 ///////
+	static setScreenBrightness(object) {
+		return uni.setScreenBrightness(object)
+	}
+
+	static setKeepScreenOn(object) {
+		return uni.setKeepScreenOn(object)
+	}
+
+	static onUserCaptureScreen(callback) {
+		return uni.onUserCaptureScreen(callback)
+	}
+
+	static offUserCaptureScreen(callback) {
+		return console.error("offUserCaptureScreen暂不支持")
+	}
+
+	static getScreenBrightness(object) {
+		return uni.getScreenBrightness(object)
+	}
+
+	/////// 电话 ///////
+	static makePhoneCall(object) {
+		return uni.makePhoneCall(object)
+	}
+
+	/////// 加速计 ///////
+	static stopAccelerometer(object) {
+		return uni.stopAccelerometer(object)
+	}
+
+	static startAccelerometer(object) {
+		return uni.startAccelerometer(object)
+	}
+
+	static onAccelerometerChange(callback) {
+		return uni.onAccelerometerChange(callback)
+	}
+
+	static offAccelerometerChange(callback) {
+		return uni.offAccelerometerChange(callback)
+	}
+
+	/////// 罗盘 ///////
+	static stopCompass(object) {
+		return uni.stopAccelerometer(object)
+	}
+
+	static startCompass(object) {
+		return uni.startCompass(object)
+	}
+
+	static onCompassChange(callback) {
+		return uni.onCompassChange(callback)
+	}
+
+	static offCompassChange(callback) {
+		return uni.offCompassChange(callback)
+	}
+
+	/////// 设备方向 ///////
+	static stopDeviceMotionListening(object) {
+		return console.error("stopDeviceMotionListening暂不支持")
+	}
+
+	static startDeviceMotionListening(object) {
+		return console.error("startDeviceMotionListening暂不支持")
+	}
+
+	static onDeviceMotionChange(callback) {
+		return console.error("onDeviceMotionChange暂不支持")
+	}
+
+	static offDeviceMotionChange(callback) {
+		return console.error("offDeviceMotionChange暂不支持")
+	}
+
+	/////// 陀螺仪 ///////
+	static stopGyroscope(object) {
+		return uni.stopGyroscope(object)
+	}
+
+	static startGyroscope(object) {
+		return uni.startGyroscope(object)
+	}
+
+	static onGyroscopeChange(callback) {
+		return uni.onGyroscopeChange(callback)
+	}
+
+	static offGyroscopeChange(callback) {
+		return console.error("offGyroscopeChange暂不支持")
+	}
+
+	/////// 性能 ///////
+	static onMemoryWarning(callback) {
+		return uni.onMemoryWarning(callback)
+	}
+
+	static offMemoryWarning(callback) {
+		return console.error("offMemoryWarning暂不支持")
+	}
+
+	/////// 扫码 ///////
+	static scanCode(object) {
+		return uni.scanCode(object)
+	}
+
+	/////// 振动 ///////
+	static vibrateShort(object) {
+		return uni.vibrateShort(object)
+	}
+
+	static vibrateLong(object) {
+		return uni.vibrateLong(object)
+	}
+
+	/////////////////// Worker //////////////////////////
+	static createWorker(string,object) {
+		return console.error("createWorker暂不支持")
+	}
+
+	/////////////////// 第三方平台 //////////////////////////
+	static getExtConfigSync() {
+		return uni.getExtConfigSync()
+	}
+
+	static getExtConfig(object) {
+		return uni.getExtConfig(object)
+	}
+
+	/////////////////// WXML //////////////////////////
+	static createSelectorQuery() {
+		return uni.createSelectorQuery()
+	}
+
+	static createIntersectionObserver(object1,object2) {
+		return uni.createSelectorQuery(object1,object2)
+	}
+
+	/////////////////// 广告 //////////////////////////
+	static createRewardedVideoAd(object) {
+		return uni.createRewardedVideoAd(object)
+	}
+
+	static createInterstitialAd(object) {
+		return uni.createInterstitialAd(object)
+	}
+
 	/////////////////////////////////////
 	static hideKeyboard(object) {
 		return uni.hideKeyboard(object)
