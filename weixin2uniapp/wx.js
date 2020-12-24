@@ -68,8 +68,8 @@ export default class wxx {
 		return uni.onError(callback)
 	}
 
-	static onAudioInterruptionBegin(callback) {
-		return console.error("onAudioInterruptionBegin暂不支持")
+	static onAudioInterruptionEnd(callback) {
+		return console.error("onAudioInterruptionEnd暂不支持")
 	}
 
 	static onAudioInterruptionBegin(callback) {
@@ -1022,15 +1022,15 @@ export default class wxx {
 	}
 
 	static getWifiList(object) {
-		return console.error("stopWifi暂不支持")
+		return console.error("getWifiList暂不支持")
 	}
 
 	static getConnectedWifi(object) {
-		return console.error("startWifi暂不支持")
+		return console.error("getConnectedWifi暂不支持")
 	}
 
 	static getConnectedWifi(object) {
-		return console.error("setWifiList暂不支持")
+		return console.error("getConnectedWifi暂不支持")
 	}
 
 	/////// 联系人 //////
