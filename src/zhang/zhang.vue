@@ -16,11 +16,20 @@
 		onLoad(){
 			console.log("ok")
 			const db = uniCloud.database()
-			db.collection('developer').get({
-					success(res){
+			/*
+			db.collection('developer').get().then((res)=>{
 						console.log(res)
-					}
-			})
+					}).catch((err)=>{
+						console.log(err)
+					})
+			*/
+		   db.collection('developer').get({
+			   success(res){
+		   			console.log(res)
+		   		},fail(err){
+		   			console.log(err)
+		   		}
+				})
 		},
 		methods: {
 			
