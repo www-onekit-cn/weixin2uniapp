@@ -1,6 +1,6 @@
 export default class Collection {
-  constructor(db, name) {
-    this.THIS = db.THIS.collection(name)
+  constructor(uni_collection) {
+    this.THIS = uni_collection
   }
 
   get(wx_object) {
@@ -80,4 +80,13 @@ export default class Collection {
       })
     })
   }
+
+
+  where(object) {
+    return new Collection(this.THIS.where(object))
+  }
+
+  remove(wx_object) {
+  }
+  
 }
