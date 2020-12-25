@@ -81,7 +81,6 @@ export default class Collection {
     })
   }
 
-
   where(object) {
     return new Collection(this.THIS.where(object))
   }
@@ -163,6 +162,43 @@ export default class Collection {
         }
         if (wx_complete) {
           wx_complete(wx_err)
+        }
+      })
+    })
+  }
+
+  count(wx_object) {
+    let wx_success, wx_fail, wx_complete
+    if (wx_object) {
+      wx_success = wx_object.success
+      wx_fail = wx_object.fail
+      wx_complete = wx_object.complete
+    }
+    wx_object = null
+
+    return new Promise((wx_resolve, wx_reject) => {
+      this.THIS.count().then(({result}) => {
+        const wx_res = {
+          total: result.total,
+          errMsh: 'collection.count:ok'
+        }
+        wx_resolve(wx_res)
+        if(wx_success){
+          wx_success(wx_res)
+        }
+        if(wx_complete) {
+          wx_complete(wx_res)
+        }
+      }).catch(uni_err => {
+        const wx_res = {
+          errMsg: uni_err
+        }
+        wx_reject(wx_res)
+        if(wx_fail) {
+          wx_fail(wx_res)
+        }
+        if(wx_complete) {
+          wx_complete(wx_res)
         }
       })
     })
