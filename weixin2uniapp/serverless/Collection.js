@@ -244,4 +244,11 @@ export default class Collection {
     targetObject._openid
   }
 
+  limit(wx_value) {
+    return new Collection(this.THIS.limit(wx_value))
+  }
+
+  orderBy(filedPath, order) {
+    return new Collection(this.THIS.orderBy(filedPath, order))
+  }
 }
