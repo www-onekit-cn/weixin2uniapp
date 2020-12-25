@@ -177,16 +177,18 @@ export default class Collection {
     wx_object = null
 
     return new Promise((wx_resolve, wx_reject) => {
-      this.THIS.count().then(({result}) => {
+      this.THIS.count().then(({
+        result
+      }) => {
         const wx_res = {
           total: result.total,
           errMsh: 'collection.count:ok'
         }
         wx_resolve(wx_res)
-        if(wx_success){
+        if (wx_success) {
           wx_success(wx_res)
         }
-        if(wx_complete) {
+        if (wx_complete) {
           wx_complete(wx_res)
         }
       }).catch(uni_err => {
@@ -194,13 +196,36 @@ export default class Collection {
           errMsg: uni_err
         }
         wx_reject(wx_res)
-        if(wx_fail) {
+        if (wx_fail) {
           wx_fail(wx_res)
         }
-        if(wx_complete) {
+        if (wx_complete) {
           wx_complete(wx_res)
         }
       })
     })
   }
+
+  watch(wx_object) {
+    const wx_onChange = wx_object.onChange
+    const wx_onError = wx_object.onChange
+    let target = this.THIS.content.$param[0]
+    console.log('--- code runing here --')
+
+    target = new Proxy({}, {
+      get: function (target, propKey, receiver) {
+        console.log(`getting ${propKey}!`);
+        // return Reflect.get(target, propKey, receiver);
+      },
+      set: function (target, propKey, value, receiver) {
+        wx_onChange(target)
+        return Reflect.set(target, propKey, value, receiver);
+      }
+    })
+     
+    setTimeout(() => {
+      target.name = 'xiaopeng'
+    }, 3000);
+  }
+
 }
