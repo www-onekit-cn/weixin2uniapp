@@ -251,4 +251,5 @@ export default class Collection {
   orderBy(filedPath, order) {
     return new Collection(this.THIS.orderBy(filedPath, order))
   }
+  
 }
