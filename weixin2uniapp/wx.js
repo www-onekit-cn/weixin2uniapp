@@ -1,4 +1,5 @@
 
+import wx_cloud from './serverless/wx.cloud'
 export default class wx {
 
 	//////////////////////  基础  ///////////////////////////
@@ -1328,4 +1329,9 @@ export default class wx {
 		return uni.createInterstitialAd(object)
 	}
 
+	//////////////////   cloud   //////////////////////
+	
+	static get cloud() {
+		return wx_cloud
+	}
 }
