@@ -209,23 +209,39 @@ export default class Collection {
   watch(wx_object) {
     const wx_onChange = wx_object.onChange
     const wx_onError = wx_object.onChange
-    let target = this.THIS.content.$param[0]
-    console.log('--- code runing here --')
-
-    target = new Proxy({}, {
-      get: function (target, propKey, receiver) {
-        console.log(`getting ${propKey}!`);
-        // return Reflect.get(target, propKey, receiver);
-      },
-      set: function (target, propKey, value, receiver) {
-        wx_onChange(target)
-        return Reflect.set(target, propKey, value, receiver);
+    let targetObject = this.THIS.content.$param
+    let id = 0
+    function randomRequestId(randomFlag, min, max) {
+      let str = "",
+        range = min,
+        arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      if (randomFlag) {
+        range = Math.round(Math.random() * (max - min)) + min;
+      }
+      for (var i = 0; i < range; i++) {
+        let pos = Math.round(Math.random() * (arr.length - 1));
+        str += arr[pos];
+      }
+      return str;
+    }
+    const requestId = `160888${randomRequestId(false,7)}_${id}.${randomRequestId(false, 16)}`
+    const watchId = `watchid_160888${randomRequestId(false,7)}_${id}.${randomRequestId(false, 16)}`
+    targetObject = new Proxy({}, {
+      get: target => {
+        const docChange = Array.from(target)
+        const res = {
+          docChange,
+          id,
+          requestId,
+          type: 'init',
+          watchId
+        }
+        wx_onChange(res)
+        id++
       }
     })
-     
-    setTimeout(() => {
-      target.name = 'xiaopeng'
-    }, 3000);
+
+    targetObject._openid
   }
 
 }
