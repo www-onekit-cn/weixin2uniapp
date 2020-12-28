@@ -1,4 +1,6 @@
 import Database from './Database'
+import TheKit from '../tools/image'
+import { String } from 'core-js'
 export default class wx_cloud {
   static init(wx_options) {
     const env = wx_options.env
@@ -31,32 +33,34 @@ export default class wx_cloud {
       uniCloud.getTempFileURL({
         fileList,
       }).then(res => {
+        console.log(res)
         const resu = {
           errMsg: 'cloud.getTempFileURL:ok',
           fileList: res.fileList.map(res => {
             const obj = {
               errMsg: 'OK',
               fileID: res.fileID,
-              maxAge: undefined,
+              maxAge: fetch(res.tempFileURL).then(res => res.blob()).then(data => data.size),
               status: 0,
               tempFileURL: res.tempFileURL
-            }
+            }            
             return obj
           })
+          
         }
         wx_resolve(resu)
-        if(wx_success) {
+        if (wx_success) {
           wx_success(resu)
         }
-        if(wx_complete) {
+        if (wx_complete) {
           wx_complete(resu)
         }
       }).catch(err => {
         wx_reject(err)
-        if(wx_fail) {
+        if (wx_fail) {
           wx_fail(err)
         }
-        if(wx_complete) {
+        if (wx_complete) {
           wx_complete(err)
         }
       })
