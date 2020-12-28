@@ -254,17 +254,16 @@ export default class Collection {
     return new Collection(this.THIS.orderBy(filedPath, order))
   }
 
-  skip(wx_offset) {
-    return new Collection(this.THIS.skip(wx_offset))
+  skip(offset) {
+    return new Collection(this.THIS.skip(offset))
   }
 
-  field(wx_object) {
-    return new Collection(this.THIS.field(wx_object))
+  field(object) {
+    return new Collection(this.THIS.field(object))
   } 
-
  
   aggregate() {
-    // console.log(this)
     return new Aggregate(this.THIS.aggregate())
   }
+
 }

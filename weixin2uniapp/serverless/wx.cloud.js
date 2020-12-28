@@ -12,7 +12,7 @@ export default class wx_cloud {
   static database () {
     let wx_database = this.wx_database
     if(!wx_database){
-      wx_database = new Database()
+      wx_database = new Database(uniCloud.database())
       this.wx_database = wx_database
     }
     return wx_database
