@@ -8,6 +8,10 @@ export default class Aggregate {
     return new Aggregate(this.THIS.addFields(object))
   }
 
+  bucket(object) {
+    return new Aggregate(this.THIS.bucket(object))
+  }
+
   group(object) {
     return new Aggregate(this.THIS.group(object))
   }
