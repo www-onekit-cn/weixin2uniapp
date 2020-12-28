@@ -12,9 +12,20 @@ export default class Aggregate {
     return new Aggregate(this.THIS.bucket(object))
   }
 
+  count(fieldName) {
+    return new Aggregate(this.THIS.count(fieldName))
+  }
+
+  ////////////
+
+  match(object) {
+    return new Aggregate(this.THIS.match(object))
+  }
+
   bucketAuto(object) {
     return new Aggregate(this.THIS.bucketAuto(object))
   }
+
 
   group(object) {
     return new Aggregate(this.THIS.group(object))
