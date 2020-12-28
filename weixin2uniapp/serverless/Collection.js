@@ -1,3 +1,4 @@
+import Aggregate from './Aggregate'
 export default class Collection {
   constructor(uni_collection) {
     this.THIS = uni_collection
@@ -260,7 +261,9 @@ export default class Collection {
     return new Collection(this.THIS.field(wx_object))
   } 
 
+ 
   aggregate() {
-    
+    // console.log(this)
+    return new Aggregate()
   }
 }

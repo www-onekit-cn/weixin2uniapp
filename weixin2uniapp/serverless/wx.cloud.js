@@ -8,6 +8,7 @@ export default class wx_cloud {
     this.env = env // 并不支持
     this.traceUser = traceUser
   }
+
   static database () {
     let wx_database = this.wx_database
     if(!wx_database){
@@ -16,4 +17,5 @@ export default class wx_cloud {
     }
     return wx_database
   }
+
 }
