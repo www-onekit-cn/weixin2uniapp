@@ -5,11 +5,11 @@ export default class Aggregate {
   }
 
   group(wx_object) {
-    return console.log('i am here')
-    // return new Aggregate(this.THIS.group(wx_object))
+    console.log('ok')
+    return new Aggregate(this.THIS.group(wx_object))
   }
 
   end() {
-    // return new Aggregate(this.THIS.end())
+    return new Aggregate(this.THIS.end())
   }
 }

@@ -1,5 +1,6 @@
 import Aggregate from './Aggregate'
 export default class Collection {
+
   constructor(uni_collection) {
     this.THIS = uni_collection
   }
@@ -264,6 +265,6 @@ export default class Collection {
  
   aggregate() {
     // console.log(this)
-    return new Aggregate()
+    return new Aggregate(this.THIS.aggregate())
   }
 }
