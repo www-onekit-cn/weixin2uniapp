@@ -12,6 +12,10 @@ export default class Aggregate {
     return new Aggregate(this.THIS.bucket(object))
   }
 
+  bucketAuto(object) {
+    return new Aggregate(this.THIS.bucketAuto(object))
+  }
+
   group(object) {
     return new Aggregate(this.THIS.group(object))
   }
