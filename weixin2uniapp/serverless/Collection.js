@@ -251,5 +251,9 @@ export default class Collection {
   orderBy(filedPath, order) {
     return new Collection(this.THIS.orderBy(filedPath, order))
   }
+
+  skip(wx_offset) {
+    return new Collection(this.THIS.skip(wx_offset))
+  }
   
 }
