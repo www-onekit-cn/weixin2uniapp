@@ -3,6 +3,10 @@ export default class Aggregate {
   constructor(uni_aggregate) {
     this.THIS = uni_aggregate
   }
+  
+  addFields(object) {
+    return new Aggregate(this.THIS.addFields(object))
+  }
 
   group(object) {
     return new Aggregate(this.THIS.group(object))
@@ -22,8 +26,8 @@ export default class Aggregate {
         result
       }) => {
         const wx_res = {
-          errMsg: "collection.get:ok",
-          data: result.data
+          errMsg: "collection.aggregate:ok",
+          list: result.data
         }
         wx_resolve(wx_res)
         if (wx_success) {
