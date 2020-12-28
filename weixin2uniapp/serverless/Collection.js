@@ -255,5 +255,12 @@ export default class Collection {
   skip(wx_offset) {
     return new Collection(this.THIS.skip(wx_offset))
   }
-  
+
+  field(wx_object) {
+    return new Collection(this.THIS.field(wx_object))
+  } 
+
+  aggregate() {
+    
+  }
 }
