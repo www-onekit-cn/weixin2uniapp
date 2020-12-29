@@ -12,25 +12,57 @@ export default class Aggregate {
     return new Aggregate(this.THIS.bucket(object))
   }
 
-  count(fieldName) {
-    return new Aggregate(this.THIS.count(fieldName))
-  }
-
-  ////////////
-
-  match(object) {
-    return new Aggregate(this.THIS.match(object))
-  }
-
   bucketAuto(object) {
     return new Aggregate(this.THIS.bucketAuto(object))
   }
 
 
+  count(fieldName) {
+    return new Aggregate(this.THIS.count(fieldName))
+  }
+
+
+  geoNear(object) {
+    return new Aggregate(this.THIS.geoNear(object))
+  }
+
   group(object) {
     return new Aggregate(this.THIS.group(object))
   }
 
+  limit(object) {
+    return new Aggregate(this.THIS.limit(object))
+  }
+
+  lookup (object) {
+    return new Aggregate(this.THIS.lookup (object))
+  }
+
+  replaceRoot(object) {
+    return new Aggregate(this.THIS.replaceRoot(object))
+  }
+
+  sample(object) {
+    return new Aggregate(this.THIS.sample(object))
+  }
+
+  skip(object) {
+    return new Aggregate(this.THIS.skip(object))
+  }
+
+  sort(object) {
+    return new Aggregate(this.THIS.sort(object))
+  }
+
+  sortByCount(object) {
+    return new Aggregate(this.THIS.sortByCount(object))
+  }
+
+  unwind(object) {
+    return new Aggregate(this.THIS.unwind(object))
+  }
+
+ 
   end(wx_object) {
     let wx_success, wx_fail, wx_complete
     if (wx_object) {

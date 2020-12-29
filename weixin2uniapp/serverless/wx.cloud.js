@@ -1,6 +1,4 @@
 import Database from './Database'
-import TheKit from '../tools/image'
-import { String } from 'core-js'
 export default class wx_cloud {
   static init(wx_options) {
     const env = wx_options.env
@@ -43,10 +41,10 @@ export default class wx_cloud {
               maxAge: fetch(res.tempFileURL).then(res => res.blob()).then(data => data.size),
               status: 0,
               tempFileURL: res.tempFileURL
-            }            
+            }
             return obj
           })
-          
+         
         }
         wx_resolve(resu)
         if (wx_success) {
