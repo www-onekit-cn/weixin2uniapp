@@ -1,4 +1,5 @@
 import Collection from './Collection'
+import Geo from './Geo'
 export default class Database {
   constructor(uni_database) {
     this.THIS = uni_database
@@ -10,4 +11,9 @@ export default class Database {
   get command() {
     return this.THIS.command
   }
+
+  get Geo() {
+    return new Geo(this.THIS.Geo)
+  }
+
 }
