@@ -1,4 +1,5 @@
 import Aggregate from './Aggregate'
+import Document from './Document'
 export default class Collection {
 
   constructor(uni_collection) {
@@ -266,4 +267,7 @@ export default class Collection {
     return new Aggregate(this.THIS.aggregate())
   }
 
+  doc(todo) {
+    return new Document(this.THIS.doc(todo))
+  }
 }

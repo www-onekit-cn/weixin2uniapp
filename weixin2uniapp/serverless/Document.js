@@ -1,9 +1,15 @@
+/** 数据库记录引用 */
 export default class Document {
-  get()
 
-  set()
+  constructor(uni_doc) {
+    this.THIS = uni_doc
+  }
 
-  update()
+  get() {}
 
-  remove()
+  set() {}
+
+  update() {}
+
+  remove() {}
 }
