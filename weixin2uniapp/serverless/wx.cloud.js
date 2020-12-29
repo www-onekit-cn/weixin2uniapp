@@ -27,11 +27,11 @@ export default class wx_cloud {
       wx_complete = wx_object.complete
     }
     wx_object = null
+
     return new Promise((wx_resolve, wx_reject) => {
       uniCloud.getTempFileURL({
         fileList,
       }).then(res => {
-        console.log(res)
         const resu = {
           errMsg: 'cloud.getTempFileURL:ok',
           fileList: res.fileList.map(res => {
