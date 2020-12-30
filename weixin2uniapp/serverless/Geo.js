@@ -9,17 +9,19 @@ export default class Geo {
 
   LineString(wx_points) {
     const res = new this.THIS.LineString(wx_points)
-    const uni_points = res.param[0].map(res => res.param)
-    let arrRes = {}
-    let longtitude = []
-    let latitude = []
-
-
-    for(let i in uni_points) {
-      longtitude.push(uni_points[i][i-1])
-      latitude.push(uni_points[i][i+1])
+    const uni_params = res.param[0].map(res => res.param)
+    let resultObj = {points: []}
+    for (let key of uni_params) {
+      const res = {
+        st: {
+          latitude: key[1],
+          longtitud: key[0],
+          _internalType: Symbol('GEO_POINT')
+        }
+      }
+      resultObj.points.push(res)
     }
-
-    return new this.THIS.LineString(wx_points)
+    resultObj._internalType = Symbol('Geo_POINT')
+    return resultObj
   }
 }
