@@ -1,5 +1,6 @@
 import Database from './Database'
 export default class wx_cloud {
+
   static init(wx_options) {
     const env = wx_options.env
     const traceUser = wx_options.traceUser || false
@@ -83,6 +84,45 @@ export default class wx_cloud {
     })
   }
 
+  static uploadFile(wx_object) {
+    const cloudPath = wx_object.cloudPath
+    const filePath = wx_object.filePath
+    let wx_success,wx_fail,wx_complete
+    if(wx_object.success || wx_object.fail || wx_object.complete) {
+      wx_success = wx_object.success
+      wx_fail = wx_object.fail
+      wx_complete = wx_object.complete
+    }
+    wx_object = null
+    return new Promise((wx_resolve, wx_reject) => {
+      uniCloud.uploadFile({
+        filePath,
+        cloudPath
+      }).then(res => {
+        const resu = {
+          errMsg: 'cloud.uploadFile:ok',
+          fileID: res.fileID,
+          statusCode: 204
+        }
+        wx_resolve(resu)
+        if (wx_success) {
+          wx_success(resu)
+        }
+        if (wx_complete) {
+          wx_complete(resu)
+        }
+      }).catch(err => {
+        wx_reject(err)
+        if (wx_fail) {
+          wx_fail(err)
+        }
+        if (wx_complete) {
+          wx_complete(err)
+        }
+      })
+    })
+  }
+
   static getTempFileURL(wx_object) {
     let wx_success, wx_fail, wx_complete
     const fileList = wx_object.fileList
@@ -129,4 +169,5 @@ export default class wx_cloud {
       })
     })
   }
+  
 }
