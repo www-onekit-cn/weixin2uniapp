@@ -58,6 +58,31 @@ export default class wx_cloud {
 
   }
 
+  static callContainer(wx_object) {
+    let wx_success, wx_fail, wx_complete
+    if (wx_object) {
+      wx_success = wx_object.success
+      wx_fail = wx_object.fail
+      wx_complete = wx_object.complete
+    }
+    wx_object = null
+    //////////////////////
+    return new Promise((wx_resolve, wx_reject) => {
+
+      const wx_err = {
+        errMsg: "callContainer is not support"
+      }
+      if (wx_fail) {
+        wx_fail(wx_err)
+      } else {
+        wx_reject(wx_err)
+      }
+      if (wx_complete) {
+        wx_complete(wx_err)
+      }
+    })
+  }
+
   static getTempFileURL(wx_object) {
     let wx_success, wx_fail, wx_complete
     const fileList = wx_object.fileList
