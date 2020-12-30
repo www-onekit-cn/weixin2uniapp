@@ -12,6 +12,10 @@ export default class Database {
     return this.THIS.command
   }
 
+  get Transaction() {
+    return this.THIS.Transaction
+  }
+
   get Geo() {
     return new Geo(this.THIS.Geo)
   }

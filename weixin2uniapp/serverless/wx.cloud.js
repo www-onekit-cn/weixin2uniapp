@@ -18,6 +18,46 @@ export default class wx_cloud {
     return wx_database
   }
 
+  static callFunction(wx_object) {
+    let wx_success, wx_fail, wx_complete
+    const name = wx_object.name
+    const data = wx_object.data
+    if (wx_object.success || wx_object.fail || wx_object.complete) {
+      wx_success = wx_object.success
+      wx_fail = wx_object.fail
+      wx_complete = wx_object.complete
+    }
+    wx_object = null
+    return new Promise((wx_resolve, wx_reject) => {
+      uniCloud.callFunction({
+        name,
+        data
+      }).then(res => {
+        const resu = {
+          errMsg: 'cloud.callFunction:ok',
+          requestId: res.requestId,
+          result: res.result
+        }
+        wx_resolve(resu)
+        if (wx_success) {
+          wx_success(resu)
+        }
+        if (wx_complete) {
+          wx_complete(resu)
+        }
+      }).catch(err => {
+        wx_reject(err)
+        if (wx_fail) {
+          wx_fail(err)
+        }
+        if (wx_complete) {
+          wx_complete(err)
+        }
+      })
+    })
+
+  }
+
   static getTempFileURL(wx_object) {
     let wx_success, wx_fail, wx_complete
     const fileList = wx_object.fileList
@@ -44,7 +84,7 @@ export default class wx_cloud {
             }
             return obj
           })
-         
+
         }
         wx_resolve(resu)
         if (wx_success) {
