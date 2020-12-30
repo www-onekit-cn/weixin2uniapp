@@ -87,8 +87,8 @@ export default class wx_cloud {
   static uploadFile(wx_object) {
     const cloudPath = wx_object.cloudPath
     const filePath = wx_object.filePath
-    let wx_success,wx_fail,wx_complete
-    if(wx_object.success || wx_object.fail || wx_object.complete) {
+    let wx_success, wx_fail, wx_complete
+    if (wx_object.success || wx_object.fail || wx_object.complete) {
       wx_success = wx_object.success
       wx_fail = wx_object.fail
       wx_complete = wx_object.complete
@@ -135,11 +135,11 @@ export default class wx_cloud {
       uniCloud.downloadFile({
         fileID
       }).then(res => {
-        console.log(res)
+        // console.log(res)
         const resu = {
           cookies: [],
           dataLength: 0,
-          errMsg: 'ownloadFile:ok',
+          errMsg: 'downloadFile:ok',
           header: '',
           statusCode: 200,
           tempFilePath: ''
@@ -151,6 +151,8 @@ export default class wx_cloud {
         if (wx_complete) {
           wx_complete(resu)
         }
+
+
       }).catch(err => {
         wx_reject(err)
         if (wx_fail) {
@@ -166,7 +168,7 @@ export default class wx_cloud {
   static deleteFile(wx_object) {
 
   }
-//cloud://tcb-m1tywhnkezjbnto55a81e-8a87e2.7463-tcb-m1tywhnkezjbnto55a81e-8a87e2-1304593361/a.jpg
+
   static getTempFileURL(wx_object) {
     let wx_success, wx_fail, wx_complete
     const fileList = wx_object.fileList
@@ -178,7 +180,7 @@ export default class wx_cloud {
     wx_object = null
 
     return new Promise((wx_resolve, wx_reject) => {
-      uniCloud.getTempFileURL({
+      this.THIS.getTempFileURL({
         fileList,
       }).then(res => {
         const resu = {
