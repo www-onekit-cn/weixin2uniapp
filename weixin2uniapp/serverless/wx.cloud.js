@@ -123,6 +123,50 @@ export default class wx_cloud {
     })
   }
 
+  static downloadFile(wx_object) {
+    const fileID = wx_object.fileID
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+
+    wx_object = null
+
+    return new Promise((wx_resolve, wx_reject) => {
+      uniCloud.downloadFile({
+        fileID
+      }).then(res => {
+        console.log(res)
+        const resu = {
+          cookies: [],
+          dataLength: 0,
+          errMsg: 'ownloadFile:ok',
+          header: '',
+          statusCode: 200,
+          tempFilePath: ''
+        }
+        wx_resolve(resu)
+        if (wx_success) {
+          wx_success(resu)
+        }
+        if (wx_complete) {
+          wx_complete(resu)
+        }
+      }).catch(err => {
+        wx_reject(err)
+        if (wx_fail) {
+          wx_fail(err)
+        }
+        if (wx_complete) {
+          wx_complete(err)
+        }
+      })
+    })
+  }
+
+  static deleteFile(wx_object) {
+
+  }
+//cloud://tcb-m1tywhnkezjbnto55a81e-8a87e2.7463-tcb-m1tywhnkezjbnto55a81e-8a87e2-1304593361/a.jpg
   static getTempFileURL(wx_object) {
     let wx_success, wx_fail, wx_complete
     const fileList = wx_object.fileList
@@ -169,5 +213,5 @@ export default class wx_cloud {
       })
     })
   }
-  
+
 }
