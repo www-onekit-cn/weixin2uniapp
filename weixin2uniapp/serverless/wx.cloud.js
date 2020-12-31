@@ -133,16 +133,15 @@ export default class wx_cloud {
 
     return new Promise((wx_resolve, wx_reject) => {
       uniCloud.downloadFile({
-        fileID
+        fileID: `c${fileID}`
       }).then(res => {
-        // console.log(res)
         const resu = {
           cookies: [],
           dataLength: 0,
-          errMsg: 'downloadFile:ok',
-          header: '',
-          statusCode: 200,
-          tempFilePath: ''
+          errMsg: 'downloadFile:fail',
+          header: '请在云函数中执行',
+          statusCode: 500,
+          tempFilePath: null
         }
         wx_resolve(resu)
         if (wx_success) {
@@ -151,8 +150,6 @@ export default class wx_cloud {
         if (wx_complete) {
           wx_complete(resu)
         }
-
-
       }).catch(err => {
         wx_reject(err)
         if (wx_fail) {
