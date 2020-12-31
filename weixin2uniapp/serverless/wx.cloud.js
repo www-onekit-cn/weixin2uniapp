@@ -257,4 +257,7 @@ export default class wx_cloud {
     return wx_cloud
   }
 
+  static CDN() {
+    console.error('uniapp is not support cloud.CDN()')
+  }
 }
