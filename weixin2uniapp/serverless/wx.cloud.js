@@ -253,4 +253,8 @@ export default class wx_cloud {
     })
   }
 
+  static Cloud() {
+    return wx_cloud
+  }
+
 }
