@@ -139,8 +139,8 @@ export default class wx_cloud {
           cookies: [],
           dataLength: 0,
           errMsg: 'downloadFile:fail',
-          header: '请在云函数中执行',
-          statusCode: 500,
+          header: 'Requested range not satisfiable',
+          statusCode: 416,
           tempFilePath: null
         }
         wx_resolve(resu)
@@ -163,7 +163,47 @@ export default class wx_cloud {
   }
 
   static deleteFile(wx_object) {
+    let wx_success, wx_fail, wx_complete
+    const fileList = wx_object.fileList
+    if (wx_object.success || wx_object.fail || wx_object.complete) {
+      wx_success = wx_object.success
+      wx_fail = wx_object.fail
+      wx_complete = wx_object.complete
+    }
+    wx_object = null
 
+    return new Promise((wx_resolve, wx_reject) => {
+     uniCloud.deleteFile({
+        fileList,
+      }).then(res => {
+        const resu = {
+          errMsg: 'cloud.deleteFile:ok',
+          fileList: res.fileList.map(res => {
+            const obj = {
+              errMsg: 'OK',
+              fileID: res.fileID,
+              status: 0,
+            }
+            return obj
+          })
+        }
+        wx_resolve(resu)
+        if (wx_success) {
+          wx_success(resu)
+        }
+        if (wx_complete) {
+          wx_complete(resu)
+        }
+      }).catch(err => {
+        wx_reject(err)
+        if (wx_fail) {
+          wx_fail(err)
+        }
+        if (wx_complete) {
+          wx_complete(err)
+        }
+      })
+    })
   }
 
   static getTempFileURL(wx_object) {
@@ -177,7 +217,7 @@ export default class wx_cloud {
     wx_object = null
 
     return new Promise((wx_resolve, wx_reject) => {
-      this.THIS.getTempFileURL({
+     uniCloud.getTempFileURL({
         fileList,
       }).then(res => {
         const resu = {
