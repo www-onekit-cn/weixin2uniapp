@@ -1,6 +1,6 @@
 {
   "name": "weixin2uniapp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/dev/h5/index/index.js",
   "files": [
     "dist"

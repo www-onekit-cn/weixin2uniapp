@@ -3,22 +3,22 @@
 	export default {
 		onLaunch: function () {
 			if (app.onLaunch) {
-				return app.onLaunch.apply(this);
+				return app.onLaunch.call(this);
 			}
 		},
 		onShow: function () {
 			if (app.onShow) {
-				return app.onShow.apply(this);
+				return app.onShow.call(this);
 			}
 		},
 		onHide: function () {
 			if (app.onHide) {
-				return app.onHide.apply(this);
+				return app.onHide.call(this);
 			}
 		},
 		onError: function () {
 			if (app.onError) {
-				return app.onError.apply(this);
+				return app.onError.call(this);
 			}
 		},
 		onUniNViewMessage: function () {}

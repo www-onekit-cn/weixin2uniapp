@@ -1,6 +1,6 @@
 <template>
 	<onekit-page>
-		<view>wang</view>
+		<view @click="f1">wang</view>
 	</onekit-page>
 </template>
 <script>
@@ -20,7 +20,10 @@
 			.then(console.log)
 			.catch(console.error)
 		},
-		methods: {}
+		f1() {
+				console.log("xxx")
+			}
+		
 	})
 
 </script>
