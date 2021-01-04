@@ -1,8 +1,5 @@
 export default function(PAGE_JSON, wx_object) {
   let uni_object = {
-    data() {
-      return {};
-    },
     onLoad(query) {
       this.data = this.$data;
       if(wx_object){

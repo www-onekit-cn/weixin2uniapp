@@ -7,7 +7,7 @@
 	import OnekitPage from '../../weixin2uniapp/OnekitPage'
 	import wx from '../../weixin2uniapp/wx'
 	export default OnekitPage({}, {
-		data:{},
+		data:{a:1},
 		onLoad() {
 			const db = wx.cloud.database()
 			// wx.cloud.downloadFile({
@@ -19,6 +19,8 @@
 			})
 			.then(console.log)
 			.catch(console.error)
+			this.data.yyyy = "yyyy";
+			console.log("xxxxx",this.data)
 		},
 		f1() {
 				console.log("xxx")
