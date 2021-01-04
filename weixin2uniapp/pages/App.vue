@@ -25,5 +25,5 @@
 	}
 </script>
 <style>
-	@import url("../onekit.css");
+	@import url("/public/onekit.css");
 </style>
