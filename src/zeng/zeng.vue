@@ -1,7 +1,7 @@
 <template>
-	<page id="app">
+	<onekit-page>
 		<view>zeng</view>
-	</page>
+	</onekit-page>
 </template>
 
 <script>
