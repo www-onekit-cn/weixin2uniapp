@@ -1,17 +1,13 @@
 <template>
-	<page id="app">
+	<onekit-page>
 		<view>li</view>
-	</page>
+	</onekit-page>
 </template>
 
 <script>
 	import OnekitPage from '../../weixin2uniapp/OnekitPage'
 	export default OnekitPage({},{
-		data() {
-			return {
-				
-			}
-		},
+		data:{},
 		methods: {
 			
 		}
