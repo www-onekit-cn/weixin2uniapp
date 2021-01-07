@@ -1,19 +1,20 @@
 export default function(UC_JSON, wx_object) {
   let uni_object = {
-    attached() {
+    props:{},
+    mounted() {
       this.data = this.$data;
-      if(wx_object && wx_object.pageLifetimes && wx_object.pageLifetimes.attached){
-        wx_object.pageLifetimes.attached.call(this);
+      if(wx_object.lifetimes && wx_object.lifetimes.attached){
+        wx_object.lifetimes.attached.call(this);
       }
-      if (wx_object && wx_object["attached"]) {
+      if (wx_object["attached"]) {
         wx_object["attached"].call(this );
       }
     },
-    detached() {
-      if(wx_object && wx_object.pageLifetimes && wx_object.pageLifetimes.attadetachedched){
-        wx_object.pageLifetimes.detached.call(this);
+    destroyed() {
+      if(wx_object.lifetimes && wx_object.lifetimes.attadetachedched){
+        wx_object.lifetimes.detached.call(this);
       }
-      if (wx_object && wx_object["detached"]) {
+      if (wx_object["detached"]) {
         wx_object["detached"].call(this);
       }
     },
@@ -31,15 +32,27 @@ export default function(UC_JSON, wx_object) {
       }
     }
   };
-  if (wx_object) {
     if (wx_object.data) {
       uni_object.data = () => {
         return wx_object.data;
       };
-      for (let key of Object.keys(wx_object.methods)) {
-        let func = wx_object.methods[key];
-        uni_object.methods[key] = func;
+    }
+    if(wx_object.properties){
+      for (const key of Object.keys(wx_object.properties)) {
+        const property = wx_object.properties[key];
+        const prop = {
+          type:property.type
+        }
+        if(property.value){
+          prop.default = property.value
+        }
+        uni_object.props[key] = prop;
       }
+    }
+    if(wx_object.methods){
+    for (let key of Object.keys(wx_object.methods)) {
+      let func = wx_object.methods[key];
+      uni_object.methods[key] = func;
     }
   }
   return uni_object;

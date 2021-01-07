@@ -1,39 +1,18 @@
 <template>
-	<page id="app">
+	<onekit-page>
 		<view>zhang</view>
-	</page>
+		<view is="onekit-template-head" DATA='"title":"title1","desc":"desc1"'/>
+	</onekit-page>
 </template>
 
 <script>
 	import OnekitPage from '../../weixin2uniapp/OnekitPage'
 	import wx from '../../weixin2uniapp/wx'
+	import head from "../common/head.head"
+	import Vue from 'vue'
+	Vue.component("onekit-template-head",head)
 	export default OnekitPage({},{
-		data() {
-			return {
-				
-			}
-		},
-		onLoad(){
-			console.log("ok")
-			const db = uniCloud.database()
-			/*
-			db.collection('developer').get().then((res)=>{
-						console.log(res)
-					}).catch((err)=>{
-						console.log(err)
-					})
-			*/
-		   db.collection('developer').get({
-			   success(res){
-		   			console.log(res)
-		   		},fail(err){
-		   			console.log(err)
-		   		}
-				})
-		},
-		methods: {
-			
-		}
+		
 	})
 </script>
 
