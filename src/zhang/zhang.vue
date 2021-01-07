@@ -1,7 +1,7 @@
 <template>
 	<onekit-page>
 		<view>zhang</view>
-		<view is="onekit-template-head" DATA='"title":"title1","desc":"desc1"'/>
+		<div is="onekit-template-head" DATA='"title":"title1","desc":"desc1"'/>
 	</onekit-page>
 </template>
 
