@@ -23,7 +23,7 @@ export default class wx {
 	}
 
 	static getSystemInfoAsync(object) {
-		return console.error("getSystemInfoAsync暂不支持")
+		return coonsole.warn("getSystemInfoAsync is not support")
 	}
 
 	static getSystemInfo(object) {
@@ -33,7 +33,7 @@ export default class wx {
 	//////// 更新 /////// 
 
 	static updateWeChatApp(object) {
-		return console.error("updateWeChatApp暂不支持")
+		return coonsole.warn("updateWeChatApp is not support")
 	}
 
 	static getUpdateManager() {
@@ -43,17 +43,17 @@ export default class wx {
   //////// 生命周期 /////
 
 	static getLaunchOptionsSync() {
-		return console.error("getLaunchOptionsSync暂不支持")
+		return coonsole.warn("getLaunchOptionsSync is not support")
 	}
 
 	static getEnterOptionsSync() {
-		return console.error("getEnterOptionsSync暂不支持")
+		return coonsole.warn("getEnterOptionsSync is not support")
 	}
 
 	//////// 应用级事件 /////
 
 	static onUnhandledRejection(callback) {
-		return console.error("onUnhandledRejection暂不支持")
+		return coonsole.warn("onUnhandledRejection is not support")
 	}
 
 	static onThemeChange(callback) {
@@ -69,11 +69,11 @@ export default class wx {
 	}
 
 	static onAudioInterruptionBegin(callback) {
-		return console.error("onAudioInterruptionBegin暂不支持")
+		return coonsole.warn("onAudioInterruptionBegin is not support")
 	}
 
 	static onAudioInterruptionBegin(callback) {
-		return console.error("onAudioInterruptionBegin暂不支持")
+		return coonsole.warn("onAudioInterruptionBegin is not support")
 	}
 
 	static onAppShow(callback) {
@@ -85,11 +85,11 @@ export default class wx {
 	}
 
 	static offUnhandledRejection(callback) {
-		return console.error("offUnhandledRejection暂不支持")
+		return coonsole.warn("offUnhandledRejection is not support")
 	}
 
 	static offThemeChange(callback) {
-		return console.error("offThemeChange暂不支持")
+		return coonsole.warn("offThemeChange is not support")
 	}
 
 	static offPageNotFound(callback) {
@@ -101,11 +101,11 @@ export default class wx {
 	}
 
 	static offAudioInterruptionEnd(callback) {
-		return console.error("offAudioInterruptionEnd暂不支持")
+		return coonsole.warn("offAudioInterruptionEnd is not support")
 	}
 
 	static offAudioInterruptionBegin(callback) {
-		return console.error("offAudioInterruptionBegin暂不支持")
+		return coonsole.warn("offAudioInterruptionBegin is not support")
 	}
 
 	static offAppShow(callback) {
@@ -122,11 +122,11 @@ export default class wx {
 	}
 
 	static getRealtimeLogManager(object) {
-		return console.error("getRealtimeLogManager暂不支持")
+		return coonsole.warn("getRealtimeLogManager is not support")
 	}
 
 	static getLogManager(object) {
-		return console.error("getLogManager暂不支持")
+		return coonsole.warn("getLogManager is not support")
 	}
 
 	/////// 调试 /////
@@ -186,11 +186,11 @@ export default class wx {
 	}
 
 	static enableAlertBeforeUnload(object) {
-		return console.error("enableAlertBeforeUnload暂不支持")
+		return coonsole.warn("enableAlertBeforeUnload is not support")
 	}
 
 	static disableAlertBeforeUnload(object) {
-		return console.error("disableAlertBeforeUnload暂不支持")
+		return coonsole.warn("disableAlertBeforeUnload is not support")
 	}
 
 	static showNavigationBarLoading(object) {
@@ -274,7 +274,7 @@ export default class wx {
 	}
 
 	static setTopBarText(object) {
-		return console.error("setTopBarText暂不支持")
+		return coonsole.warn("setTopBarText is not support")
 	}
 
 	static nextTick(callback) {
@@ -286,7 +286,7 @@ export default class wx {
 	}
 
 	static setWindowSize(object) {
-		return console.error("setWindowSize暂不支持")
+		return coonsole.warn("setWindowSize is not support")
 	}
 
 	static onWindowResize(callback) {
@@ -302,7 +302,7 @@ export default class wx {
 	}
 
 	static offKeyboardHeightChange(callback) {
-		return console.error("offKeyboardHeightChange暂不支持")
+		return coonsole.warn("offKeyboardHeightChange is not support")
 	}
 
 	static hideKeyboard(object) {
@@ -310,7 +310,7 @@ export default class wx {
 	}
 
 	static getSelectedTextRange(object) {
-		return console.error("getSelectedTextRange暂不支持")
+		return coonsole.warn("getSelectedTextRange is not support")
 	}
 
 	///////////////// 网络 ////////////////////
@@ -365,48 +365,48 @@ export default class wx {
 
 	/////// mDNS /////
 	static stopLocalServiceDiscovery(object) {
-		return console.error("stopLocalServiceDiscovery暂不支持")
+		return coonsole.warn("stopLocalServiceDiscovery is not support")
 	}
 
 	static startLocalServiceDiscovery(object) {
-		return console.error("startLocalServiceDiscovery暂不支持")
+		return coonsole.warn("startLocalServiceDiscovery is not support")
 	}
 
 	static onLocalServiceResolveFail(object) {
-		return console.error("onLocalServiceResolveFail暂不支持")
+		return coonsole.warn("onLocalServiceResolveFail is not support")
 	}
 
 	static onLocalServiceLost(callback) {
-		return console.error("onLocalServiceLost暂不支持")
+		return coonsole.warn("onLocalServiceLost is not support")
 	}
 
 	static onLocalServiceFound(callback) {
-		return console.error("onLocalServiceFound暂不支持")
+		return coonsole.warn("onLocalServiceFound is not support")
 	}
 
 	static onLocalServiceDiscoveryStop(callback) {
-		return console.error("onLocalServiceDiscoveryStop暂不支持")
+		return coonsole.warn("onLocalServiceDiscoveryStop is not support")
 	}
 
 	static offLocalServiceResolveFail(callback) {
-		return console.error("offLocalServiceResolveFail暂不支持")
+		return coonsole.warn("offLocalServiceResolveFail is not support")
 	}
 
 	static offLocalServiceLost(callback) {
-		return console.error("offLocalServiceLost暂不支持")
+		return coonsole.warn("offLocalServiceLost is not support")
 	}
 
 	static offLocalServiceFound(callback) {
-		return console.error("offLocalServiceFound暂不支持")
+		return coonsole.warn("offLocalServiceFound is not support")
 	}
 
 	static offLocalServiceDiscoveryStop(callback) {
-		return console.error("offLocalServiceDiscoveryStop暂不支持")
+		return coonsole.warn("offLocalServiceDiscoveryStop is not support")
 	}
 
 	/////// UDP /////
 	static createUDPSocket() {
-		return console.error("createUDPSocket暂不支持")
+		return coonsole.warn("createUDPSocket is not support")
 	}
 
 	/////////////////// 数据缓存 //////////////////////////
@@ -453,19 +453,19 @@ export default class wx {
 
 	/////// 周期性更新 /////
 	static setBackgroundFetchToken(object) {
-		return console.error("setBackgroundFetchToken暂不支持")
+		return coonsole.warn("setBackgroundFetchToken is not support")
 	}
 
 	static onBackgroundFetchData(callback) {
-		return console.error("onBackgroundFetchData暂不支持")
+		return coonsole.warn("onBackgroundFetchData is not support")
 	}
 
 	static getBackgroundFetchToken(object) {
-		return console.error("getBackgroundFetchToken暂不支持")
+		return coonsole.warn("getBackgroundFetchToken is not support")
 	}
 
 	static getBackgroundFetchData(object) {
-		return console.error("getBackgroundFetchData暂不支持")
+		return coonsole.warn("getBackgroundFetchData is not support")
 	}
 
 	/////////////////// 媒体 //////////////////////////
@@ -481,7 +481,7 @@ export default class wx {
 	}
 
 	static previewMedia(object, showmenu) {
-		return console.error("previewMedia暂不支持")
+		return coonsole.warn("previewMedia is not support")
 	}
 
 	static previewImage(object, showmenu) {
@@ -497,7 +497,7 @@ export default class wx {
 	}
 
 	static chooseMessageFile(object) {
-		return console.error("chooseMessageFile暂不支持")
+		return coonsole.warn("chooseMessageFile is not support")
 	}
 
 	static chooseImage(object) {
@@ -535,27 +535,27 @@ export default class wx {
 
 	/////// 音频 /////
 	static stopVoice(object) {
-		return console.error("stopVoice暂不支持")
+		return coonsole.warn("stopVoice is not support")
 	}
 
 	static setInnerAudioOption(object) {
-		return console.error("setInnerAudioOption暂不支持")
+		return coonsole.warn("setInnerAudioOption is not support")
 	}
 
 	static playVoice(object) {
-		return console.error("playVoice暂不支持")
+		return coonsole.warn("playVoice is not support")
 	}
 
 	static pauseVoice(object) {
-		return console.error("pauseVoice暂不支持")
+		return coonsole.warn("pauseVoice is not support")
 	}
 
 	static getAvailableAudioSources(object) {
-		return console.error("getAvailableAudioSources暂不支持")
+		return coonsole.warn("getAvailableAudioSources is not support")
 	}
 
 	static createMediaAudioPlayer() {
-		return console.error("createMediaAudioPlayer暂不支持")
+		return coonsole.warn("createMediaAudioPlayer is not support")
 	}
 
 	static createInnerAudioContext() {
@@ -563,40 +563,40 @@ export default class wx {
 	}
 
 	static createAudioContext(string, object) {
-		return console.error("createAudioContext暂不支持")
+		return coonsole.warn("createAudioContext is not support")
 	}
 
 	/////// 背景音频 /////
 	static stopBackgroundAudio(object) {
-		return console.error("stopBackgroundAudio暂不支持")
+		return coonsole.warn("stopBackgroundAudio is not support")
 	}
 
 	static seekBackgroundAudio(object) {
-		return console.error("seekBackgroundAudio暂不支持")
+		return coonsole.warn("seekBackgroundAudio is not support")
 	}
 
 	static playBackgroundAudio(object) {
-		return console.error("playBackgroundAudio暂不支持")
+		return coonsole.warn("playBackgroundAudio is not support")
 	}
 
 	static pauseBackgroundAudio(object) {
-		return console.error("pauseBackgroundAudio暂不支持")
+		return coonsole.warn("pauseBackgroundAudio is not support")
 	}
 
 	static onBackgroundAudioStop(callback) {
-		return console.error("onBackgroundAudioStop暂不支持")
+		return coonsole.warn("onBackgroundAudioStop is not support")
 	}
 
 	static onBackgroundAudioPlay(callback) {
-		return console.error("onBackgroundAudioPlay暂不支持")
+		return coonsole.warn("onBackgroundAudioPlay is not support")
 	}
 
 	static onBackgroundAudioPause(callback) {
-		return console.error("onBackgroundAudioPause暂不支持")
+		return coonsole.warn("onBackgroundAudioPause is not support")
 	}
 
 	static getBackgroundAudioPlayerState(callback) {
-		return console.error("getBackgroundAudioPlayerState暂不支持")
+		return coonsole.warn("getBackgroundAudioPlayerState is not support")
 	}
 
 	static getBackgroundAudioManager() {
@@ -614,11 +614,11 @@ export default class wx {
 
 	/////// 录音 /////
 	static stopRecord(object) {
-		return console.error("stopRecord暂不支持")
+		return coonsole.warn("stopRecord is not support")
 	}
 
 	static startRecord(object) {
-		return console.error("startRecord暂不支持")
+		return coonsole.warn("startRecord is not support")
 	}
 
 	static getRecorderManager() {
@@ -639,70 +639,70 @@ export default class wx {
 
 	/////// 实时语音 /////
 	static updateVoIPChatMuteConfig(object) {
-		return console.error("updateVoIPChatMuteConfig暂不支持")
+		return coonsole.warn("updateVoIPChatMuteConfig is not support")
 	}
 
 	static subscribeVoIPVideoMembers(object) {
-		return console.error("subscribeVoIPVideoMembers暂不支持")
+		return coonsole.warn("subscribeVoIPVideoMembers is not support")
 	}
 
 	static onVoIPVideoMembersChanged(callback) {
-		return console.error("onVoIPVideoMembersChanged暂不支持")
+		return coonsole.warn("onVoIPVideoMembersChanged is not support")
 	}
 
 	static onVoIPChatSpeakersChanged(callback) {
-		return console.error("onVoIPChatSpeakersChanged暂不支持")
+		return coonsole.warn("onVoIPChatSpeakersChanged is not support")
 	}
 
 	static onVoIPChatMembersChanged(callback) {
-		return console.error("onVoIPChatMembersChanged暂不支持")
+		return coonsole.warn("onVoIPChatMembersChanged is not support")
 	}
 
 	static onVoIPChatInterrupted(callback) {
-		return console.error("onVoIPChatInterrupted暂不支持")
+		return coonsole.warn("onVoIPChatInterrupted is not support")
 	}
 
 	static offVoIPVideoMembersChanged(callback) {
-		return console.error("offVoIPVideoMembersChanged暂不支持")
+		return coonsole.warn("offVoIPVideoMembersChanged is not support")
 	}
 
 	static offVoIPChatMembersChanged(callback) {
-		return console.error("offVoIPChatMembersChanged暂不支持")
+		return coonsole.warn("offVoIPChatMembersChanged is not support")
 	}
 
 	static offVoIPChatInterrupted(callback) {
-		return console.error("offVoIPChatInterrupted暂不支持")
+		return coonsole.warn("offVoIPChatInterrupted is not support")
 	}
 
 	static joinVoIPChat(object) {
-		return console.error("joinVoIPChat暂不支持")
+		return coonsole.warn("joinVoIPChat is not support")
 	}
 
 	static exitVoIPChat(object) {
-		return console.error("exitVoIPChat暂不支持")
+		return coonsole.warn("exitVoIPChat is not support")
 	}
 
 	/////// 画面录制器 /////
 	static createMediaRecorder(object1, object2) {
-		return console.error("createMediaRecorder暂不支持")
+		return coonsole.warn("createMediaRecorder is not support")
 	}
 
 	/////// 视频解码器 /////
 	static createVideoDecoder() {
-		return console.error("createVideoDecoder暂不支持")
+		return coonsole.warn("createVideoDecoder is not support")
 	}
 
 	/////////////////// 位置 //////////////////////////
 	static stopLocationUpdate(object) {
-		return console.error("stopLocationUpdate暂不支持")
+		return coonsole.warn("stopLocationUpdate is not support")
 	}
 
 	static startLocationUpdateBackground(object) {
-		return console.error("startLocationUpdateBackground暂不支持")
+		return coonsole.warn("startLocationUpdateBackground is not support")
 	}
 
 	static startLocationUpdate(object) {
-		return console.error("startLocationUpdate暂不支持")
+		return coonsole.warn("startLocationUpdate is not support")
 	}
 
 	static openLocation(object) {
@@ -710,11 +710,11 @@ export default class wx {
 	}
 
 	static onLocationChange(callback) {
-		return console.error("onLocationChange暂不支持")
+		return coonsole.warn("onLocationChange is not support")
 	}
 
 	static offLocationChange(callback) {
-		return console.error("offLocationChange暂不支持")
+		return coonsole.warn("offLocationChange is not support")
 	}
 
 	static getLocation(object) {
@@ -728,7 +728,7 @@ export default class wx {
 	/////////////////// 转发 //////////////////////////
 
 	static updateShareMenu(object) {
-		return console.error("updateShareMenu暂不支持")
+		return coonsole.warn("updateShareMenu is not support")
 	}
 
 	static showShareMenu(object) {
@@ -740,39 +740,39 @@ export default class wx {
 	}
 
 	static getShareInfo(object) {
-		return console.error("getShareInfo暂不支持")
+		return coonsole.warn("getShareInfo is not support")
 	}
 
 	static authPrivateMessage(object) {
-		return console.error("authPrivateMessage暂不支持")
+		return coonsole.warn("authPrivateMessage is not support")
 	}
 
 	/////////////////// 画布 //////////////////////////
 
 	static createOffscreenCanvas() {
-		return console.error("createOffscreenCanvas暂不支持")
+		return coonsole.warn("createOffscreenCanvas is not support")
 	}
 
 	static createCanvasContext(string,object) {
-		return console.error("createCanvasContext暂不支持")
+		return coonsole.warn("createCanvasContext is not support")
 	}
 
 	static canvasToTempFilePath(object1,object2) {
-		return console.error("canvasToTempFilePath暂不支持")
+		return coonsole.warn("canvasToTempFilePath is not support")
 	}
 
 	static canvasPutImageData(object1,object2) {
-		return console.error("canvasPutImageData暂不支持")
+		return coonsole.warn("canvasPutImageData is not support")
 	}
 
 	static canvasGetImageData(object1,object2) {
-		return console.error("canvasGetImageData暂不支持")
+		return coonsole.warn("canvasGetImageData is not support")
 	}
 
 	/////////////////// 文件 //////////////////////////
 
 	static saveFileToDisk(object) {
-		return console.error("saveFileToDisk暂不支持")
+		return coonsole.warn("saveFileToDisk is not support")
 	}
 
 	static saveFile(object) {
@@ -835,12 +835,12 @@ export default class wx {
 
 	/////// 数据上报 /////
 	static reportMonitor(string,number) {
-		return console.error("reportMonitor暂不支持")
+		return coonsole.warn("reportMonitor is not support")
 	}
 
 	/////// 数据分析 /////
 	static reportAnalytics(string,object) {
-		return console.error("reportAnalytics暂不支持")
+		return coonsole.warn("reportAnalytics is not support")
 	}
 
 	/////// 支付 /////
@@ -869,11 +869,11 @@ export default class wx {
 
 	/////// 卡劵 /////
 	static openCard(object) {
-		return console.error("openCard暂不支持")
+		return coonsole.warn("openCard is not support")
 	}
 
 	static addCard(object) {
-		return console.error("addCard暂不支持")
+		return coonsole.warn("addCard is not support")
 	}
 
 	/////// 发票 /////
@@ -882,7 +882,7 @@ export default class wx {
 	}
 
 	static chooseInvoice(object) {
-		return console.error("chooseInvoice暂不支持")
+		return coonsole.warn("chooseInvoice is not support")
 	}
 
 	/////// 生物认证 /////
@@ -900,16 +900,16 @@ export default class wx {
 
 	/////// 微信运动 /////
 	static getWeRunData(object) {
-		return console.error("getWeRunData暂不支持")
+		return coonsole.warn("getWeRunData is not support")
 	}
 
 	/////// 性能 /////
 	static reportPerformance(number1,number2,string) {
-		return console.error("reportPerformance暂不支持")
+		return coonsole.warn("reportPerformance is not support")
 	}
 
 	static getWeRunData() {
-		return console.error("getWeRunData暂不支持")
+		return coonsole.warn("getWeRunData is not support")
 	}
 
 	/////// 订阅消息 /////
@@ -919,27 +919,27 @@ export default class wx {
 
 	/////// 微信红包 /////
 	static showRedPackage(object) {
-		return console.error("showRedPackage暂不支持")
+		return coonsole.warn("showRedPackage is not support")
 	}
 
 	/////// 群工具 /////
 	static getGroupEnterInfo(object) {
-		return console.error("getGroupEnterInfo暂不支持")
+		return coonsole.warn("getGroupEnterInfo is not support")
 	}
 
 	/////////////////// 设备 //////////////////////////
 
 	/////// 外围设备 /////
 	static onBLEPeripheralConnectionStateChanged(callback) {
-		return console.error("onBLEPeripheralConnectionStateChanged暂不支持")
+		return coonsole.warn("onBLEPeripheralConnectionStateChanged is not support")
 	}
 
 	static offBLEPeripheralConnectionStateChanged(callback) {
-		return console.error("offBLEPeripheralConnectionStateChanged暂不支持")
+		return coonsole.warn("offBLEPeripheralConnectionStateChanged is not support")
 	}
 
 	static createBLEPeripheralServer(callback) {
-		return console.error("createBLEPeripheralServer暂不支持")
+		return coonsole.warn("createBLEPeripheralServer is not support")
 	}
 
 	/////// iBeacon /////
@@ -960,11 +960,11 @@ export default class wx {
 	}
 
   static offBeaconUpdate(callback) {
-		return console.error("offBeaconUpdate暂不支持")
+		return coonsole.warn("offBeaconUpdate is not support")
 	}
 
 	static offBeaconServiceChange(callback) {
-		return console.error("offBeaconServiceChange暂不支持")
+		return coonsole.warn("offBeaconServiceChange is not support")
 	}
 
 	static getBeacons(object) {
@@ -973,72 +973,72 @@ export default class wx {
 
 	/////// NFC /////
 	static stopHCE(object) {
-		return console.error("stopHCE暂不支持")
+		return coonsole.warn("stopHCE is not support")
 	}
 
 	static startHCE(object) {
-		return console.error("startHCE暂不支持")
+		return coonsole.warn("startHCE is not support")
 	}
 
 	static sendHCEMessage(object) {
-		return console.error("sendHCEMessage暂不支持")
+		return coonsole.warn("sendHCEMessage is not support")
 	}
 
 	static onHCEMessage(callback) {
-		return console.error("onHCEMessage暂不支持")
+		return coonsole.warn("onHCEMessage is not support")
 	}
 
 	static offHCEMessage(callback) {
-		return console.error("offHCEMessage暂不支持")
+		return coonsole.warn("offHCEMessage is not support")
 	}
 
 	static getNFCAdapter() {
-		return console.error("getNFCAdapter暂不支持")
+		return coonsole.warn("getNFCAdapter is not support")
 	}
 
 	static getHCEState(object) {
-		return console.error("getHCEState暂不支持")
+		return coonsole.warn("getHCEState is not support")
 	}
 
 	/////// WiFi //////
 	static stopWifi(object) {
-		return console.error("stopWifi暂不支持")
+		return coonsole.warn("stopWifi is not support")
 	}
 
 	static startWifi(object) {
-		return console.error("startWifi暂不支持")
+		return coonsole.warn("startWifi is not support")
 	}
 
 	static setWifiList(object) {
-		return console.error("setWifiList暂不支持")
+		return coonsole.warn("setWifiList is not support")
 	}
 
 	static onWifiConnected(callback) {
-		return console.error("onWifiConnected暂不支持")
+		return coonsole.warn("onWifiConnected is not support")
 	}
 
 	static onGetWifiList(callback) {
-		return console.error("onGetWifiList暂不支持")
+		return coonsole.warn("onGetWifiList is not support")
 	}
 
 	static offWifiConnected(callback) {
-		return console.error("offWifiConnected暂不支持")
+		return coonsole.warn("offWifiConnected is not support")
 	}
 
 	static offGetWifiList(callback) {
-		return console.error("offGetWifiList暂不支持")
+		return coonsole.warn("offGetWifiList is not support")
 	}
 
 	static getWifiList(object) {
-		return console.error("stopWifi暂不支持")
+		return coonsole.warn("stopWifi is not support")
 	}
 
 	static getConnectedWifi(object) {
-		return console.error("startWifi暂不支持")
+		return coonsole.warn("startWifi is not support")
 	}
 
 	static getConnectedWifi(object) {
-		return console.error("setWifiList暂不支持")
+		return coonsole.warn("setWifiList is not support")
 	}
 
 	/////// 联系人 //////
@@ -1048,7 +1048,7 @@ export default class wx {
 
 	/////// 无障碍 //////
 	static checkIsOpenAccessibility(object) {
-		return console.error("checkIsOpenAccessibility暂不支持")
+		return coonsole.warn("checkIsOpenAccessibility is not support")
 	}
 
 	/////// 低功耗蓝牙 //////
@@ -1069,11 +1069,11 @@ export default class wx {
 	}
 
 	static offBLEConnectionStateChange(callback) {
-		return console.error("offBLEConnectionStateChange暂不支持")
+		return coonsole.warn("offBLEConnectionStateChange is not support")
 	}
 
 	static offBLECharacteristicValueChange(callback) {
-		return console.error("offBLECharacteristicValueChange暂不支持")
+		return coonsole.warn("offBLECharacteristicValueChange is not support")
 	}
 
 	static notifyBLECharacteristicValueChange(object) {
@@ -1081,7 +1081,7 @@ export default class wx {
 	}
 
 	static makeBluetoothPair(object) {
-		return console.error("makeBluetoothPair暂不支持")
+		return coonsole.warn("makeBluetoothPair is not support")
 	}
 
 	static getBLEDeviceServices(object) {
@@ -1126,11 +1126,11 @@ export default class wx {
 	}
 
 	static offBluetoothDeviceFound(callback) {
-		return console.error("offBluetoothDeviceFound暂不支持")
+		return coonsole.warn("offBluetoothDeviceFound is not support")
 	}
 
 	static offBluetoothAdapterStateChange(callback) {
-		return console.error("offBluetoothAdapterStateChange暂不支持")
+		return coonsole.warn("offBluetoothAdapterStateChange is not support")
 	}
 
 	static getConnectedBluetoothDevices(object) {
@@ -1151,11 +1151,11 @@ export default class wx {
 
 	/////// 电量 ///////
 	static getBatteryInfoSync() {
-		return console.error("getBatteryInfoSync暂不支持")
+		return coonsole.warn("getBatteryInfoSync is not support")
 	}
 
 	static getBatteryInfo(object) {
-		return console.error("getBatteryInfo暂不支持")
+		return coonsole.warn("getBatteryInfo is not support")
 	}
 
 	/////// 剪切板 ///////
@@ -1173,7 +1173,7 @@ export default class wx {
 	}
 
 	static offNetworkStatusChange(callback) {
-		return console.error("offNetworkStatusChange暂不支持")
+		return coonsole.warn("offNetworkStatusChange is not support")
 	}
 
 	static getNetworkType(object) {
@@ -1194,7 +1194,7 @@ export default class wx {
 	}
 
 	static offUserCaptureScreen(callback) {
-		return console.error("offUserCaptureScreen暂不支持")
+		return coonsole.warn("offUserCaptureScreen is not support")
 	}
 
 	static getScreenBrightness(object) {
@@ -1242,19 +1242,19 @@ export default class wx {
 
 	/////// 设备方向 ///////
 	static stopDeviceMotionListening(object) {
-		return console.error("stopDeviceMotionListening暂不支持")
+		return coonsole.warn("stopDeviceMotionListening is not support")
 	}
 
 	static startDeviceMotionListening(object) {
-		return console.error("startDeviceMotionListening暂不支持")
+		return coonsole.warn("startDeviceMotionListening is not support")
 	}
 
 	static onDeviceMotionChange(callback) {
-		return console.error("onDeviceMotionChange暂不支持")
+		return coonsole.warn("onDeviceMotionChange is not support")
 	}
 
 	static offDeviceMotionChange(callback) {
-		return console.error("offDeviceMotionChange暂不支持")
+		return coonsole.warn("offDeviceMotionChange is not support")
 	}
 
 	/////// 陀螺仪 ///////
@@ -1271,7 +1271,7 @@ export default class wx {
 	}
 
 	static offGyroscopeChange(callback) {
-		return console.error("offGyroscopeChange暂不支持")
+		return coonsole.warn("offGyroscopeChange is not support")
 	}
 
 	/////// 性能 ///////
@@ -1280,7 +1280,7 @@ export default class wx {
 	}
 
 	static offMemoryWarning(callback) {
-		return console.error("offMemoryWarning暂不支持")
+		return coonsole.warn("offMemoryWarning is not support")
 	}
 
 	/////// 扫码 ///////
@@ -1299,7 +1299,7 @@ export default class wx {
 
 	/////////////////// Worker //////////////////////////
 	static createWorker(string,object) {
-		return console.error("createWorker暂不支持")
+		return coonsole.warn("createWorker is not support")
 	}
 
 	/////////////////// 第三方平台 //////////////////////////
